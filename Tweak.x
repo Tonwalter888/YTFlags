@@ -25,6 +25,7 @@
 %end
 
 %hook YTPlayerResponse
+- (BOOL)isPlayableInPictureInPicture { return YES; }
 - (BOOL)isPipOffByDefault { return NO; }
 - (BOOL)shouldPipResumeOnHead { return YES; }
 %end
@@ -47,11 +48,6 @@
 - (BOOL)canEnablePictureInPicture { return YES; }
 %end
 
-%hook YTPlayerResponse
-- (BOOL)isPlayableInPictureInPicture { return YES; }
-- (BOOL)isPlayableInBackground { return YES; }
-%end
-
 %hook YTReelModel
 - (BOOL)isPiPSupported { return NO; }
 %end
@@ -67,6 +63,11 @@
 
 %hook YTPlaybackData
 - (BOOL)isPlayableInBackground { return YES; }
+%end
+
+%hook YTIPlayerResponse
+- (BOOL)isPlayableInBackground { return YES; }
+- (BOOL)isMonetized { return NO; }
 %end
 
 // Extras
