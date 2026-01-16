@@ -1,6 +1,6 @@
 # YTFlags
 
-Currently these hooks are based on YouTube version 19.49.5. I'll add the latest version soon.
+Currently these hooks are based on YouTube version 19.49.5. I'll add the latest version soon. This project is similar to [YTABGoodies](https://github.com/PoomSmart/YTABGoodies) from PoomSmart.
 
 ## Building
 - Clone [Theos](https://github.com/theos/theos).
