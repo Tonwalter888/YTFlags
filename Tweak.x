@@ -5,6 +5,7 @@
 - (BOOL)enablePipMenuItem { return YES; }
 - (BOOL)enableIosFloatingMiniplayer { return YES; }
 - (BOOL)enableIosFloatingMiniplayerDoubleTapToResize { return NO; }
+- (BOOL)enableIosFloatingMiniplayerControlsCircularBackground { return YES; }
 - (BOOL)enableIosFreeStableVolume { return YES; }
 - (BOOL)enableIosLockMode { return YES; }
 - (BOOL)enableIosLockModeFixes { return YES; }
@@ -119,3 +120,4 @@
 - (BOOL)shouldSkipIntroDialog { return YES; }
 
 %end
+
