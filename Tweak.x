@@ -14,6 +14,7 @@
 %end
 
 %hook YTHotConfig
+- (BOOL)clientInfraClientConfigIosEnableFillingEncodedHacksInnertubeContext { return NO; }
 - (BOOL)iosPlayerClientSharedConfigDefaultOffPremiumPip { return NO; }
 - (BOOL)iosPlayerClientSharedConfigDisableLockscreenControlsFromPip { return NO; }
 - (BOOL)iosPlayerClientSharedConfigEnableResumeOnHeadForImmersiveLiveInPip { return NO; }
@@ -60,6 +61,10 @@
 
 %hook HAMPlayer
 - (BOOL)allowsBackgroundPlayback { return YES; }
+%end
+
+%hook MLVideo
+- (BOOL)playableInBackground { return YES; }
 %end
 
 // Extras
