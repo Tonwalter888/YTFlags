@@ -51,6 +51,7 @@
 
 %hook YTPlayerResponse
 - (BOOL)isPlayableInPictureInPicture { return YES; }
+- (BOOL)isPlayableInBackground { return YES; }
 %end
 
 %hook YTReelModel
@@ -65,6 +66,10 @@
 
 %hook MLVideo
 - (BOOL)playableInBackground { return YES; }
+%end
+
+%hook YTPlaybackData
+- (BOOL)isPlayableInBackground { return YES; }
 %end
 
 // Extras
