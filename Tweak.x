@@ -5,7 +5,6 @@
 - (BOOL)enablePipMenuItem { return YES; }
 - (BOOL)enableIosFloatingMiniplayer { return YES; }
 - (BOOL)enableIosFreeStableVolume { return YES; }
-- (BOOL)enableIosLocalPlaybackSequence { return YES; }
 - (BOOL)enableIosLockMode { return YES; }
 - (BOOL)enableIosLockModeFixes { return YES; }
 - (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPicture { return NO; }
