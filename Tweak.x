@@ -87,14 +87,6 @@
 - (BOOL)shouldShowPromo { return NO; }
 %end
 
-%hook YTSlimOwnerCellController
-- (BOOL)shouldShowHint: { return NO; }
-%end
-
-%hook YTSlimVideoScrollableActionBarCellController
-- (BOOL)shouldShowHint: { return NO; }
-%end
-
 %hook YTGlobalConfig
 - (BOOL)shouldBlockUpgradeDialog { return YES; }
 - (BOOL)shouldShowUpgradeDialog { return NO; }
