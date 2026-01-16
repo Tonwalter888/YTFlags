@@ -1,6 +1,5 @@
 // Tweak.x
 // PiP
-
 %hook YTColdConfig
 - (BOOL)addPipMenuItem { return YES; }
 - (BOOL)enablePipMenuItem { return YES; }
@@ -59,7 +58,6 @@
 %end
 
 // Background Playback
-
 %hook HAMPlayer
 - (BOOL)allowsBackgroundPlayback { return YES; }
 %end
@@ -73,7 +71,6 @@
 %end
 
 // Extras
-
 %hook FVRDefaultUIFlowController
 - (BOOL)shouldSkipWelcome { return YES; }
 %end
