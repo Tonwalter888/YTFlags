@@ -99,6 +99,7 @@
 - (BOOL)shouldBlockUpgradeDialog { return YES; }
 - (BOOL)shouldShowUpgradeDialog { return NO; }
 - (BOOL)shouldShowUpgrade { return NO; }
+- (BOOL)shouldForceUpgrade { return NO; }
 %end
 
 %hook YTCreatorEndscreenToggleButton
