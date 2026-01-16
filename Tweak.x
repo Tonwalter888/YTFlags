@@ -44,10 +44,6 @@
     return YES;
 }
 
-// - (BOOL)iosReleasePipControllerOnMain {
-//     return YES;
-// }
-
 %end
 
 %hook YTPlayerViewController
@@ -136,10 +132,116 @@
 
 %end
 
-// %hook YTWatchFloatingMiniplayerViewController
-//
-// - (BOOL)isBackgroundPlaybackEnabled {
-//     return YES;
-// }
-//
-// %end
+// Extras
+
+%hook FVRDefaultUIFlowController
+
+- (BOOL)shouldSkipWelcome {
+    return YES;
+}
+
+%end
+
+%hook YTYouThereController
+
+- (BOOL)shouldShowYouTherePrompt {
+    return NO;
+}
+
+%end
+
+%hook YTMusicButtonController
+
+- (BOOL)shouldShowYoutubeMusicButton {
+    return NO;
+}
+
+%end
+
+%hook YTShareMainView
+
+- (BOOL)shouldShowPromo {
+    return NO;
+}
+
+%end
+
+%hook YTSlimOwnerCellController
+
+- (BOOL)shouldShowHint: {
+    return NO;
+}
+
+%end
+
+%hook YTSlimVideoScrollableActionBarCellController
+
+- (BOOL)shouldShowHint: {
+    return NO;
+}
+
+%end
+
+%hook YTGlobalConfig
+
+- (BOOL)shouldBlockUpgradeDialog {
+    return YES;
+}
+
+- (BOOL)shouldShowUpgradeDialog {
+    return NO;
+}
+
+- (BOOL)shouldShowUpgrade {
+    return NO;
+}
+
+%end
+
+%hook YTCreatorEndscreenToggleButton
+
+- (BOOL)shouldHideEndScreen {
+    return YES;
+}
+
+%end
+
+%hook YTPromotedVideoCellController
+
+- (BOOL)shouldShowPromotedItems {
+    return NO;
+}
+
+%end
+
+%hook YTAutonavEndscreenController
+
+- (BOOL)shouldShowEndscreen {
+    return NO;
+}
+
+%end
+
+%hook YTBedtimeReminderController
+
+- (BOOL)shouldShowBedtimeReminderAsPanel {
+    return NO;
+}
+
+%end
+
+%hook YTReelWatchRootViewController
+
+- (BOOL)shouldHideSnackbarsOnScrollshouldHideSnackbarsOnScroll {
+    return YES;
+}
+
+%end
+
+%hook YTLCEntryRequirementsViewController
+
+- (BOOL)shouldSkipIntroDialog {
+    return YES;
+}
+
+%end
