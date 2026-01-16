@@ -4,6 +4,7 @@
 - (BOOL)addPipMenuItem { return YES; }
 - (BOOL)enablePipMenuItem { return YES; }
 - (BOOL)enableIosFloatingMiniplayer { return YES; }
+- (BOOL)enableIosFloatingMiniplayerDoubleTapToResize { return NO; }
 - (BOOL)enableIosFreeStableVolume { return YES; }
 - (BOOL)enableIosLockMode { return YES; }
 - (BOOL)enableIosLockModeFixes { return YES; }
@@ -116,4 +117,5 @@
 
 %hook YTLCEntryRequirementsViewController
 - (BOOL)shouldSkipIntroDialog { return YES; }
+
 %end
