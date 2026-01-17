@@ -308,4 +308,3 @@
 - (BOOL)safeguardEducationSkipped { return YES; }
 - (BOOL)didShowNewReelUserEducation { return YES; }
 %end
-
