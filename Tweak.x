@@ -108,7 +108,7 @@
 - (BOOL)shouldSkipWelcome { return YES; }
 %end
 
-// Stop YouTube asking "Are you there?"
+// Prevent YouTube from asking "Are you there?"
 %hook YTYouThereController
 - (BOOL)shouldShowYouTherePrompt { return NO; }
 %end
@@ -118,7 +118,7 @@
 - (BOOL)shouldShowYoutubeMusicButton { return NO; }
 %end
 
-// Stop YouTube asking to update the app
+// Prevent YouTube from asking to update the app
 %hook YTGlobalConfig
 - (BOOL)shouldBlockUpgradeDialog { return YES; }
 - (BOOL)shouldShowUpgradeDialog { return NO; }
@@ -308,3 +308,4 @@
 - (BOOL)safeguardEducationSkipped { return YES; }
 - (BOOL)didShowNewReelUserEducation { return YES; }
 %end
+
