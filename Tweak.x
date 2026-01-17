@@ -22,6 +22,7 @@
 - (BOOL)iosPlayerClientSharedConfigDefaultOffPremiumPip { return NO; }
 - (BOOL)iosPlayerClientSharedConfigDisableLockscreenControlsFromPip { return NO; }
 - (BOOL)iosPlayerClientSharedConfigEnableResumeOnHeadForImmersiveLiveInPip { return NO; }
+- (BOOL)iosPlayerClientSharedConfigSkipPipToggleOnStateChange { return NO; }
 - (BOOL)iosPlayerClientSharedConfigOffsetPipControllerTimeRangeWithSbdlCurrentTime { return NO; }
 - (BOOL)iosPlayerClientSharedConfigTouchEarlyAccessPipSetting { return YES; }
 - (BOOL)iosPlayerClientSharedConfigShowPipClingPromo { return NO; }
