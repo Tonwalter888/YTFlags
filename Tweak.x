@@ -31,6 +31,8 @@
 - (BOOL)iosPlayerClientSharedConfigShowPipClingPromo { return NO; }
 - (BOOL)livestreamClientConfigEnableCreationModesPromosTriggered { return NO; }
 - (BOOL)liveConsumptionClientConfigIosImmersiveLivePreviewDisableEndscreen { return YES; }
+- (BOOL)isAggressiveSwipeUserEducationEnabled { return NO; }
+- (BOOL)shortsPlayerGlobalConfigAndroidDisableEducationOverlay { return YES; }
 %end
 
 %hook YTPlayerViewController
@@ -92,6 +94,11 @@
 %hook YTIPlayerResponse
 - (BOOL)isPlayableInBackground { return YES; }
 - (BOOL)isMonetized { return NO; }
+%end
+
+%hook YTMainAppVideoPlayerOverlayViewController
+- (BOOL)shouldEnableScrubberSlideUserEducation { return NO; }
+- (BOOL)shouldShowScrubUserEducation { return NO; }
 %end
 
 // Extras
@@ -184,6 +191,22 @@
 - (BOOL)shouldShowPromotedItems { return NO; }
 %end
 
+%hook MDXCurrentlyPlayingViewController
+- (BOOL)isAdShowing { return NO; }
+%end
+
+%hook YTAdStateDuringClipCreationEntityModel
+- (BOOL)hasAdShowing { return NO; }
+%end
+
+%hook YTPostAdStateEntityModel
+- (BOOL)hasAdShowing { return NO; }
+%end
+
+%hook SUPSupportContentService
+- (BOOL)hasPromotedProductLinkClickCallback { return NO; }
+%end
+
 %hook YTPromoThrottleController
 - (BOOL)canShowThrottledPromo { return NO; }
 %end
@@ -194,6 +217,14 @@
 
 %hook YCHLiveChatActionPanelView
 - (BOOL)shouldShowUpsellButton { return NO; }
+%end
+
+%hook YTPromosheetContainerView
+- (BOOL)isPromosheetDisplayed { return NO; }
+%end
+
+%hook GHKMainViewDataSource
+- (BOOL)hasPromotedProductLinks { return NO; }
 %end
 
 %hook YTICompactPromotedVideoRenderer
@@ -242,6 +273,10 @@
 
 %hook YTIGridVideoRenderer
 - (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTUserDefaults
+- (BOOL)isPromoForced { return NO; }
 %end
 
 // %hook MDXSmartRemoteViewController
