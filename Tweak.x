@@ -1,6 +1,6 @@
 // Tweak.x
 // You can remove the comments flags "//" if you want to use the flags.
-// PiP
+// Enables PiP
 %hook YTColdConfig
 - (BOOL)addPipMenuItem { return YES; }
 - (BOOL)enablePipMenuItem { return YES; }
@@ -8,7 +8,6 @@
 - (BOOL)androidDisablePipForPremium { return NO; }
 // - (BOOL)androidEnableShowSystemBedtimePromoHardcoded { return NO; }
 - (BOOL)cxClientDisableMementoPromotions { return YES; }
-- (BOOL)enableIosFloatingMiniplayer { return YES; }
 - (BOOL)enableIosFloatingMiniplayerDoubleTapToResize { return NO; }
 - (BOOL)enableIosFreeStableVolume { return YES; }
 - (BOOL)enableIosLockMode { return YES; }
@@ -72,7 +71,7 @@
 - (BOOL)isPlayableInPictureInPictureByUserSettings { return YES; }
 %end
 
-// Background Playback
+// Enables Background Playback
 %hook HAMPlayer
 - (BOOL)allowsBackgroundPlayback { return YES; }
 %end
@@ -230,4 +229,5 @@
 // 
 // %hook YTBedtimeReminderController
 // - (BOOL)shouldShowBedtimeReminderAsPanel { return NO; }
+
 // %end
