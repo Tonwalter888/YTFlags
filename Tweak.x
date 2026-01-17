@@ -1,11 +1,15 @@
 // Tweak.x
+// You can remove the comments flags "//" if you want to use the flags.
 // PiP
 %hook YTColdConfig
 - (BOOL)addPipMenuItem { return YES; }
 - (BOOL)enablePipMenuItem { return YES; }
+- (BOOL)androidDisablePipBackgroundButtonForPremium { return NO; }
+- (BOOL)androidDisablePipForPremium { return NO; }
+// - (BOOL)androidEnableShowSystemBedtimePromoHardcoded { return NO; }
+- (BOOL)cxClientDisableMementoPromotions { return YES; }
 - (BOOL)enableIosFloatingMiniplayer { return YES; }
 - (BOOL)enableIosFloatingMiniplayerDoubleTapToResize { return NO; }
-- (BOOL)enableIosFloatingMiniplayerControlsCircularBackground { return YES; }
 - (BOOL)enableIosFreeStableVolume { return YES; }
 - (BOOL)enableIosLockMode { return YES; }
 - (BOOL)enableIosLockModeFixes { return YES; }
@@ -20,6 +24,8 @@
 - (BOOL)iosPlayerClientSharedConfigEnableResumeOnHeadForImmersiveLiveInPip { return NO; }
 - (BOOL)iosPlayerClientSharedConfigOffsetPipControllerTimeRangeWithSbdlCurrentTime { return NO; }
 - (BOOL)iosPlayerClientSharedConfigTouchEarlyAccessPipSetting { return YES; }
+- (BOOL)iosPlayerClientSharedConfigShowPipClingPromo { return NO; }
+- (BOOL)livestreamClientConfigEnableCreationModesPromosTriggered { return NO; }
 %end
 
 %hook YTPlayerViewController
@@ -38,6 +44,7 @@
 %end
 
 %hook YTIPlayabilityStatus
+- (BOOL)isPlayableInBackground { return YES; }
 - (BOOL)isPlayableInPictureInPicture { return YES; }
 %end
 
@@ -52,6 +59,10 @@
 
 %hook YTReelModel
 - (BOOL)isPiPSupported { return NO; }
+%end
+
+%hook YTBackgroundabilityPolicyImpl
+- (BOOL)isPlayableInPictureInPictureByUserSettings { return YES; }
 %end
 
 // Background Playback
@@ -85,10 +96,6 @@
 - (BOOL)shouldShowYoutubeMusicButton { return NO; }
 %end
 
-%hook YTShareMainView
-- (BOOL)shouldShowPromo { return NO; }
-%end
-
 %hook YTGlobalConfig
 - (BOOL)shouldBlockUpgradeDialog { return YES; }
 - (BOOL)shouldShowUpgradeDialog { return NO; }
@@ -100,16 +107,21 @@
 - (BOOL)shouldHideEndScreen { return YES; }
 %end
 
-%hook YTPromotedVideoCellController
-- (BOOL)shouldShowPromotedItems { return NO; }
+%hook YTModernTransitions
+- (BOOL)isPlayablesLaunchAnimationEnabled { return NO; }
+%end
+
+%hook YTInlineMutedPlaybackOverlayStatusUpdate
+- (BOOL)shouldHideCaptions { return YES; }
+%end
+
+%hook YTInlineMutedPlaybackWatchController
+- (BOOL)shouldHideCaptionsOnAppStart { return YES; }
+- (BOOL)shouldHideCaptionsOnPlaybackStart { return YES; }
 %end
 
 %hook YTAutonavEndscreenController
 - (BOOL)shouldShowEndscreen { return NO; }
-%end
-
-%hook YTBedtimeReminderController
-- (BOOL)shouldShowBedtimeReminderAsPanel { return NO; }
 %end
 
 %hook YTReelWatchRootViewController
@@ -118,6 +130,97 @@
 
 %hook YTLCEntryRequirementsViewController
 - (BOOL)shouldSkipIntroDialog { return YES; }
-
 %end
 
+%hook GTLRBatchQuery
+- (BOOL)shouldSkipAuthorization { return YES; }
+%end
+
+%hook GTLRQuery
+- (BOOL)shouldSkipAuthorization { return YES; }
+%end
+
+%hook YTActiveVideoNotifierImpl
+- (BOOL)isActiveVideoPlayable { return YES; }
+%end
+
+%hook GWACameraView
+- (BOOL)shouldShowInstructions { return NO; }
+%end
+
+%hook YTInlineMutedPlaybackPlayerOverlayViewController
+- (BOOL)shouldShowUserEducation { return NO; }
+%end
+
+// Ads
+%hook YTPromotedVideoCellController
+- (BOOL)shouldShowPromotedItems { return NO; }
+%end
+
+%hook YTPromoThrottleController
+- (BOOL)canShowThrottledPromo { return NO; }
+%end
+
+%hook YTShareMainView
+- (BOOL)shouldShowPromo { return NO; }
+%end
+
+%hook YCHLiveChatActionPanelView
+- (BOOL)shouldShowUpsellButton { return NO; }
+%end
+
+%hook YTICompactPromotedVideoRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTICompactRadioRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTICompactShowRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTICompactVideoRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridNarrowPlaylistRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridNarrowRadioRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridNarrowVideoRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridPlaylistRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridPromotedVideoRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridRadioRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridShowRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridVideoRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+// %hook MDXSmartRemoteViewController
+// - (BOOL)shouldShowPrivacyDialog { return NO; }
+// %end
+// 
+// %hook YTBedtimeReminderController
+// - (BOOL)shouldShowBedtimeReminderAsPanel { return NO; }
+// %end
