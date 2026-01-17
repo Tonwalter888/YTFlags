@@ -1,8 +1,7 @@
 # YTFlags
+Currently, these hooks are based on YouTube versions 19.49.5 and 20.21.6. The latest version will be added soon. This project is similar to [YTABGoodies](https://github.com/PoomSmart/YTABGoodies) by [PoomSmart](https://github.com/PoomSmart).
 
-Currently these hooks are based on YouTube versions 19.49.5 and 20.21.6. I'll add the latest version soon. This project is similar to [YTABGoodies](https://github.com/PoomSmart/YTABGoodies) from PoomSmart.
-
-This project tries to enforce useful YouTube features that are otherwise 50/50 available to you.
+This project tries to enable useful YouTube features that are avaliable to you.
 
 ## Building
 - Clone [Theos](https://github.com/theos/theos).
