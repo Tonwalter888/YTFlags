@@ -3,7 +3,7 @@
 // Some flags may not work as expected, as simply enabling or disabling them may not be enough.
 // TODO: Group each feature and %ctor with %init().
 
-// Enables PiP, modifying miniplayer, hide endscreens, remove tips
+// Enables PiP, modifies the miniplayer, hides endscreens and tips
 %hook YTColdConfig
 - (BOOL)addPipMenuItem { return YES; }
 - (BOOL)enablePipMenuItem { return YES; }
@@ -103,7 +103,7 @@
 - (BOOL)isMonetized { return NO; }
 %end
 
-// Remove welcome screen
+// Hide welcome screen
 %hook FVRDefaultUIFlowController
 - (BOOL)shouldSkipWelcome { return YES; }
 %end
@@ -113,7 +113,7 @@
 - (BOOL)shouldShowYouTherePrompt { return NO; }
 %end
 
-// Remove YouTube Music button
+// Hide YouTube Music button
 %hook YTMusicButtonController
 - (BOOL)shouldShowYoutubeMusicButton { return NO; }
 %end
@@ -126,7 +126,7 @@
 - (BOOL)shouldForceUpgrade { return NO; }
 %end
 
-// No modern startup animations
+// Hide modern startup animations
 %hook YTModernTransitions
 - (BOOL)isPlayablesLaunchAnimationEnabled { return NO; }
 %end
@@ -306,5 +306,5 @@
 %hook YTUserDefaults
 - (BOOL)isPromoForced { return NO; }
 - (BOOL)safeguardEducationSkipped { return YES; }
-- (BOOL)didShowNewReelUserEducation { return NO; }
+- (BOOL)didShowNewReelUserEducation { return YES; }
 %end
