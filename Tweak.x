@@ -307,5 +307,4 @@
 - (BOOL)isPromoForced { return NO; }
 - (BOOL)safeguardEducationSkipped { return YES; }
 - (BOOL)didShowNewReelUserEducation { return YES; }
-
 %end
