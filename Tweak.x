@@ -3,7 +3,7 @@
 // Some flags may not work as expected, as simply enabling or disabling them may not be enough.
 // TODO: Group each feature and %ctor with %init().
 
-// Enables PiP, modifies the miniplayer, hides endscreens and tips
+// Enables PiP, modifies the miniplayer, hide endscreens and tips
 %hook YTColdConfig
 - (BOOL)addPipMenuItem { return YES; }
 - (BOOL)enablePipMenuItem { return YES; }
@@ -307,4 +307,5 @@
 - (BOOL)isPromoForced { return NO; }
 - (BOOL)safeguardEducationSkipped { return YES; }
 - (BOOL)didShowNewReelUserEducation { return YES; }
+
 %end
