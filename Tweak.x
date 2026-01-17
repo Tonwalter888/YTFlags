@@ -1,6 +1,9 @@
 // Tweak.x
 // You can remove the comments flags "//" if you want to use the flags.
-// Enables PiP
+// Some flags may not work as expected, as simply enabling or disabling them may not be enough.
+// TODO: Group each feature and %ctor with %init().
+
+// Enables PiP, modifying miniplayer, hide endscreens, remove tips
 %hook YTColdConfig
 - (BOOL)addPipMenuItem { return YES; }
 - (BOOL)enablePipMenuItem { return YES; }
@@ -18,6 +21,8 @@
 - (BOOL)iosDisableEndscreenOnActivateVideo { return YES; }
 - (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPicture { return NO; }
 - (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPictureIos { return NO; }
+- (BOOL)isPlaylistEntrypointUserEducationEnabled { return NO; }
+- (BOOL)enableYouthereCommandsOnIos { return NO; }
 %end
 
 %hook YTHotConfig
@@ -35,6 +40,7 @@
 - (BOOL)shortsPlayerGlobalConfigAndroidDisableEducationOverlay { return YES; }
 %end
 
+// PiP hacks stuff
 %hook YTPlayerViewController
 - (BOOL)isPictureInPicturePossible { return YES; }
 %end
@@ -50,6 +56,7 @@
 - (BOOL)pictureInPictureSupported { return YES; }
 %end
 
+// Bypass every restrictions
 %hook YTIPlayabilityStatus
 - (BOOL)isAgeCheckRequired { return NO; }
 - (BOOL)isAgeVerificationRequired { return NO; }
@@ -78,7 +85,7 @@
 - (BOOL)isPlayableInPictureInPictureByUserSettings { return YES; }
 %end
 
-// Enables Background Playback
+// Allows background playback
 %hook HAMPlayer
 - (BOOL)allowsBackgroundPlayback { return YES; }
 %end
@@ -96,24 +103,22 @@
 - (BOOL)isMonetized { return NO; }
 %end
 
-%hook YTMainAppVideoPlayerOverlayViewController
-- (BOOL)shouldEnableScrubberSlideUserEducation { return NO; }
-- (BOOL)shouldShowScrubUserEducation { return NO; }
-%end
-
-// Extras
+// Remove welcome screen
 %hook FVRDefaultUIFlowController
 - (BOOL)shouldSkipWelcome { return YES; }
 %end
 
+// Stop YouTube asking "Are you there?"
 %hook YTYouThereController
 - (BOOL)shouldShowYouTherePrompt { return NO; }
 %end
 
+// Remove YouTube Music button
 %hook YTMusicButtonController
 - (BOOL)shouldShowYoutubeMusicButton { return NO; }
 %end
 
+// Stop YouTube asking to update the app
 %hook YTGlobalConfig
 - (BOOL)shouldBlockUpgradeDialog { return YES; }
 - (BOOL)shouldShowUpgradeDialog { return NO; }
@@ -121,34 +126,18 @@
 - (BOOL)shouldForceUpgrade { return NO; }
 %end
 
+// No modern startup animations
+%hook YTModernTransitions
+- (BOOL)isPlayablesLaunchAnimationEnabled { return NO; }
+%end
+
+// Hide endscreens
 %hook YTCreatorEndscreenToggleButton
 - (BOOL)shouldHideEndScreen { return YES; }
 %end
 
 %hook YTCreatorEndscreenViewController
 - (BOOL)endscreenActivated { return NO; }
-%end
-
-%hook YTModernTransitions
-- (BOOL)isPlayablesLaunchAnimationEnabled { return NO; }
-%end
-
-%hook YTInlineMutedPlaybackOverlayStatusUpdate
-- (BOOL)shouldHideCaptions { return YES; }
-%end
-
-%hook YTInlineMutedPlaybackOverlayView
-- (BOOL)captionsHidden { return YES; }
-%end
-
-%hook YTInlineMutedPlaybackStateController
-- (BOOL)inlinePlaybackCaptionHidden { return YES; }
-- (BOOL)inlinePlaybackCaptionHiddenOnStartEnabled { return YES; }
-%end
-
-%hook YTInlineMutedPlaybackWatchController
-- (BOOL)shouldHideCaptionsOnAppStart { return YES; }
-- (BOOL)shouldHideCaptionsOnPlaybackStart { return YES; }
 %end
 
 %hook YTAutonavEndscreenController
@@ -166,18 +155,32 @@
 - (BOOL)isEndscreenOverlayVisible { return NO; }
 %end
 
+// Hide captions
+%hook YTInlineMutedPlaybackOverlayStatusUpdate
+- (BOOL)shouldHideCaptions { return YES; }
+%end
+
+%hook YTInlineMutedPlaybackOverlayView
+- (BOOL)captionsHidden { return YES; }
+%end
+
+%hook YTInlineMutedPlaybackStateController
+- (BOOL)inlinePlaybackCaptionHidden { return YES; }
+- (BOOL)inlinePlaybackCaptionHiddenOnStartEnabled { return YES; }
+%end
+
+%hook YTInlineMutedPlaybackWatchController
+- (BOOL)shouldHideCaptionsOnAppStart { return YES; }
+- (BOOL)shouldHideCaptionsOnPlaybackStart { return YES; }
+- (BOOL)shouldTriggerIMPUserEducationIfNeeded { return NO; }
+%end
+
+// Hide snackbars
 %hook YTReelWatchRootViewController
 - (BOOL)shouldHideSnackbarsOnScroll { return YES; }
 %end
 
-%hook YTLCEntryRequirementsViewController
-- (BOOL)shouldSkipIntroDialog { return YES; }
-%end
-
-%hook YTActiveVideoNotifierImpl
-- (BOOL)isActiveVideoPlayable { return YES; }
-%end
-
+// Stop YouTube teaching you how to use the app
 %hook GWACameraView
 - (BOOL)shouldShowInstructions { return NO; }
 %end
@@ -186,7 +189,32 @@
 - (BOOL)shouldShowUserEducation { return NO; }
 %end
 
-// Ads
+%hook YTLCEntryRequirementsViewController
+- (BOOL)shouldSkipIntroDialog { return YES; }
+%end
+
+%hook YTInlineMutedPlaybackAudioIconView
+- (BOOL)enableUserEducation { return NO; }
+%end
+
+%hook YTMainAppVideoPlayerOverlayViewController
+- (BOOL)shouldEnableScrubberSlideUserEducation { return NO; }
+- (BOOL)shouldShowScrubUserEducation { return NO; }
+%end
+
+%hook YTShortsUploadsTrimLayoutModel
+- (BOOL)shouldDisplayTrimEducationLabel { return NO; }
+%end
+
+// %hook MDXSmartRemoteViewController
+// - (BOOL)shouldShowPrivacyDialog { return NO; }
+// %end
+// 
+// %hook YTBedtimeReminderController
+// - (BOOL)shouldShowBedtimeReminderAsPanel { return NO; }
+// %end
+
+// Hide ads
 %hook YTPromotedVideoCellController
 - (BOOL)shouldShowPromotedItems { return NO; }
 %end
@@ -277,12 +305,6 @@
 
 %hook YTUserDefaults
 - (BOOL)isPromoForced { return NO; }
+- (BOOL)safeguardEducationSkipped { return YES; }
+- (BOOL)didShowNewReelUserEducation { return NO; }
 %end
-
-// %hook MDXSmartRemoteViewController
-// - (BOOL)shouldShowPrivacyDialog { return NO; }
-// %end
-// 
-// %hook YTBedtimeReminderController
-// - (BOOL)shouldShowBedtimeReminderAsPanel { return NO; }
-// %end
