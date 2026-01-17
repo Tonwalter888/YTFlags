@@ -180,7 +180,7 @@
 - (BOOL)shouldHideSnackbarsOnScroll { return YES; }
 %end
 
-// Stop YouTube teaching you how to use the app
+// Prevent YouTube from showing you how to use the app
 %hook GWACameraView
 - (BOOL)shouldShowInstructions { return NO; }
 %end
