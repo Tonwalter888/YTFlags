@@ -187,6 +187,10 @@
 - (BOOL)shouldShowInstructions { return NO; }
 %end
 
+%hook YTFormfillFormHeaderView
+- (BOOL)shouldShowInstructions { return NO; }
+%end
+
 %hook YTInlineMutedPlaybackPlayerOverlayViewController
 - (BOOL)shouldShowUserEducation { return NO; }
 %end
