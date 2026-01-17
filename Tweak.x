@@ -229,5 +229,4 @@
 // 
 // %hook YTBedtimeReminderController
 // - (BOOL)shouldShowBedtimeReminderAsPanel { return NO; }
-
 // %end
