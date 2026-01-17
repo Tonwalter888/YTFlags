@@ -66,6 +66,8 @@
 - (BOOL)isLoginRequired { return NO; }
 - (BOOL)isPlayableInBackground { return YES; }
 - (BOOL)isPlayableInPictureInPicture { return YES; }
+- (BOOL)isRentalActivationVerificationRequired { return NO; }
+- (BOOL)isPlayable { return YES; } // try
 %end
 
 %hook YTLocalPlaybackController
