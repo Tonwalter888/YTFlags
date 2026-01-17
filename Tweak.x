@@ -12,6 +12,10 @@
 - (BOOL)enableIosFreeStableVolume { return YES; }
 - (BOOL)enableIosLockMode { return YES; }
 - (BOOL)enableIosLockModeFixes { return YES; }
+- (BOOL)iosDisableCaptionsOnAppStartForVwc { return YES; }
+- (BOOL)iosClientGlobalConfigEnableCaptionsAutoTranslationIosClient { return NO; }
+- (BOOL)iosDisableCreatorEndscreenHitTestFix { return YES; }
+- (BOOL)iosDisableEndscreenOnActivateVideo { return YES; }
 - (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPicture { return NO; }
 - (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPictureIos { return NO; }
 %end
@@ -26,6 +30,7 @@
 - (BOOL)iosPlayerClientSharedConfigTouchEarlyAccessPipSetting { return YES; }
 - (BOOL)iosPlayerClientSharedConfigShowPipClingPromo { return NO; }
 - (BOOL)livestreamClientConfigEnableCreationModesPromosTriggered { return NO; }
+- (BOOL)liveConsumptionClientConfigIosImmersiveLivePreviewDisableEndscreen { return YES; }
 %end
 
 %hook YTPlayerViewController
@@ -113,12 +118,25 @@
 - (BOOL)shouldHideEndScreen { return YES; }
 %end
 
+%hook YTCreatorEndscreenViewController
+- (BOOL)endscreenActivated { return NO; }
+%end
+
 %hook YTModernTransitions
 - (BOOL)isPlayablesLaunchAnimationEnabled { return NO; }
 %end
 
 %hook YTInlineMutedPlaybackOverlayStatusUpdate
 - (BOOL)shouldHideCaptions { return YES; }
+%end
+
+%hook YTInlineMutedPlaybackOverlayView
+- (BOOL)captionsHidden { return YES; }
+%end
+
+%hook YTInlineMutedPlaybackStateController
+- (BOOL)inlinePlaybackCaptionHidden { return YES; }
+- (BOOL)inlinePlaybackCaptionHiddenOnStartEnabled { return YES; }
 %end
 
 %hook YTInlineMutedPlaybackWatchController
@@ -128,22 +146,25 @@
 
 %hook YTAutonavEndscreenController
 - (BOOL)shouldShowEndscreen { return NO; }
+- (BOOL)isEndscreenReady { return NO; }
+- (BOOL)isEndscreenActivated { return NO; }
+%end
+
+%hook YTFeaturePlayerOverlayStateEntityModel
+- (BOOL)hasIsEndscreenOverlayVisible { return NO; }
+- (BOOL)isEndscreenOverlayVisible { return NO; }
+%end
+
+%hook YTWatchStateController
+- (BOOL)isEndscreenOverlayVisible { return NO; }
 %end
 
 %hook YTReelWatchRootViewController
-- (BOOL)shouldHideSnackbarsOnScrollshouldHideSnackbarsOnScroll { return YES; }
+- (BOOL)shouldHideSnackbarsOnScroll { return YES; }
 %end
 
 %hook YTLCEntryRequirementsViewController
 - (BOOL)shouldSkipIntroDialog { return YES; }
-%end
-
-%hook GTLRBatchQuery
-- (BOOL)shouldSkipAuthorization { return YES; }
-%end
-
-%hook GTLRQuery
-- (BOOL)shouldSkipAuthorization { return YES; }
 %end
 
 %hook YTActiveVideoNotifierImpl
