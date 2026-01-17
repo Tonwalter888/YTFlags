@@ -44,6 +44,12 @@
 %end
 
 %hook YTIPlayabilityStatus
+- (BOOL)isAgeCheckRequired { return NO; }
+- (BOOL)isAgeVerificationRequired { return NO; }
+- (BOOL)isContentCheckRequired { return NO; }
+- (BOOL)isKoreanAgeVerificationRequired { return NO; }
+- (BOOL)isConfirmationRequired { return NO; }
+- (BOOL)isLoginRequired { return NO; }
 - (BOOL)isPlayableInBackground { return YES; }
 - (BOOL)isPlayableInPictureInPicture { return YES; }
 %end
