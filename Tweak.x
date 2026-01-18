@@ -28,7 +28,6 @@
 %hook YTHotConfig
 - (BOOL)clientInfraClientConfigIosEnableFillingEncodedHacksInnertubeContext { return NO; }
 - (BOOL)iosPlayerClientSharedConfigEnableResumeOnHeadForImmersiveLiveInPip { return NO; }
-- (BOOL)iosPlayerClientSharedConfigDisableLockscreenControlsFromPip { return NO; }
 - (BOOL)iosPlayerClientSharedConfigDefaultOffPremiumPip { return NO; }
 - (BOOL)iosPlayerClientSharedConfigDisableLockscreenControlsFromPip { return NO; }
 - (BOOL)iosPlayerClientSharedConfigSkipPipToggleOnStateChange { return NO; }
@@ -315,4 +314,5 @@
 - (BOOL)safeguardEducationSkipped { return YES; }
 - (BOOL)didShowNewReelUserEducation { return YES; }
 %end
+
 
