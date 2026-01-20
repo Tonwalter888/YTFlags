@@ -1,5 +1,4 @@
-TARGET := iphone:clang:latest:15.0
-THEOS_PACKAGE_SCHEME = rootless
+TARGET := iphone:clang:latest:14.0
 FINALPACKAGE = 1
 DEBUG = 0
 INSTALL_TARGET_PROCESSES = YouTube
