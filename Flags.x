@@ -1,7 +1,6 @@
-// Tweak.x
+// Flags.x
 // You can remove the comments flags "//" if you want to use the flags.
 // Some flags may not work as expected, as simply enabling or disabling them may not be enough.
-// TODO: Group each feature and %ctor with %init().
 
 // Enables PiP, modifies the miniplayer, hide endscreens and tips
 %hook YTColdConfig
@@ -41,19 +40,10 @@
 %end
 
 // PiP hacks stuff
-%hook YTPlayerViewController
-- (BOOL)isPictureInPicturePossible { return YES; }
-%end
-
 %hook YTPlayerResponse
 - (BOOL)isPlayableInPictureInPicture { return YES; }
 - (BOOL)isPipOffByDefault { return NO; }
 - (BOOL)shouldPipResumeOnHead { return YES; }
-%end
-
-%hook MLPIPController
-- (BOOL)pictureInPicturePossible { return YES; }
-- (BOOL)pictureInPictureSupported { return YES; }
 %end
 
 // Bypass every restrictions
@@ -67,18 +57,14 @@
 - (BOOL)isPlayableInBackground { return YES; }
 - (BOOL)isPlayableInPictureInPicture { return YES; }
 - (BOOL)isRentalActivationVerificationRequired { return NO; }
-- (BOOL)isPlayable { return YES; } // try
-%end
-
-%hook YTLocalPlaybackController
-- (BOOL)isPictureInPicturePossible { return YES; }
+- (BOOL)isPlayable { return YES; } // May not work
 %end
 
 %hook YTPlayerPIPController
-- (BOOL)isPictureInPicturePossible { return YES; }
 - (BOOL)canEnablePictureInPicture { return YES; }
 %end
 
+// Try to disable Shorts PiP
 %hook YTReelModel
 - (BOOL)isPiPSupported { return NO; }
 %end
@@ -215,7 +201,7 @@
 // %hook MDXSmartRemoteViewController
 // - (BOOL)shouldShowPrivacyDialog { return NO; }
 // %end
-// 
+
 // %hook YTBedtimeReminderController
 // - (BOOL)shouldShowBedtimeReminderAsPanel { return NO; }
 // %end
