@@ -60,10 +60,6 @@
 - (BOOL)isPlayable { return YES; } // May not work
 %end
 
-%hook YTPlayerPIPController
-- (BOOL)canEnablePictureInPicture { return YES; }
-%end
-
 // Try to disable Shorts PiP
 %hook YTReelModel
 - (BOOL)isPiPSupported { return NO; }
