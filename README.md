@@ -3,6 +3,11 @@ Currently, these hooks are based on YouTube versions 19.49.5 and 20.21.6. The la
 
 This project tries to enable useful YouTube features that are avaliable to you.
 
+## Features (100% Verified)
+- Enables PiP (Picture-In-Picture)
+- Allows Background Playbacks
+- Hide captions automatically when starts playing videos
+
 ## Building
 - Clone [Theos](https://github.com/theos/theos) along with its submodules.
 - Clone and copy [iOS 18.6 SDK](https://github.com/Tonwalter888/iOS-18.6-SDK) to ``$THEOS/sdks``.

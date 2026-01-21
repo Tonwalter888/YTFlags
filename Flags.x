@@ -70,14 +70,6 @@
 %end
 
 // Allows background playback
-%hook HAMPlayer
-- (BOOL)allowsBackgroundPlayback { return YES; }
-%end
-
-%hook MLVideo
-- (BOOL)playableInBackground { return YES; }
-%end
-
 %hook YTPlaybackData
 - (BOOL)isPlayableInBackground { return YES; }
 %end
