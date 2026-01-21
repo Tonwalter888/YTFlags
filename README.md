@@ -5,8 +5,8 @@ This project tries to enable useful YouTube features that are avaliable to you.
 
 ## Features (100% Verified)
 - Enables PiP (Picture-In-Picture)
-- Allows Background Playbacks
-- Hide captions automatically when starts playing videos
+- Allow Background Playbacks
+- Hide captions automatically when start playing videos
 
 ## Building
 - Clone [Theos](https://github.com/theos/theos) along with its submodules.
