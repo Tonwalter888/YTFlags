@@ -6,7 +6,9 @@ This project tries to enable useful YouTube features that are avaliable to you.
 ## Features (100% Verified)
 - Enables PiP (Picture-In-Picture)
 - Allow Background Playbacks
-- Hide captions automatically when start playing videos
+- Fix playback issues (For jailbroken and TrollStore users only)
+- Hide a prompt "Are you there?"
+- Fix miniplayer working slowly (Only for older YouTube versions)
 
 ## Building
 - Clone [Theos](https://github.com/theos/theos) along with its submodules.
