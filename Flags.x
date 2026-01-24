@@ -74,6 +74,14 @@
 %end
 
 // Allows background playback
+%hook HAMPlayer
+- (BOOL)allowsBackgroundPlayback { return YES; } // testing
+%end
+
+%hook MLVideo
+- (BOOL)playableInBackground { return YES; } // testing
+%end
+
 %hook YTPlaybackData
 - (BOOL)isPlayableInBackground { return YES; }
 %end
@@ -123,7 +131,8 @@
 %hook YTAutonavEndscreenController
 - (BOOL)shouldShowEndscreen { return NO; }
 - (BOOL)isEndscreenReady { return NO; }
-- (BOOL)isEndscreenActivated { return NO; }
+- (BOOL)isEndscreenActivated { return YES; }
+- (BOOL)isEndscreenCancelled { return YES; }
 %end
 
 %hook YTFeaturePlayerOverlayStateEntityModel
@@ -160,6 +169,11 @@
 - (BOOL)shouldHideSnackbarsOnScroll { return YES; }
 %end
 
+// Hide "Continue watching" section
+// %hook YTCommuteShelfViewModel
+// - (BOOL)shouldHideShelf { return YES; }
+// %end
+
 // Prevent YouTube from showing you how to use the app
 %hook GWACameraView
 - (BOOL)shouldShowInstructions { return NO; }
@@ -189,9 +203,29 @@
 - (BOOL)shouldShowQuickSwipeApdEducation { return NO; }
 %end
 
+%hook YTNUXTooltipVisibility
+- (BOOL)shouldShowTooltip { return NO; }
+%end
+
+%hook YTPostsQuizCollectionViewController
+- (BOOL)shouldShowMarkAnswerTooltip { return NO; }
+%end
+
+// No crap AI things
+%hook YTShortsSharedGalleryPresentationView
+- (BOOL)shouldShowAiMontageButton { return NO; }
+%end
+
+%hook YTShortsSharedGalleryPresentationViewController
+- (BOOL)shouldShowAiMontageButton { return NO; }
+%end
+
 %hook YTMainAppVideoPlayerOverlayViewController
 - (BOOL)shouldEnableScrubberSlideUserEducation { return NO; }
 - (BOOL)shouldShowScrubUserEducation { return NO; }
+- (BOOL)shouldShowAutonavEndscreen { return NO; }
+- (BOOL)shouldShowCaptions { return NO; }
+- (BOOL)shouldShowFineScrubbingUserEdu { return NO; }
 %end
 
 %hook YTShortsUploadsTrimLayoutModel
@@ -209,18 +243,6 @@
 // Hide ads
 %hook YTPromotedVideoCellController
 - (BOOL)shouldShowPromotedItems { return NO; }
-%end
-
-%hook MDXCurrentlyPlayingViewController
-- (BOOL)isAdShowing { return NO; }
-%end
-
-%hook YTAdStateDuringClipCreationEntityModel
-- (BOOL)hasAdShowing { return NO; }
-%end
-
-%hook YTPostAdStateEntityModel
-- (BOOL)hasAdShowing { return NO; }
 %end
 
 %hook SUPSupportContentService
@@ -241,58 +263,11 @@
 
 %hook YTPromosheetContainerView
 - (BOOL)isPromosheetDisplayed { return YES; }
+- (BOOL)shouldShowExpandButton { return NO; }
 %end
 
 %hook GHKMainViewDataSource
 - (BOOL)hasPromotedProductLinks { return NO; }
-%end
-
-%hook YTICompactPromotedVideoRenderer
-- (BOOL)shouldShowAdBadge { return NO; }
-%end
-
-%hook YTICompactRadioRenderer
-- (BOOL)shouldShowAdBadge { return NO; }
-%end
-
-%hook YTICompactShowRenderer
-- (BOOL)shouldShowAdBadge { return NO; }
-%end
-
-%hook YTICompactVideoRenderer
-- (BOOL)shouldShowAdBadge { return NO; }
-%end
-
-%hook YTIGridNarrowPlaylistRenderer
-- (BOOL)shouldShowAdBadge { return NO; }
-%end
-
-%hook YTIGridNarrowRadioRenderer
-- (BOOL)shouldShowAdBadge { return NO; }
-%end
-
-%hook YTIGridNarrowVideoRenderer
-- (BOOL)shouldShowAdBadge { return NO; }
-%end
-
-%hook YTIGridPlaylistRenderer
-- (BOOL)shouldShowAdBadge { return NO; }
-%end
-
-%hook YTIGridPromotedVideoRenderer
-- (BOOL)shouldShowAdBadge { return NO; }
-%end
-
-%hook YTIGridRadioRenderer
-- (BOOL)shouldShowAdBadge { return NO; }
-%end
-
-%hook YTIGridShowRenderer
-- (BOOL)shouldShowAdBadge { return NO; }
-%end
-
-%hook YTIGridVideoRenderer
-- (BOOL)shouldShowAdBadge { return NO; }
 %end
 
 %hook YTUserDefaults
@@ -300,6 +275,11 @@
 - (BOOL)safeguardEducationSkipped { return YES; }
 - (BOOL)didShowNewReelUserEducation { return YES; }
 - (BOOL)hasPictureInPictureOnboardingHintShown { return YES; }
+- (BOOL)shouldShowAddToLongPressHint { return NO; }
+%end
+
+%hook YTVideoSubtitleView
+- (BOOL)shouldShowAdBadge { return NO; }
 %end
 
 %hook YTPostCreationDialogStateEntityModel
