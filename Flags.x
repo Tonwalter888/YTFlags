@@ -51,6 +51,10 @@
 - (BOOL)isPlayableInPictureInPicture { return YES; }
 %end
 
+%hook YTBackgroundabilityPolicyImpl
+- (BOOL)isPlayableInPictureInPictureByUserSettings { return YES; }
+%end
+
 // Try to disable Shorts PiP
 %hook YTReelModel
 - (BOOL)isPiPSupported { return NO; }
@@ -58,10 +62,6 @@
 
 %hook YTReelPlayerViewController
 - (BOOL)isPictureInPictureAllowed { return NO; }
-%end
-
-%hook YTBackgroundabilityPolicyImpl
-- (BOOL)isPlayableInPictureInPictureByUserSettings { return YES; }
 %end
 
 // Allows background playback
@@ -254,3 +254,4 @@
 - (BOOL)hasisPromoDismissed { return YES; }
 - (BOOL)isPromoDismissed { return YES; }
 %end
+
