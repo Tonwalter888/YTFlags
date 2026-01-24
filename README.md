@@ -1,5 +1,5 @@
 # YTFlags
-Currently, these hooks are based on YouTube versions 19.49.5 and 20.21.6. The latest version will be added soon. This project is similar to [YTABGoodies](https://github.com/PoomSmart/YTABGoodies) by [PoomSmart](https://github.com/PoomSmart).
+Currently, these hooks are based on YouTube versions 19.49.5, 20.21.6, and 21.03.2. I'll keep updaing the flags if there are any newer versions come out. This project is similar to [YTABGoodies](https://github.com/PoomSmart/YTABGoodies) by [PoomSmart](https://github.com/PoomSmart).
 
 This project tries to enable useful YouTube features that are avaliable to you.
 

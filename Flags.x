@@ -65,6 +65,10 @@
 - (BOOL)isPiPSupported { return NO; }
 %end
 
+%hook YTReelPlayerViewController
+- (BOOL)isPictureInPictureAllowed { return NO; }
+%end
+
 %hook YTBackgroundabilityPolicyImpl
 - (BOOL)isPlayableInPictureInPictureByUserSettings { return YES; }
 %end
@@ -161,6 +165,10 @@
 - (BOOL)shouldShowInstructions { return NO; }
 %end
 
+%hook YTReelWatchEducationViewController
+- (BOOL)isEducationAvailable { return NO; }
+%end
+
 %hook YTFormfillFormHeaderView
 - (BOOL)shouldShowInstructions { return NO; }
 %end
@@ -175,6 +183,10 @@
 
 %hook YTInlineMutedPlaybackAudioIconView
 - (BOOL)enableUserEducation { return NO; }
+%end
+
+%hook OGLEducationCappingServiceImpl
+- (BOOL)shouldShowQuickSwipeApdEducation { return NO; }
 %end
 
 %hook YTMainAppVideoPlayerOverlayViewController
@@ -212,7 +224,7 @@
 %end
 
 %hook SUPSupportContentService
-- (BOOL)hasPromotedProductLinkClickCallback { return NO; }
+- (BOOL)hasPromotedProductLinkClickCallback { return YES; }
 %end
 
 %hook YTPromoThrottleController
@@ -228,11 +240,11 @@
 %end
 
 %hook YTPromosheetContainerView
-- (BOOL)isPromosheetDisplayed { return NO; }
+- (BOOL)isPromosheetDisplayed { return YES; }
 %end
 
 %hook GHKMainViewDataSource
-- (BOOL)hasPromotedProductLinks { return NO; }
+- (BOOL)hasPromotedProductLinks { return YES; }
 %end
 
 %hook YTICompactPromotedVideoRenderer
@@ -287,4 +299,10 @@
 - (BOOL)isPromoForced { return NO; }
 - (BOOL)safeguardEducationSkipped { return YES; }
 - (BOOL)didShowNewReelUserEducation { return YES; }
+- (BOOL)hasPictureInPictureOnboardingHintShown { return YES; }
+%end
+
+%hook YTPostCreationDialogStateEntityModel
+- (BOOL)hasisPromoDismissed { return YES; }
+- (BOOL)isPromoDismissed { return YES; }
 %end
