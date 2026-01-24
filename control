@@ -1,6 +1,6 @@
 Package: dev.water888.ytflags
 Name: YTFlags
-Version: 1.0.28
+Version: 1.0.29
 Architecture: iphoneos-arm
 Description: Flags hooks for YouTube app.
 Maintainer: Tonwalter888

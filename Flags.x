@@ -224,7 +224,7 @@
 %end
 
 %hook SUPSupportContentService
-- (BOOL)hasPromotedProductLinkClickCallback { return YES; }
+- (BOOL)hasPromotedProductLinkClickCallback { return NO; }
 %end
 
 %hook YTPromoThrottleController
@@ -244,7 +244,7 @@
 %end
 
 %hook GHKMainViewDataSource
-- (BOOL)hasPromotedProductLinks { return YES; }
+- (BOOL)hasPromotedProductLinks { return NO; }
 %end
 
 %hook YTICompactPromotedVideoRenderer
