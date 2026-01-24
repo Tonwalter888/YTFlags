@@ -10,6 +10,7 @@
 - (BOOL)androidDisablePipForPremium { return NO; }
 // - (BOOL)androidEnableShowSystemBedtimePromoHardcoded { return NO; }
 - (BOOL)cxClientDisableMementoPromotions { return YES; }
+- (BOOL)enableIosFloatingMiniplayer { return YES; }
 - (BOOL)enableIosFloatingMiniplayerDoubleTapToResize { return NO; }
 - (BOOL)enableIosFreeStableVolume { return YES; }
 - (BOOL)enableIosLockMode { return YES; }
@@ -30,7 +31,6 @@
 - (BOOL)iosPlayerClientSharedConfigDefaultOffPremiumPip { return NO; }
 - (BOOL)iosPlayerClientSharedConfigDisableLockscreenControlsFromPip { return NO; }
 - (BOOL)iosPlayerClientSharedConfigSkipPipToggleOnStateChange { return NO; }
-- (BOOL)iosPlayerClientSharedConfigOffsetPipControllerTimeRangeWithSbdlCurrentTime { return NO; }
 - (BOOL)iosPlayerClientSharedConfigTouchEarlyAccessPipSetting { return YES; }
 - (BOOL)iosPlayerClientSharedConfigShowPipClingPromo { return NO; }
 - (BOOL)livestreamClientConfigEnableCreationModesPromosTriggered { return NO; }
@@ -46,18 +46,9 @@
 - (BOOL)shouldPipResumeOnHead { return YES; }
 %end
 
-// Bypass every restrictions
 %hook YTIPlayabilityStatus
-- (BOOL)isAgeCheckRequired { return NO; }
-- (BOOL)isAgeVerificationRequired { return NO; }
-- (BOOL)isContentCheckRequired { return NO; }
-- (BOOL)isKoreanAgeVerificationRequired { return NO; }
-- (BOOL)isConfirmationRequired { return NO; }
-- (BOOL)isLoginRequired { return NO; }
 - (BOOL)isPlayableInBackground { return YES; }
 - (BOOL)isPlayableInPictureInPicture { return YES; }
-- (BOOL)isRentalActivationVerificationRequired { return NO; }
-- (BOOL)isPlayable { return YES; } // May not work
 %end
 
 // Try to disable Shorts PiP
@@ -83,19 +74,9 @@
 - (BOOL)isMonetized { return NO; }
 %end
 
-// Hide welcome screen
-%hook FVRDefaultUIFlowController
-- (BOOL)shouldSkipWelcome { return YES; }
-%end
-
 // Prevent YouTube from asking "Are you there?"
 %hook YTYouThereController
 - (BOOL)shouldShowYouTherePrompt { return NO; }
-%end
-
-// Hide YouTube Music button
-%hook YTMusicButtonController
-- (BOOL)shouldShowYoutubeMusicButton { return NO; }
 %end
 
 // Prevent YouTube from asking to update the app
@@ -104,61 +85,6 @@
 - (BOOL)shouldShowUpgradeDialog { return NO; }
 - (BOOL)shouldShowUpgrade { return NO; }
 - (BOOL)shouldForceUpgrade { return NO; }
-%end
-
-// Hide modern startup animations
-%hook YTModernTransitions
-- (BOOL)isPlayablesLaunchAnimationEnabled { return NO; }
-%end
-
-// Hide endscreens
-%hook YTCreatorEndscreenToggleButton
-- (BOOL)shouldHideEndScreen { return YES; }
-%end
-
-%hook YTCreatorEndscreenViewController
-- (BOOL)endscreenActivated { return NO; }
-%end
-
-%hook YTAutonavEndscreenController
-- (BOOL)shouldShowEndscreen { return NO; }
-- (BOOL)isEndscreenReady { return NO; }
-- (BOOL)isEndscreenActivated { return NO; }
-- (BOOL)isEndscreenCancelled { return YES; }
-%end
-
-%hook YTFeaturePlayerOverlayStateEntityModel
-- (BOOL)hasIsEndscreenOverlayVisible { return NO; }
-- (BOOL)isEndscreenOverlayVisible { return NO; }
-%end
-
-%hook YTWatchStateController
-- (BOOL)isEndscreenOverlayVisible { return NO; }
-%end
-
-// Hide captions
-%hook YTInlineMutedPlaybackOverlayStatusUpdate
-- (BOOL)shouldHideCaptions { return YES; }
-%end
-
-%hook YTInlineMutedPlaybackOverlayView
-- (BOOL)captionsHidden { return YES; }
-%end
-
-%hook YTInlineMutedPlaybackStateController
-- (BOOL)inlinePlaybackCaptionHidden { return YES; }
-- (BOOL)inlinePlaybackCaptionHiddenOnStartEnabled { return YES; }
-%end
-
-%hook YTInlineMutedPlaybackWatchController
-- (BOOL)shouldHideCaptionsOnAppStart { return YES; }
-- (BOOL)shouldHideCaptionsOnPlaybackStart { return YES; }
-- (BOOL)shouldTriggerIMPUserEducationIfNeeded { return NO; }
-%end
-
-// Hide snackbars
-%hook YTReelWatchRootViewController
-- (BOOL)shouldHideSnackbarsOnScroll { return YES; }
 %end
 
 // Hide "Continue watching" section
@@ -203,7 +129,7 @@
 - (BOOL)shouldShowMarkAnswerTooltip { return NO; }
 %end
 
-// No crap AI things
+// Remove AI things
 %hook YTShortsSharedGalleryPresentationView
 - (BOOL)shouldShowAiMontageButton { return NO; }
 %end
@@ -215,8 +141,6 @@
 %hook YTMainAppVideoPlayerOverlayViewController
 - (BOOL)shouldEnableScrubberSlideUserEducation { return NO; }
 - (BOOL)shouldShowScrubUserEducation { return NO; }
-- (BOOL)shouldShowAutonavEndscreen { return NO; }
-- (BOOL)shouldShowCaptions { return NO; }
 - (BOOL)shouldShowFineScrubbingUserEdu { return NO; }
 %end
 
