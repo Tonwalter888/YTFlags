@@ -254,4 +254,3 @@
 - (BOOL)hasisPromoDismissed { return YES; }
 - (BOOL)isPromoDismissed { return YES; }
 %end
-
