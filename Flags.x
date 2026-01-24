@@ -129,7 +129,7 @@
 - (BOOL)shouldShowMarkAnswerTooltip { return NO; }
 %end
 
-// Remove AI things
+// Hide AI things
 %hook YTShortsSharedGalleryPresentationView
 - (BOOL)shouldShowAiMontageButton { return NO; }
 %end
