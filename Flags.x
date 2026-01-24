@@ -74,14 +74,6 @@
 %end
 
 // Allows background playback
-%hook HAMPlayer
-- (BOOL)allowsBackgroundPlayback { return YES; } // testing
-%end
-
-%hook MLVideo
-- (BOOL)playableInBackground { return YES; } // testing
-%end
-
 %hook YTPlaybackData
 - (BOOL)isPlayableInBackground { return YES; }
 %end
@@ -131,7 +123,7 @@
 %hook YTAutonavEndscreenController
 - (BOOL)shouldShowEndscreen { return NO; }
 - (BOOL)isEndscreenReady { return NO; }
-- (BOOL)isEndscreenActivated { return YES; }
+- (BOOL)isEndscreenActivated { return NO; }
 - (BOOL)isEndscreenCancelled { return YES; }
 %end
 
@@ -268,6 +260,58 @@
 
 %hook GHKMainViewDataSource
 - (BOOL)hasPromotedProductLinks { return NO; }
+%end
+
+%hook YTICompactPlaylistRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTICompactPromotedVideoRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTICompactRadioRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTICompactShowRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTICompactVideoRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridNarrowPlaylistRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridNarrowRadioRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridNarrowVideoRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridPlaylistRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridPromotedVideoRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridRadioRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridShowRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIGridVideoRenderer
+- (BOOL)shouldShowAdBadge { return NO; }
 %end
 
 %hook YTUserDefaults
