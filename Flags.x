@@ -15,10 +15,6 @@
 - (BOOL)enableIosFreeStableVolume { return YES; }
 - (BOOL)enableIosLockMode { return YES; }
 - (BOOL)enableIosLockModeFixes { return YES; }
-- (BOOL)iosDisableCaptionsOnAppStartForVwc { return YES; }
-- (BOOL)iosClientGlobalConfigEnableCaptionsAutoTranslationIosClient { return NO; }
-- (BOOL)iosDisableCreatorEndscreenHitTestFix { return YES; }
-- (BOOL)iosDisableEndscreenOnActivateVideo { return YES; }
 - (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPicture { return NO; }
 - (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPictureIos { return NO; }
 - (BOOL)isPlaylistEntrypointUserEducationEnabled { return NO; }
@@ -34,7 +30,6 @@
 - (BOOL)iosPlayerClientSharedConfigTouchEarlyAccessPipSetting { return YES; }
 - (BOOL)iosPlayerClientSharedConfigShowPipClingPromo { return NO; }
 - (BOOL)livestreamClientConfigEnableCreationModesPromosTriggered { return NO; }
-- (BOOL)liveConsumptionClientConfigIosImmersiveLivePreviewDisableEndscreen { return YES; }
 - (BOOL)isAggressiveSwipeUserEducationEnabled { return NO; }
 - (BOOL)shortsPlayerGlobalConfigAndroidDisableEducationOverlay { return YES; }
 %end
@@ -262,4 +257,3 @@
 - (BOOL)hasisPromoDismissed { return YES; }
 - (BOOL)isPromoDismissed { return YES; }
 %end
-
