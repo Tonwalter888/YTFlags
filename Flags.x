@@ -2,7 +2,7 @@
 // You can remove the comments flags "//" if you want to use the flags.
 // Some flags may not work as expected, as simply enabling or disabling them may not be enough.
 
-// Enables PiP, modifies the miniplayer, hide endscreens and tips
+// Enables PiP, modifies the miniplayer, and hide tips
 %hook YTColdConfig
 - (BOOL)addPipMenuItem { return YES; }
 - (BOOL)enablePipMenuItem { return YES; }
@@ -256,4 +256,5 @@
 %hook YTPostCreationDialogStateEntityModel
 - (BOOL)hasisPromoDismissed { return YES; }
 - (BOOL)isPromoDismissed { return YES; }
+
 %end
