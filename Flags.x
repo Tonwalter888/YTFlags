@@ -52,7 +52,7 @@
 %end
 
 %hook YTBackgroundabilityPolicyImpl
-- (BOOL)isPlayableInPictureInPictureByUserSettings { return YES; }
+- (BOOL)isPlayableInPictureInPictureByUserSettings { return YES; } // The setting don't show up, so we have to force it here.
 %end
 
 // Try to disable Shorts PiP
@@ -65,6 +65,14 @@
 %end
 
 // Allows background playback
+%hook HAMPlayer
+- (BOOL)allowsBackgroundPlayback { return YES; }
+%end
+
+%hook MLVideo
+- (BOOL)playableInBackground { return YES; }
+%end
+
 %hook YTPlaybackData
 - (BOOL)isPlayableInBackground { return YES; }
 %end
