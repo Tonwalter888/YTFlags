@@ -52,7 +52,7 @@
 %end
 
 %hook YTBackgroundabilityPolicyImpl
-- (BOOL)isPlayableInPictureInPictureByUserSettings { return YES; } // The setting don't show up, so we have to force it here.
+- (BOOL)isPlayableInPictureInPictureByUserSettings { return YES; } // The setting doesn't show up, so we have to force it here.
 %end
 
 // Try to disable Shorts PiP
@@ -262,3 +262,4 @@
 - (BOOL)hasisPromoDismissed { return YES; }
 - (BOOL)isPromoDismissed { return YES; }
 %end
+
