@@ -256,5 +256,4 @@
 %hook YTPostCreationDialogStateEntityModel
 - (BOOL)hasisPromoDismissed { return YES; }
 - (BOOL)isPromoDismissed { return YES; }
-
 %end
