@@ -12,7 +12,7 @@ extern BOOL BlockUpgradeDialogs();
 extern BOOL HideAreYouThereDialog();
 extern BOOL HideAdsBadges();
 extern BOOL HideYouTubeEdu();
-extern BOOL FixSlowMiniPlayer();
+extern BOOL FixSlowsMiniPlayer();
 extern BOOL DisablesNewMiniPlayer();
 
 // Enables PiP, modifies the miniplayer, and hide tips
@@ -24,7 +24,7 @@ extern BOOL DisablesNewMiniPlayer();
 // - (BOOL)androidEnableShowSystemBedtimePromoHardcoded { return NO; }
 - (BOOL)cxClientDisableMementoPromotions { return HideAdsBadges(); }
 - (BOOL)enableIosFloatingMiniplayer { return !DisablesNewMiniPlayer(); }
-- (BOOL)enableIosFloatingMiniplayerDoubleTapToResize { return !FixSlowMiniPlayer(); }
+- (BOOL)enableIosFloatingMiniplayerDoubleTapToResize { return !FixSlowsMiniPlayer(); }
 - (BOOL)enableIosFreeStableVolume { return YES; }
 - (BOOL)enableIosLockMode { return YES; }
 - (BOOL)enableIosLockModeFixes { return YES; }
