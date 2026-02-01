@@ -36,6 +36,12 @@ jobs:
       - name: Clone YTFlags
         run: git clone --quiet --depth=1 https://github.com/Tonwalter888/YTFlags.git
 
+      - name: Clone YouTubeHeader
+        run: git clone --quiet --depth=1 https://github.com/PoomSmart/YouTubeHeader.git $THEOS/include/YouTubeHeader
+
+      - name: Clone PSHeader
+        run: git clone --quiet --depth=1 https://github.com/PoomSmart/PSheader.git $THEOS/include/PSHeader
+
       - name: Build YTFlags
         run: |
           cd YTFlags

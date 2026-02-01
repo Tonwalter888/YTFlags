@@ -14,7 +14,7 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = YTFlags
 
-$(TWEAK_NAME)_FILES = Flags.x
+$(TWEAK_NAME)_FILES = Flags.x Settings.x
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk

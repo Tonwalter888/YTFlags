@@ -1,0 +1,29 @@
+"ENABLES_TWEAK" = "เปิดใช้งาน YTFlags";
+"ENABLES_TWEAK_DESC" = "เปิดใช้งาน YTFlags เพื่อแก้ไขค่าของ Flags ต่าง ๆ";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "อนุญาตให้เล่นเบื้องหลัง";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "อนุญาตให้ YouTube เล่นวิดีโอในเบื้องหลังได้";
+
+"ENABLES_PIP" = "เปิดใช้งาน PiP";
+"ENABLES_PIP_DESC" = "เปิดใช้งานโหมด PiP (การเล่นภาพซ้อนภาพ) เพื่อเล่นวิดีโอนอกแอป YouTube";
+
+"DISABLES_SHORTS_PIP" = "ปิดใช้งาน PiP ของ Shorts";
+"DISABLES_SHORTS_PIP_DESC" = "พยายามปิดใช้งาน PiP สำหรับ Shorts อาจไม่สามารถปิดได้ 100%";
+
+"BLOCK_UPGRADE_DIALOGS" = "บล็อกหน้าต่างให้อัปเดต";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "บล็อกหน้าต่างแจ้งเตือนของ YouTube ที่ให้อัปเดตแอป";
+
+"ARE_YOU_THERE_DIALOG" = "ซ่อนหน้าต่าง \"คุณยังอยู่ไหม?\"";
+"ARE_YOU_THERE_DIALOG_DESC" = "ซ่อนหน้าต่างนี้เมื่อคุณไม่ได้โต้ตอบกับแอปเมื่อเล่นวิดีโออยู่เป็นระยะเวลาหนึ่ง";
+
+"HIDE_ADS_BADGES_DIALOGS" = "ซ่อนหน้าต่างและป้ายโฆษณา";
+"HIDE_ADS_BADGES_DIALOGS_DESC" = "ซ่อนหน้าต่างและป้ายโฆษณา พยายามซ่อนฟีเจอร์ AI และองค์ประกอบอื่น ๆ";
+
+"HIDE_YOUTUBE_EDU" = "ซ่อนคำแนะนำของ YouTube";
+"HIDE_YOUTUBE_EDU_DESC" = "ซ่อนคำแนะนำเมื่อใช้งานแอปหรือฟีเจอร์ต่าง ๆ เป็นครั้งแรก หรือหลังจากติดตั้งแอปใหม่";
+
+"FIX_SLOWS_MINIPLAYER" = "แก้ปัญหา Miniplayer ช้า";
+"FIX_SLOWS_MINIPLAYER_DESC" = "แก้ปัญหา Miniplayer ขยายวิดีโอช้า ฟีเจอร์นี้ใช้ได้เฉพาะ YouTube เวอร์ชันเก่า";
+
+"DISABLES_NEW_MINIPLAYER" = "ปิดใช้งาน Miniplayer แบบใหม่";
+"DISABLES_NEW_MINIPLAYER_DESC" = "ใช้ Miniplayer แบบเก่าแทนรูปแบบใหม่ ฟีเจอร์นี้ใช้ได้เฉพาะ YouTube เวอร์ชันเก่า";

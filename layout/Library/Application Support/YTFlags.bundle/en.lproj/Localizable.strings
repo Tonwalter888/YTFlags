@@ -1,0 +1,29 @@
+"ENABLES_TWEAK" = "Enables YTFlags";
+"ENABLES_TWEAK_DESC" = "Enables YTFlags to edit the flags values";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "Allows Background Playback";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Allows YouTube to play videos in the background";
+
+"ENABLES_PIP" = "Enables PiP";
+"ENABLES_PIP_DESC" = "Enables PiP (Picture-In-Picture) to play videos outsides the YouTube app";
+
+"DISABLES_SHORTS_PIP" = "Disables Shorts PiP";
+"DISABLES_SHORTS_PIP_DESC" = "Try to disables Shorts PiP, this may not 100% disables it";
+
+"BLOCK_UPGRADE_DIALOGS" = "Block Upgrade Dialogs";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Block the YouTube dialogs that are telling you to upgrade the app";
+
+"ARE_YOU_THERE_DIALOG" = "Hide \"Are you there?"\ Dialog";
+"ARE_YOU_THERE_DIALOG_DESC" = "Hide the dialog when you are inactive to the app";
+
+"HIDE_ADS_BADGES_DIALOGS" = "Hide Ads Badges Dialogs";
+"HIDE_ADS_BADGES_DIALOGS_DESC" = "Hide ads badges dialogs, try to hide AI things, and much more";
+
+"HIDE_YOUTUBE_EDU" = "Hide YouTube Educations";
+"HIDE_YOUTUBE_EDU_DESC" = "Hide educations when you are using the app/features in the first time or reinstall the app";
+
+"FIX_SLOWS_MINIPLAYER" = "Fix Slows Miniplayer";
+"FIX_SLOWS_MINIPLAYER_DESC" = "Fix the miniplayer slows to expand the video, this only works in older YouTube versions";
+
+"DISABLES_NEW_MINIPLAYER" = "Disables New Miniplayer";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Use old-style miniplayer instead of the new one, this only works in older YouTube versions";
