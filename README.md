@@ -1,13 +1,11 @@
 # YTFlags
-Currently, these hooks are based on YouTube versions 19.49.5, 20.21.6, and 21.03.2. I'll keep updaing the flags if the newer version comes out. This project is similar to [YTABGoodies](https://github.com/PoomSmart/YTABGoodies) by [PoomSmart](https://github.com/PoomSmart).
-
-This project tries to enable useful YouTube features that are avaliable to you.
+Currently, these hooks are based on YouTube versions 19.49.5, 20.21.6, and 21.04.2. I'll keep updaing the flags if the newer version comes out. This project is similar to [YTABGoodies](https://github.com/PoomSmart/YTABGoodies) by [PoomSmart](https://github.com/PoomSmart) and tries to enable useful YouTube features that are avaliable to you.
 
 ## Features (100% Verified)
 - Enables PiP (Picture-In-Picture)
-- Allow Background Playbacks
+- Allows Background Playback
 - Fix playback issues (For jailbroken and TrollStore users only)
-- Hide a prompt "Are you there?"
+- Hide the prompt "Are you there?"
 - Hide upgrade dialogs
 - Fix miniplayer working slowly (Only for older YouTube versions)
 
