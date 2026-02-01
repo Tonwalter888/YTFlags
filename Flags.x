@@ -2,6 +2,8 @@
 // You can remove the comments flags "//" if you want to use the flags.
 // Some flags may not work as expected, as simply enabling or disabling them may not be enough.
 
+#import <Foundation/Foundation.h>
+
 extern BOOL EnablesTweak();
 extern BOOL AllowsBackgroundPlayback();
 extern BOOL EnablesPiP();

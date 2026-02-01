@@ -1,5 +1,7 @@
 // Settings.x
 // Thanks to the original codes from YTUHD by PoomSmart - https://github.com/PoomSmart/YTUHD/blob/0e735616fd8fc6546339da7fdc78466f16f23ffd/Settings.x
+
+#import <Foundation/Foundation.h>
 #import <PSHeader/Misc.h>
 #import <YouTubeHeader/YTSettingsGroupData.h>
 #import <YouTubeHeader/YTSettingsPickerViewController.h>
@@ -12,10 +14,10 @@
 #define EnablesTweakKey @"EditFlags"
 #define AllowsBackgroundPlaybackKey @"EnableBackgroundPlayback"
 #define EnablesPiPKey @"AllowsPiP"
-#define DisablesShortsKey @"TryToDisablesShortsPiP"
+#define DisablesShortsPiPKey @"TryToDisablesShortsPiP"
 #define BlockUpgradeDialogsKey @"StopYouTubeForcingToUpgrade"
 #define HideAreYouThereDialogKey @"HideAnnoyingDialog"
-#define HideAdsBadgeKey @"HideAds"
+#define HideAdsBadgesKey @"HideAds"
 #define HideYouTubeEduKey @"HideYouTubeEducations"
 #define FixSlowsMiniPlayerKey @"FixSlowsPlayer"
 #define DisablesNewMiniPlayerKey @"DisablesNewStyleMiniPlayer"
@@ -41,7 +43,7 @@ BOOL EnablesPiP() {
 }
 
 BOOL DisablesShortsPiP() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:DisablesShortsKey];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:DisablesShortsPiPKey];
 }
 
 BOOL BlockUpgradeDialogs() {
@@ -53,7 +55,7 @@ BOOL HideAreYouThereDialog() {
 }
 
 BOOL HideAdsBadges() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:HideAdsBadgeKey];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:HideAdsBadgesKey];
 }
 
 BOOL HideYouTubeEdu() {
@@ -187,7 +189,7 @@ NSBundle *YTFlagsBundle() {
     [sectionItems addObject:areyouthere];
 
     // Hide Ads Badges
-    YTSettingsSectionItem *ads = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_ADS_BADGES_DIALOGS")
+    YTSettingsSectionItem *ads = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_ADS_BADGES")
         titleDescription:LOC(@"HIDE_ADS_BADGES_DESC")
         accessibilityIdentifier:nil
         switchOn:HideAdsBadges()
@@ -236,7 +238,7 @@ NSBundle *YTFlagsBundle() {
 
     if ([settingsViewController respondsToSelector:@selector(setSectionItems:forCategory:title:icon:titleDescription:headerHidden:)]) {
         YTIIcon *icon = [%c(YTIIcon) new];
-        icon.iconType = YT_PLANNER_REVIEW;
+        icon.iconType = YT_SETTINGS_CAIRO;
         [settingsViewController setSectionItems:sectionItems forCategory:TweakSection title:TweakName icon:icon titleDescription:nil headerHidden:NO];
     } else
         [settingsViewController setSectionItems:sectionItems forCategory:TweakSection title:TweakName titleDescription:nil headerHidden:NO];

@@ -16,8 +16,8 @@
 "ARE_YOU_THERE_DIALOG" = "Hide \"Are you there?"\ Dialog";
 "ARE_YOU_THERE_DIALOG_DESC" = "Hide the dialog when you are inactive to the app";
 
-"HIDE_ADS_BADGES_DIALOGS" = "Hide Ads Badges Dialogs";
-"HIDE_ADS_BADGES_DIALOGS_DESC" = "Hide ads badges dialogs, try to hide AI things, and much more";
+"HIDE_ADS_BADGES" = "Hide Ads Badges Dialogs";
+"HIDE_ADS_BADGES_DESC" = "Hide ads badges dialogs, try to hide AI things, and much more";
 
 "HIDE_YOUTUBE_EDU" = "Hide YouTube Educations";
 "HIDE_YOUTUBE_EDU_DESC" = "Hide educations when you are using the app/features in the first time or reinstall the app";
