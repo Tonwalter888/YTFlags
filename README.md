@@ -5,7 +5,7 @@ Currently, these hooks are based on YouTube versions 19.49.5, 20.21.6, and 21.04
 - Enables PiP (Picture-In-Picture)
 - Allows Background Playback
 - Fix playback issues (For jailbroken and TrollStore users only)
-- Hide the prompt "Are you there?"
+- Hide the "Are you there?" dialog
 - Hide upgrade dialogs
 - Fix miniplayer working slowly (Only for older YouTube versions)
 
