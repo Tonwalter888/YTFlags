@@ -13,7 +13,7 @@
 "BLOCK_UPGRADE_DIALOGS" = "Block Upgrade Dialogs";
 "BLOCK_UPGRADE_DIALOGS_DESC" = "Block the YouTube dialogs that are telling you to upgrade the app";
 
-"ARE_YOU_THERE_DIALOG" = "Hide \"Are you there?"\ Dialog";
+"ARE_YOU_THERE_DIALOG" = "Hide Are you there? Dialog";
 "ARE_YOU_THERE_DIALOG_DESC" = "Hide the dialog when you are inactive to the app";
 
 "HIDE_ADS_BADGES" = "Hide Ads Badges Dialogs";
