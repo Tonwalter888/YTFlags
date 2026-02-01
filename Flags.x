@@ -75,7 +75,7 @@ extern BOOL DisablesNewMiniPlayer();
 
 %hook YTIPlayerResponse
 - (BOOL)isPlayableInBackground { return AllowsBackgroundPlayback(); }
-- (BOOL)isMonetized { return NO; }
+- (BOOL)isMonetized { return !HideAdsBadges(); }
 %end
 
 // Prevent YouTube from asking "Are you there?"

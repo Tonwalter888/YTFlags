@@ -10,6 +10,7 @@
 #import <YouTubeHeader/YTSettingsViewController.h>
 
 #define TweakName @"YTFlags"
+#define TWEAK_VERSION 1.1.1
 
 #define EnablesTweakKey @"EditFlags"
 #define AllowsBackgroundPlaybackKey @"EnableBackgroundPlayback"
@@ -23,6 +24,8 @@
 #define DisablesNewMiniPlayerKey @"DisablesNewStyleMiniPlayer"
 
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
+#define STRINGIFY(x) #x
+#define TOSTRING(x) STRINGIFY(x)
 
 static const NSInteger TweakSection = 'ytfl';
 
@@ -115,6 +118,18 @@ NSBundle *YTFlagsBundle() {
     NSBundle *tweakBundle = YTFlagsBundle();
     Class YTSettingsSectionItemClass = %c(YTSettingsSectionItem);
     YTSettingsViewController *settingsViewController = [self valueForKey:@"_settingsViewControllerDelegate"];
+
+    // Tweak Version (at the top)
+    // Thanks to the original codes from YTweaks by fosterbarnes - https://github.com/fosterbarnes/YTweaks/blob/e921591a89b87256a2b37c4788bd99282f70d9c2/Settings.x
+    NSString *versionString = [NSString stringWithFormat:@"YTFlags v%s", TOSTRING(TWEAK_VERSION)];
+    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:versionString
+        titleDescription:nil
+        accessibilityIdentifier:nil
+        detailTextBlock:nil
+        selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+            return NO;
+        }];
+    [sectionItems addObject:tweakVersion];
 
     // Enables Tweak
     YTSettingsSectionItem *enablesTweak = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLES_TWEAK")
