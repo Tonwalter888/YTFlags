@@ -10,9 +10,10 @@
 #import <YouTubeHeader/YTSettingsViewController.h>
 
 #define TweakName @"YTFlags"
-#define TWEAK_VERSION 1.1.1
+#define TWEAK_VERSION 1.1.2
 
-#define EnablesTweakKey @"EditFlags"
+// #define BedtimeKey @"IAmNotGonnaSleep"
+// #define WatchingKey @"NoWatchingShelf"
 #define AllowsBackgroundPlaybackKey @"EnableBackgroundPlayback"
 #define EnablesPiPKey @"AllowsPiP"
 #define DisablesShortsPiPKey @"TryToDisablesShortsPiP"
@@ -32,10 +33,6 @@ static const NSInteger TweakSection = 'ytfl';
 @interface YTSettingsSectionItemManager (YTFlags)
 - (void)updateYTFlagsSectionWithEntry:(id)entry;
 @end
-
-BOOL EnablesTweak() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:EnablesTweakKey];
-}
 
 BOOL AllowsBackgroundPlayback() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:AllowsBackgroundPlaybackKey];
@@ -130,18 +127,6 @@ NSBundle *YTFlagsBundle() {
             return NO;
         }];
     [sectionItems addObject:tweakVersion];
-
-    // Enables Tweak
-    YTSettingsSectionItem *enablesTweak = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLES_TWEAK")
-        titleDescription:LOC(@"ENABLES_TWEAK_DESC")
-        accessibilityIdentifier:nil
-        switchOn:EnablesTweak()
-        switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:EnablesTweakKey];
-            return YES;
-        }
-        settingItemId:0];
-    [sectionItems addObject:enablesTweak];
 
     // Allows Background Playback
     YTSettingsSectionItem *backgroundPlayback = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ALLOWS_BACKGROUND_PLAYBACK")

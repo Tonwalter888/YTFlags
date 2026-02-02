@@ -1,6 +1,3 @@
-"ENABLES_TWEAK" = "เปิดใช้งาน YTFlags";
-"ENABLES_TWEAK_DESC" = "เปิดใช้งาน YTFlags เพื่อแก้ไขค่าของ Flags ต่าง ๆ";
-
 "ALLOWS_BACKGROUND_PLAYBACK" = "อนุญาตให้เล่นเบื้องหลัง";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "อนุญาตให้ YouTube เล่นวิดีโอในเบื้องหลังได้";
 
