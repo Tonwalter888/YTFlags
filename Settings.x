@@ -10,7 +10,7 @@
 #import <YouTubeHeader/YTSettingsViewController.h>
 
 #define TweakName @"YTFlags"
-#define TWEAK_VERSION 1.1.2
+#define TWEAK_VERSION 1.1.3
 
 // #define BedtimeKey @"IAmNotGonnaSleep"
 // #define WatchingKey @"NoWatchingShelf"
