@@ -1,5 +1,4 @@
 // Flags.x
-// You can remove the comments flags "//" if you want to use the flags.
 // Some flags may not work as expected, as simply enabling or disabling them may not be enough.
 
 #import <Foundation/Foundation.h>
@@ -199,4 +198,5 @@ extern BOOL DisablesNewMiniPlayer();
 %hook YTPostCreationDialogStateEntityModel
 - (BOOL)hasisPromoDismissed { return HideAdsBadges() ? YES : %orig; }
 - (BOOL)isPromoDismissed { return HideAdsBadges() ? YES : %orig; }
+
 %end
