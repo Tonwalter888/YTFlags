@@ -198,5 +198,4 @@ extern BOOL DisablesNewMiniPlayer();
 %hook YTPostCreationDialogStateEntityModel
 - (BOOL)hasisPromoDismissed { return HideAdsBadges() ? YES : %orig; }
 - (BOOL)isPromoDismissed { return HideAdsBadges() ? YES : %orig; }
-
 %end
