@@ -24,3 +24,9 @@
 
 "DISABLES_NEW_MINIPLAYER" = "Disables New Miniplayer";
 "DISABLES_NEW_MINIPLAYER_DESC" = "Use old-style miniplayer instead of the new one, this only works in older YouTube versions";
+
+"BEDTIME" = "Hide Bedtime Reminders";
+"BEDTIME_DESC" = "Hide bedtime reminders panels when YouTube tries to show them up";
+
+"WATCHING" = "Hide Continue Watching Section";
+"WATCHING_DESC" = "Hide Continue Watcing section in feeds such as Home or when searching videos"; 

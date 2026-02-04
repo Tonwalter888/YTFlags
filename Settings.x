@@ -10,10 +10,10 @@
 #import <YouTubeHeader/YTSettingsViewController.h>
 
 #define TweakName @"YTFlags"
-#define TWEAK_VERSION 1.1.3
+#define TWEAK_VERSION 1.1.4
 
-// #define BedtimeKey @"IAmNotGonnaSleep"
-// #define WatchingKey @"NoWatchingShelf"
+#define BedtimeKey @"IAmNotGonnaSleep"
+#define WatchingKey @"NoWatchingShelf"
 #define AllowsBackgroundPlaybackKey @"EnableBackgroundPlayback"
 #define EnablesPiPKey @"AllowsPiP"
 #define DisablesShortsPiPKey @"TryToDisablesShortsPiP"
@@ -68,6 +68,14 @@ BOOL FixSlowsMiniPlayer() {
 
 BOOL DisablesNewMiniPlayer() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:DisablesNewMiniPlayerKey];
+}
+
+BOOL Bedtime() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:BedtimeKey];
+}
+
+BOOL Watching() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:WatchingKey];
 }
 
 NSBundle *YTFlagsBundle() {
@@ -236,9 +244,33 @@ NSBundle *YTFlagsBundle() {
         settingItemId:0];
     [sectionItems addObject:newminiplayer];
 
+    // Hide "Continue Watching" section in feeds
+    YTSettingsSectionItem *watching = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"WATCHING")
+        titleDescription:LOC(@"WATCHING_DESC")
+        accessibilityIdentifier:nil
+        switchOn:Watching()
+        switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:WatchingKey];
+            return YES;
+        }
+        settingItemId:0];
+    [sectionItems addObject:watching];
+
+    // Hide Bedtime Reminders
+    YTSettingsSectionItem *bedtime = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"BEDTIME")
+        titleDescription:LOC(@"BEDTIME_DESC")
+        accessibilityIdentifier:nil
+        switchOn:Bedtime()
+        switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:BedtimeKey];
+            return YES;
+        }
+        settingItemId:0];
+    [sectionItems addObject:bedtime];
+
     if ([settingsViewController respondsToSelector:@selector(setSectionItems:forCategory:title:icon:titleDescription:headerHidden:)]) {
         YTIIcon *icon = [%c(YTIIcon) new];
-        icon.iconType = YT_SETTINGS_CAIRO;
+        icon.iconType = YT_SETTINGS;
         [settingsViewController setSectionItems:sectionItems forCategory:TweakSection title:TweakName icon:icon titleDescription:nil headerHidden:NO];
     } else
         [settingsViewController setSectionItems:sectionItems forCategory:TweakSection title:TweakName titleDescription:nil headerHidden:NO];

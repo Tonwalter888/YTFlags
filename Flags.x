@@ -4,8 +4,8 @@
 
 #import <Foundation/Foundation.h>
 
-// extern BOOL Bedtime();
-// extern BOOL Watching();
+extern BOOL Bedtime();
+extern BOOL Watching();
 extern BOOL AllowsBackgroundPlayback();
 extern BOOL EnablesPiP();
 extern BOOL DisablesShortsPiP();
@@ -22,7 +22,7 @@ extern BOOL DisablesNewMiniPlayer();
 - (BOOL)enablePipMenuItem { return EnablesPiP() ? YES : %orig; }
 - (BOOL)androidDisablePipBackgroundButtonForPremium { return EnablesPiP() ? NO : %orig; }
 - (BOOL)androidDisablePipForPremium { return EnablesPiP() ? NO : %orig; }
-// - (BOOL)androidEnableShowSystemBedtimePromoHardcoded { return Bedtime() ? NO : %orig; }
+- (BOOL)androidEnableShowSystemBedtimePromoHardcoded { return Bedtime() ? NO : %orig; }
 - (BOOL)cxClientDisableMementoPromotions { return HideAdsBadges() ? YES : %orig; }
 - (BOOL)enableIosFloatingMiniplayer { return DisablesNewMiniPlayer() ? NO : %orig; }
 - (BOOL)enableIosFloatingMiniplayerDoubleTapToResize { return FixSlowsMiniPlayer() ? NO : %orig; }
@@ -92,10 +92,10 @@ extern BOOL DisablesNewMiniPlayer();
 - (BOOL)shouldForceUpgrade { return BlockUpgradeDialogs() ? NO : %orig; }
 %end
 
-// Hide "Continue watching" section
-// %hook YTCommuteShelfViewModel
-// - (BOOL)shouldHideShelf { return Watching() ? YES : %orig; }
-// %end
+// Hide "Continue watching" section in feeds
+%hook YTCommuteShelfViewModel
+- (BOOL)shouldHideShelf { return Watching() ? YES : %orig; }
+%end
 
 // Prevent YouTube from showing you how to use the app
 %hook GWACameraView
@@ -153,9 +153,10 @@ extern BOOL DisablesNewMiniPlayer();
 - (BOOL)shouldShowPrivacyDialog { return HideYouTubeEdu() ? NO : %orig; }
 %end
 
-// %hook YTBedtimeReminderController
-// - (BOOL)shouldShowBedtimeReminderAsPanel { return Bedtime() ? NO : %orig; }
-// %end
+// Hide Bedtime Reminders
+%hook YTBedtimeReminderController
+- (BOOL)shouldShowBedtimeReminderAsPanel { return Bedtime() ? NO : %orig; }
+%end
 
 // Hide ads
 %hook YTPromotedVideoCellController
