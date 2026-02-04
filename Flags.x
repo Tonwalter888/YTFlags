@@ -178,7 +178,6 @@ extern BOOL DisablesNewMiniPlayer();
 - (BOOL)shouldShowExpandButton { return HideAdsBadges() ? NO : %orig; }
 %end
 
-
 %hook YTUserDefaults
 - (BOOL)isPromoForced { return HideAdsBadges() ? NO : %orig; }
 - (BOOL)safeguardEducationSkipped { return HideYouTubeEdu() ? YES : %orig; }
