@@ -10,6 +10,7 @@
 #import <YouTubeHeader/YTSettingsViewController.h>
 
 #define TweakName @"YTFlags"
+#define TWEAK_VERSION 1.1.6
 
 #define BedtimeKey @"IAmNotGonnaSleep"
 #define WatchingKey @"NoWatchingShelf"
@@ -24,6 +25,8 @@
 #define DisablesNewMiniPlayerKey @"DisablesNewStyleMiniPlayer"
 
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
+#define STRINGIFY(x) #x
+#define TOSTRING(x) STRINGIFY(x)
 
 static const NSInteger TweakSection = 'ytfl';
 
@@ -123,9 +126,6 @@ NSBundle *YTFlagsBundle() {
 
     // Tweak Version (at the top)
     // Thanks to the original codes from YTweaks by fosterbarnes - https://github.com/fosterbarnes/YTweaks/blob/e921591a89b87256a2b37c4788bd99282f70d9c2/Settings.x
-    #define TWEAK_VERSION 1.1.5
-    #define STRINGIFY(x) #x
-    #define TOSTRING(x) STRINGIFY(x)
     NSString *versionString = [NSString stringWithFormat:@"YTFlags v%s", TOSTRING(TWEAK_VERSION)];
     YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:versionString
         titleDescription:nil

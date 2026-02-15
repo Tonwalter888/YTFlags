@@ -41,7 +41,7 @@ extern BOOL DisablesNewMiniPlayer();
 
 %hook YTHotConfig
 - (BOOL)clientInfraClientConfigIosEnableFillingEncodedHacksInnertubeContext { return NO; }
-- (BOOL)iosPlayerClientSharedConfigEnableResumeOnHeadForImmersiveLiveInPip { return EnablesPiP() ? YES : %orig; }
+- (BOOL)iosPlayerClientSharedConfigEnableResumeOnHeadForImmersiveLiveInPip { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosPlayerClientSharedConfigDefaultOffPremiumPip { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosPlayerClientSharedConfigDisableLockscreenControlsFromPip { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosPlayerClientSharedConfigSkipPipToggleOnStateChange { return EnablesPiP() ? NO : %orig; }
