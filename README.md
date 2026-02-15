@@ -1,5 +1,5 @@
 # YTFlags
-Currently, these hooks are based on YouTube versions 19.49.5, 20.21.6, and 21.04.2. I'll keep updaing the flags if the newer version comes out. This project is similar to [YTABGoodies](https://github.com/PoomSmart/YTABGoodies) by [PoomSmart](https://github.com/PoomSmart) and tries to enable useful YouTube features that are avaliable to you.
+Currently, these hooks are based on YouTube versions 19.49.5, 20.21.6, 21.04.2, and 21.06.2. I'll keep updaing the flags if the newer version comes out. This project is similar to [YTABGoodies](https://github.com/PoomSmart/YTABGoodies) by [PoomSmart](https://github.com/PoomSmart) and tries to enable useful YouTube features that are avaliable to you.
 
 ## Features (100% Verified)
 - Enables PiP (Picture-In-Picture)

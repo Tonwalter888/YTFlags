@@ -28,30 +28,37 @@ extern BOOL DisablesNewMiniPlayer();
 - (BOOL)enableIosFreeStableVolume { return YES; }
 - (BOOL)enableIosLockMode { return YES; }
 - (BOOL)enableIosLockModeFixes { return YES; }
-- (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPicture { return EnablesPiP() ? NO : %orig; }
-- (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPictureIos { return EnablesPiP() ? NO : %orig; }
+- (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPicture { return DisablesShortsPiP() ? NO : %orig; }
+- (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPictureIos { return DisablesShortsPiP() ? NO : %orig; }
 - (BOOL)isPlaylistEntrypointUserEducationEnabled { return HideYouTubeEdu() ? NO : %orig; }
 - (BOOL)enableYouthereCommandsOnIos { return HideAreYouThereDialog() ? NO : %orig; }
+- (BOOL)immersiveWatchClientGlobalConfigIosEnableIwfEducationImpressionController { return HideYouTubeEdu() ? NO : %orig; }
+%end
+
+%hook YTColdConfigWatchPlayerClientGlobalConfigImpl
+- (BOOL)enableIosFloatingMiniplayer { return DisablesNewMiniPlayer() ? NO : %orig; }
 %end
 
 %hook YTHotConfig
 - (BOOL)clientInfraClientConfigIosEnableFillingEncodedHacksInnertubeContext { return NO; }
-- (BOOL)iosPlayerClientSharedConfigEnableResumeOnHeadForImmersiveLiveInPip { return NO; }
+- (BOOL)iosPlayerClientSharedConfigEnableResumeOnHeadForImmersiveLiveInPip { return EnablesPiP() ? YES : %orig; }
 - (BOOL)iosPlayerClientSharedConfigDefaultOffPremiumPip { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosPlayerClientSharedConfigDisableLockscreenControlsFromPip { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosPlayerClientSharedConfigSkipPipToggleOnStateChange { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosPlayerClientSharedConfigTouchEarlyAccessPipSetting { return EnablesPiP() ? YES : %orig; }
-- (BOOL)iosPlayerClientSharedConfigShowPipClingPromo { return NO; }
+- (BOOL)iosPlayerClientSharedConfigShowPipClingPromo { return HideAdsBadges() ? NO : %orig; }
+- (BOOL)liveChatEnableEngagementPanelPromo { return HideAdsBadges() ? NO : %orig; }
 - (BOOL)livestreamClientConfigEnableCreationModesPromosTriggered { return HideAdsBadges() ? NO : %orig; }
 - (BOOL)isAggressiveSwipeUserEducationEnabled { return HideYouTubeEdu() ? NO : %orig; }
 - (BOOL)shortsPlayerGlobalConfigAndroidDisableEducationOverlay { return HideYouTubeEdu() ? YES : %orig; }
+- (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPictureAllowedFromPlayer { return DisablesShortsPiP() ? NO : %orig; }
 %end
 
 // PiP hacks stuff
 %hook YTPlayerResponse
 - (BOOL)isPlayableInPictureInPicture { return EnablesPiP() ? YES : %orig; }
 - (BOOL)isPipOffByDefault { return EnablesPiP() ? NO : %orig; }
-- (BOOL)shouldPipResumeOnHead { return YES; }
+- (BOOL)shouldPipResumeOnHead { return EnablesPiP() ? YES : %orig; }
 %end
 
 %hook YTIPlayabilityStatus
@@ -80,6 +87,10 @@ extern BOOL DisablesNewMiniPlayer();
 
 // Prevent YouTube from asking "Are you there?"
 %hook YTYouThereController
+- (BOOL)shouldShowYouTherePrompt { return HideAreYouThereDialog() ? NO : %orig; }
+%end
+
+%hook YTYouThereControllerImpl
 - (BOOL)shouldShowYouTherePrompt { return HideAreYouThereDialog() ? NO : %orig; }
 %end
 
@@ -197,4 +208,12 @@ extern BOOL DisablesNewMiniPlayer();
 %hook YTPostCreationDialogStateEntityModel
 - (BOOL)hasisPromoDismissed { return HideAdsBadges() ? YES : %orig; }
 - (BOOL)isPromoDismissed { return HideAdsBadges() ? YES : %orig; }
+%end
+
+%hook YTIPlayerCompanionAdsSupportedRenderers
+- (BOOL)hasAppPromoCompanionAdRenderer { return HideAdsBadges() ? NO : %orig; }
+%end
+
+%hook YTIRenderer
+- (BOOL)hasAppPromoAdCtaRenderer { return HideAdsBadges() ? NO : %orig; }
 %end
