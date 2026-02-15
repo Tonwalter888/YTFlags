@@ -33,7 +33,7 @@ extern BOOL DisablesNewMiniPlayer();
 - (BOOL)isPlaylistEntrypointUserEducationEnabled { return HideYouTubeEdu() ? NO : %orig; }
 - (BOOL)enableYouthereCommandsOnIos { return HideAreYouThereDialog() ? NO : %orig; }
 - (BOOL)immersiveWatchClientGlobalConfigIosEnableIwfEducationImpressionController { return HideYouTubeEdu() ? NO : %orig; }
-- (BOOL)showPipStyleMiniplayer { return EnablesPiP() ? YES : %orig; }
+- (BOOL)showPipStyleMiniplayer { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosClientGlobalConfigIosEnablePipNavigationFromPlayerViewController { return EnablesPiP() ? YES : %orig; }
 %end
 
