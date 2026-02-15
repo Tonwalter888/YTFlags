@@ -33,6 +33,8 @@ extern BOOL DisablesNewMiniPlayer();
 - (BOOL)isPlaylistEntrypointUserEducationEnabled { return HideYouTubeEdu() ? NO : %orig; }
 - (BOOL)enableYouthereCommandsOnIos { return HideAreYouThereDialog() ? NO : %orig; }
 - (BOOL)immersiveWatchClientGlobalConfigIosEnableIwfEducationImpressionController { return HideYouTubeEdu() ? NO : %orig; }
+- (BOOL)showPipStyleMiniplayer { return EnablesPiP() ? YES : %orig; }
+- (BOOL)iosClientGlobalConfigIosEnablePipNavigationFromPlayerViewController { return EnablesPiP() ? YES : %orig; }
 %end
 
 %hook YTColdConfigWatchPlayerClientGlobalConfigImpl
@@ -42,6 +44,7 @@ extern BOOL DisablesNewMiniPlayer();
 %hook YTHotConfig
 - (BOOL)clientInfraClientConfigIosEnableFillingEncodedHacksInnertubeContext { return NO; }
 - (BOOL)iosPlayerClientSharedConfigEnableResumeOnHeadForImmersiveLiveInPip { return EnablesPiP() ? NO : %orig; }
+- (BOOL)iosPlayerClientSharedConfigEnableFullScreenAdsInPip { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosPlayerClientSharedConfigDefaultOffPremiumPip { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosPlayerClientSharedConfigDisableLockscreenControlsFromPip { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosPlayerClientSharedConfigSkipPipToggleOnStateChange { return EnablesPiP() ? NO : %orig; }
