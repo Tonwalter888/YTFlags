@@ -49,6 +49,7 @@ extern BOOL DisablesNewMiniPlayer();
 - (BOOL)iosPlayerClientSharedConfigDisableLockscreenControlsFromPip { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosPlayerClientSharedConfigSkipPipToggleOnStateChange { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosPlayerClientSharedConfigTouchEarlyAccessPipSetting { return EnablesPiP() ? YES : %orig; }
+- (BOOL)iosPlayerClientSharedConfigOffsetPipControllerTimeRangeWithSbdlCurrentTime { return EnablesPiP() ? NO : %orig; }
 - (BOOL)iosPlayerClientSharedConfigShowPipClingPromo { return HideAdsBadges() ? NO : %orig; }
 - (BOOL)liveChatEnableEngagementPanelPromo { return HideAdsBadges() ? NO : %orig; }
 - (BOOL)livestreamClientConfigEnableCreationModesPromosTriggered { return HideAdsBadges() ? NO : %orig; }
