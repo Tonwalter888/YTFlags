@@ -7,9 +7,10 @@
 #import <YouTubeHeader/YTSettingsSectionItem.h>
 #import <YouTubeHeader/YTSettingsSectionItemManager.h>
 #import <YouTubeHeader/YTSettingsViewController.h>
+#import <YouTubeHeader/YTSettingsCell.h>
 
 #define TweakName @"YTFlags"
-#define TWEAK_VERSION 1.1.7
+#define TWEAK_VERSION 1.1.8
 
 #define BedtimeKey @"IAmNotGonnaSleep"
 #define WatchingKey @"NoWatchingShelf"
@@ -281,6 +282,20 @@ NSBundle *YTFlagsBundle() {
         return;
     }
     %orig;
+}
+
+%end
+
+%hook YTSettingsCell
+
+- (void)layoutSubviews {
+    %orig;
+    // Style version footer (smaller, lighter)
+    NSString *versionPrefix = @"YTFlags ";
+    if (titleLabel && [titleLabel.text hasPrefix:versionPrefix]) {
+        self.userInteractionEnabled = NO;
+        titleLabel.font = [UIFont systemFontOfSize:13.0 weight:UIFontWeightLight];
+    }
 }
 
 %end
