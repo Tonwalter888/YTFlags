@@ -292,6 +292,7 @@ NSBundle *YTFlagsBundle() {
     %orig;
     // Style version footer (smaller, lighter)
     NSString *versionPrefix = @"YTFlags ";
+    UILabel *titleLabel = nil;
     if (titleLabel && [titleLabel.text hasPrefix:versionPrefix]) {
         self.userInteractionEnabled = NO;
         titleLabel.font = [UIFont systemFontOfSize:13.0 weight:UIFontWeightLight];
