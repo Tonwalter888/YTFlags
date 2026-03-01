@@ -9,7 +9,7 @@
 #import <YouTubeHeader/YTSettingsViewController.h>
 
 #define TweakName @"YTFlags"
-#define TWEAK_VERSION 1.1.9
+#define TWEAK_VERSION 1.1.10
 
 #define EnablesTweakKey @"ActivateTweak"
 #define BedtimeKey @"IAmNotGonnaSleep"
@@ -286,7 +286,7 @@ NSBundle *YTFlagsBundle() {
 
     if ([settingsViewController respondsToSelector:@selector(setSectionItems:forCategory:title:icon:titleDescription:headerHidden:)]) {
         YTIIcon *icon = [%c(YTIIcon) new];
-        icon.iconType = YT_SETTINGS;
+        icon.iconType = 52;
         [settingsViewController setSectionItems:sectionItems forCategory:TweakSection title:TweakName icon:icon titleDescription:nil headerHidden:NO];
     } else
         [settingsViewController setSectionItems:sectionItems forCategory:TweakSection title:TweakName titleDescription:nil headerHidden:NO];
