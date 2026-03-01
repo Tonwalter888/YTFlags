@@ -1,3 +1,6 @@
+"ENABLED" = "Enables Tweak";
+"ENABLED_DESC" = "Turning this option on will activate the tweak";
+
 "ALLOWS_BACKGROUND_PLAYBACK" = "Allows Background Playback";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Allows YouTube to play videos in the background";
 
