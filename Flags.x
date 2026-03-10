@@ -225,5 +225,5 @@ extern BOOL DisablesNewMiniPlayer();
 
 %ctor {
     if (!EnablesTweak()) return;
-    %init
+    %init;
 }
