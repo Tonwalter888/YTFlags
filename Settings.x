@@ -9,6 +9,7 @@
 #import <YouTubeHeader/YTSettingsViewController.h>
 #import <YouTubeHeader/YTToastResponderEvent.h>
 #import <YouTubeHeader/YTAlertView.h>
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 #import <UIKit/UIKit.h>
 
 #define TweakName @"YTFlags"
@@ -25,7 +26,7 @@
 #define FixSlowsMiniPlayerKey @"FixSlowsPlayer"
 #define DisablesNewMiniPlayerKey @"DisablesNewStyleMiniPlayer"
 
-#define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
+#define LOC(x) [YTFlagsBundle() localizedStringForKey:x value:nil table:nil]
 #define STRINGIFY(x) #x
 #define TOSTRING(x) STRINGIFY(x)
 
@@ -385,9 +386,7 @@ NSBundle *YTFlagsBundle() {
     [ytflagsPrefs writeToFile:tempPath atomically:YES];
     // Present document picker for save
     NSURL *fileURL = [NSURL fileURLWithPath:tempPath];
-    UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] 
-        initWithURL:fileURL 
-        inMode:UIDocumentPickerModeExportToService];
+    UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] initForExportingURLs:@[fileURL]];
     picker.delegate = self;
     YTSettingsViewController *settingsVC = [self valueForKey:@"_dataDelegate"];
     [settingsVC presentViewController:picker animated:YES completion:nil];
@@ -396,9 +395,10 @@ NSBundle *YTFlagsBundle() {
 %new
 - (void)importPreferences {
     self.isImportingPreferences = YES;
-    UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] 
-        initWithDocumentTypes:@[@"public.xml", @"com.apple.property-list"] 
-        inMode:UIDocumentPickerModeImport];
+    UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes:@[
+        [UTType XML],
+        [UTType propertyList]
+    ]];
     picker.delegate = self;
     picker.allowsMultipleSelection = NO;
     YTSettingsViewController *settingsVC = [self valueForKey:@"_dataDelegate"];
