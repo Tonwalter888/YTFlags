@@ -142,7 +142,7 @@ NSBundle *YTFlagsBundle() {
     YTSettingsViewController *settingsViewController = [self valueForKey:@"_settingsViewControllerDelegate"];
 
     // Tweak Version (at the top)
-    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.2.0"
+    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.2.1"
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
@@ -152,17 +152,17 @@ NSBundle *YTFlagsBundle() {
     [sectionItems addObject:tweakVersion];
 
     // Preferences management header
-    YTSettingsSectionItem *prefsHeader = [YTSettingsSectionItemClass itemWithTitle:LOC(@"PREFERENCES")
+    YTSettingsSectionItem *perfsMgr = [YTSettingsSectionItemClass itemWithTitle:LOC(@"PREFERENCES")
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
         selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
             return NO;
         }];
-    [sectionItems addObject:prefsHeader];
+    [sectionItems addObject:perfsMgr];
 
     // Import preferences
-    YTSettingsSectionItem *importPrefs = [YTSettingsSectionItemClass itemWithTitle:LOC(@"IMPORT")
+    YTSettingsSectionItem *import = [YTSettingsSectionItemClass itemWithTitle:LOC(@"IMPORT")
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
@@ -178,10 +178,10 @@ NSBundle *YTFlagsBundle() {
             [alertView show];
             return YES;
         }];
-    [sectionItems addObject:importPrefs];
+    [sectionItems addObject:import];
 
     // Export preferences
-    YTSettingsSectionItem *exportPrefs = [YTSettingsSectionItemClass itemWithTitle:LOC(@"EXPORT")
+    YTSettingsSectionItem *export = [YTSettingsSectionItemClass itemWithTitle:LOC(@"EXPORT")
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
@@ -189,10 +189,10 @@ NSBundle *YTFlagsBundle() {
             [self exportPreferences];
             return YES;
         }];
-    [sectionItems addObject:exportPrefs];
+    [sectionItems addObject:export];
 
     // Restore defaults
-    YTSettingsSectionItem *restoreDefaults = [YTSettingsSectionItemClass itemWithTitle:LOC(@"RESTORE")
+    YTSettingsSectionItem *restore = [YTSettingsSectionItemClass itemWithTitle:LOC(@"RESTORE")
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
@@ -208,7 +208,7 @@ NSBundle *YTFlagsBundle() {
             [alertView show];
             return YES;
         }];
-    [sectionItems addObject:restoreDefaults];
+    [sectionItems addObject:restore];
 
     // Allows Background Playback
     YTSettingsSectionItem *backgroundPlayback = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ALLOWS_BACKGROUND_PLAYBACK")
