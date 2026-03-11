@@ -138,7 +138,6 @@ NSBundle *YTFlagsBundle() {
 %new(v@:@)
 - (void)updateYTFlagsSectionWithEntry:(id)entry {
     NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray array];
-    NSBundle *tweakBundle = YTFlagsBundle();
     Class YTSettingsSectionItemClass = %c(YTSettingsSectionItem);
     YTSettingsViewController *settingsViewController = [self valueForKey:@"_settingsViewControllerDelegate"];
 
@@ -396,8 +395,8 @@ NSBundle *YTFlagsBundle() {
 - (void)importPreferences {
     self.isImportingPreferences = YES;
     UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes:@[
-        [UTType XML],
-        [UTType propertyList]
+        UTType.xml,
+        UTType.propertyList
     ]];
     picker.delegate = self;
     picker.allowsMultipleSelection = NO;
