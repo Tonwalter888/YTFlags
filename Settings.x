@@ -7,8 +7,8 @@
 #import <YouTubeHeader/YTSettingsSectionItem.h>
 #import <YouTubeHeader/YTSettingsSectionItemManager.h>
 #import <YouTubeHeader/YTSettingsViewController.h>
-#import <YouTubeHeader/YTAlertView.h>
 #import <YouTubeHeader/YTToastResponderEvent.h>
+#import <YouTubeHeader/YTAlertView.h>
 #import <UIKit/UIKit.h>
 
 #define TweakName @"YTFlags"
