@@ -395,8 +395,8 @@ NSBundle *YTFlagsBundle() {
 - (void)importPreferences {
     self.isImportingPreferences = YES;
     UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes:@[
-        UTType.xml,
-        UTType.propertyList
+        [UTType typeWithIdentifier:@"public.xml"],
+        [UTType typeWithIdentifier:@"com.apple.property-list"]
     ]];
     picker.delegate = self;
     picker.allowsMultipleSelection = NO;
