@@ -9,6 +9,7 @@
 #import <YouTubeHeader/YTSettingsViewController.h>
 #import <YouTubeHeader/YTToastResponderEvent.h>
 #import <YouTubeHeader/YTAlertView.h>
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 #import <UIKit/UIKit.h>
 
 #define TweakName @"YTFlags"
@@ -450,3 +451,4 @@ NSBundle *YTFlagsBundle() {
     %init;
 
 }
+
