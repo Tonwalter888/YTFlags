@@ -1,5 +1,17 @@
-"ENABLED" = "Enables Tweak";
-"ENABLED_DESC" = "Turning this option on will activate the tweak";
+"PREFERENCES" = "Preferences";
+"IMPORT" = "Import preferences";
+"EXPORT" = "Export preferences";
+"RESTORE" = "Restore defaults settings";
+
+"WARNING" = "Warning";
+"YES" = "Yes";
+"CANCEL" = "Cancel";
+
+"IMPORT_CONFIRM" = "This will overwrite your current settings. Continue?";
+"RESTORE_CONFIRM" = "Restore all preferences to default settings?";
+
+"IMPORT_SUCCESS" = "Preferences imported successfully";
+"IMPORT_FAILED" = "Failed to import preferences";
 
 "ALLOWS_BACKGROUND_PLAYBACK" = "Allows Background Playback";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Allows YouTube to play videos in the background";

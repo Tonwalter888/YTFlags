@@ -3,7 +3,6 @@
 
 #import <Foundation/Foundation.h>
 
-extern BOOL EnablesTweak();
 extern BOOL Bedtime();
 extern BOOL Watching();
 extern BOOL AllowsBackgroundPlayback();
@@ -222,8 +221,3 @@ extern BOOL DisablesNewMiniPlayer();
 %hook YTIRenderer
 - (BOOL)hasAppPromoAdCtaRenderer { return HideAdsBadges() ? NO : %orig; }
 %end
-
-%ctor {
-    if (!EnablesTweak()) return;
-    %init;
-}
