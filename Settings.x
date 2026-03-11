@@ -449,6 +449,4 @@ NSBundle *YTFlagsBundle() {
 %ctor {
     defaults = [NSUserDefaults standardUserDefaults];
     %init;
-
 }
-
