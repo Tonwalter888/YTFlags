@@ -126,7 +126,7 @@ NSBundle *YTFlagsBundle() {
 %hook YTSettingsSectionItemManager
 
 %new
-- (void)setisImportingPreferencesForYTFlags:(BOOL)isImportingPreferencesForYTFlags {
+- (void)setIsImportingPreferencesForYTFlags:(BOOL)isImportingPreferencesForYTFlags {
     objc_setAssociatedObject(self, @selector(isImportingPreferencesForYTFlags), @(isImportingPreferencesForYTFlags), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -178,7 +178,7 @@ NSBundle *YTFlagsBundle() {
         detailTextBlock:nil
         selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
             YTAlertView *alertView = [%c(YTAlertView) confirmationDialogWithAction:^{
-                [self importPreferences];
+                [self importPreferencesForYTFlags];
             }
             actionTitle:LOC(@"YES")
             cancelAction:^{}
@@ -196,7 +196,7 @@ NSBundle *YTFlagsBundle() {
         accessibilityIdentifier:nil
         detailTextBlock:nil
         selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
-            [self exportPreferences];
+            [self exportPreferencesForYTFlags];
             return YES;
         }];
     [sectionItems addObject:export];
@@ -208,7 +208,7 @@ NSBundle *YTFlagsBundle() {
         detailTextBlock:nil
         selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
             YTAlertView *alertView = [%c(YTAlertView) confirmationDialogWithAction:^{
-                [self restoreDefaults];
+                [self restoreDefaultsForYTFlags];
             }
             actionTitle:LOC(@"YES")
             cancelAction:^{}
