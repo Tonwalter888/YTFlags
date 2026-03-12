@@ -33,11 +33,11 @@
 static const NSInteger TweakSection = 'ytfl';
 
 @interface YTSettingsSectionItemManager (YTFlags) <UIDocumentPickerDelegate>
-@property (nonatomic, assign) BOOL isImportingPreferences;
+@property (nonatomic, assign) BOOL isImportingPreferencesForYTFlags;
 - (void)updateYTFlagsSectionWithEntry:(id)entry;
-- (void)exportPreferences;
-- (void)importPreferences;
-- (void)restoreDefaults;
+- (void)exportPreferencesForYTFlags;
+- (void)importPreferencesForYTFlags;
+- (void)restoreDefaultsForYTFlags;
 @end
 
 NSUserDefaults *defaults;
@@ -126,13 +126,13 @@ NSBundle *YTFlagsBundle() {
 %hook YTSettingsSectionItemManager
 
 %new
-- (void)setIsImportingPreferences:(BOOL)isImportingPreferences {
-    objc_setAssociatedObject(self, @selector(isImportingPreferences), @(isImportingPreferences), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setisImportingPreferencesForYTFlags:(BOOL)isImportingPreferencesForYTFlags {
+    objc_setAssociatedObject(self, @selector(isImportingPreferencesForYTFlags), @(isImportingPreferencesForYTFlags), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 %new
-- (BOOL)isImportingPreferences {
-    return [objc_getAssociatedObject(self, @selector(isImportingPreferences)) boolValue];
+- (BOOL)isImportingPreferencesForYTFlags {
+    return [objc_getAssociatedObject(self, @selector(isImportingPreferencesForYTFlags)) boolValue];
 }
 
 %new(v@:@)
@@ -151,15 +151,25 @@ NSBundle *YTFlagsBundle() {
         }];
     [sectionItems addObject:tweakVersion];
 
-    // Preferences management header
-    YTSettingsSectionItem *perfsMgr = [YTSettingsSectionItemClass itemWithTitle:LOC(@"PREFERENCES")
+    // Tweak Version (at the top)
+    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.2.1"
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
         selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
             return NO;
         }];
-    [sectionItems addObject:perfsMgr];
+    [sectionItems addObject:tweakVersion];
+
+    // Preferences (Adapted from Gonerino by castdrian)
+    YTSettingsSectionItem *preferences = [YTSettingsSectionItemClass itemWithTitle:@"\t"
+        titleDescription:LOC(@"PREFERENCES")
+        accessibilityIdentifier:nil
+        detailTextBlock:nil
+        selectBlock:^BOOL(YTSettingsCell *cell, NSUInteger sectionItemIndex) {
+            return NO;
+        }];
+    [sectionItems addObject:preferences];
 
     // Import preferences
     YTSettingsSectionItem *import = [YTSettingsSectionItemClass itemWithTitle:LOC(@"IMPORT")
@@ -209,6 +219,16 @@ NSBundle *YTFlagsBundle() {
             return YES;
         }];
     [sectionItems addObject:restore];
+
+    // Features (Adapted from Gonerino by castdrian)
+    YTSettingsSectionItem *features = [YTSettingsSectionItemClass itemWithTitle:@"\t"
+        titleDescription:LOC(@"FEATURES")
+        accessibilityIdentifier:nil
+        detailTextBlock:nil
+        selectBlock:^BOOL(YTSettingsCell *cell, NSUInteger sectionItemIndex) {
+            return NO;
+        }];
+    [sectionItems addObject:features];
 
     // Allows Background Playback
     YTSettingsSectionItem *backgroundPlayback = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ALLOWS_BACKGROUND_PLAYBACK")
@@ -359,8 +379,7 @@ NSBundle *YTFlagsBundle() {
 }
 
 %new
-- (void)exportPreferences {
-    self.isImportingPreferences = NO;
+- (void)exportPreferencesForYTFlags {
     // Get all preferences
     NSDictionary *prefs = [defaults dictionaryRepresentation];
     // Filter only YTFlags keys
@@ -392,8 +411,8 @@ NSBundle *YTFlagsBundle() {
 }
 
 %new
-- (void)importPreferences {
-    self.isImportingPreferences = YES;
+- (void)importPreferencesForYTFlags {
+    self.isImportingPreferencesForYTFlags = YES;
     UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes:@[
         [UTType typeWithIdentifier:@"public.xml"],
         [UTType typeWithIdentifier:@"com.apple.property-list"]
@@ -405,10 +424,10 @@ NSBundle *YTFlagsBundle() {
 }
 
 %new
-- (void)documentPicker:(UIDocumentPickerViewController *)controller 
+- (void)documentPickerForYTFlags:(UIDocumentPickerViewController *)controller 
     didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
     // Only process for import operations, ignore export
-    if (!self.isImportingPreferences || urls.count == 0) return;
+    if (!self.isImportingPreferencesForYTFlags || urls.count == 0) return;
     NSURL *fileURL = urls[0];
     NSDictionary *importedPrefs = [NSDictionary dictionaryWithContentsOfURL:fileURL];
     if (importedPrefs) {
@@ -422,11 +441,11 @@ NSBundle *YTFlagsBundle() {
     } else {
         [[%c(YTToastResponderEvent) eventWithMessage:LOC(@"IMPORT_FAILED") firstResponder:[self parentResponder]] send];
     }
+    self.isImportingPreferencesForYTFlags = NO;
 }
 
 %new
-- (void)restoreDefaults {
-    self.isImportingPreferences = NO;
+- (void)restoreDefaultsForYTFlags {
     NSArray *keys = @[@"IAmNotGonnaSleep",
                       @"NoWatchingShelf",
                       @"EnableBackgroundPlayback",
