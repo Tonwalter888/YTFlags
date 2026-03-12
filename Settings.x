@@ -430,7 +430,7 @@ NSBundle *YTFlagsBundle() {
         }
         [defaults synchronize];
         // Refresh the settings
-        [self updateYTFlagsSectionWithEntry:nil];
+        [self updateYTFlagsSectionWithEntry:entry];
         // Show success message
         [[%c(YTToastResponderEvent) eventWithMessage:LOC(@"IMPORT_SUCCESS") firstResponder:[self parentResponder]] send];
     } else {
@@ -458,7 +458,7 @@ NSBundle *YTFlagsBundle() {
     }
     [defaults synchronize];
     // Refresh the settings
-    [self updateYTFlagsSectionWithEntry:nil];
+    [self updateYTFlagsSectionWithEntry:entry];
 }
 
 %end
