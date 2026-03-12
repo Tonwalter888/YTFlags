@@ -151,16 +151,6 @@ NSBundle *YTFlagsBundle() {
         }];
     [sectionItems addObject:tweakVersion];
 
-    // Tweak Version (at the top)
-    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.2.1"
-        titleDescription:nil
-        accessibilityIdentifier:nil
-        detailTextBlock:nil
-        selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
-            return NO;
-        }];
-    [sectionItems addObject:tweakVersion];
-
     // Preferences (Adapted from Gonerino by castdrian)
     YTSettingsSectionItem *preferences = [YTSettingsSectionItemClass itemWithTitle:@"\t"
         titleDescription:LOC(@"PREFERENCES")
