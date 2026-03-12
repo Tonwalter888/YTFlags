@@ -13,6 +13,7 @@
 "IMPORT_SUCCESS" = "Preferences imported successfully";
 "IMPORT_FAILED" = "Failed to import preferences";
 
+"FEATURES" = "Features";
 "ALLOWS_BACKGROUND_PLAYBACK" = "Allows Background Playback";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Allows YouTube to play videos in the background";
 

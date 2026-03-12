@@ -13,6 +13,7 @@
 "IMPORT_SUCCESS" = "นำเข้าการตั้งค่าสำเร็จ";
 "IMPORT_FAILED" = "ไม่สามารถนำเข้าการตั้งค่าได้";
 
+"FEATURES" = "ฟีเจอร์";
 "ALLOWS_BACKGROUND_PLAYBACK" = "อนุญาตให้เล่นเบื้องหลัง";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "อนุญาตให้ YouTube เล่นวิดีโอในเบื้องหลังได้";
 

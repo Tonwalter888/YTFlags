@@ -1,6 +1,8 @@
 // Settings.x
-// Thanks to the original codes from YTUHD by PoomSmart - https://github.com/PoomSmart/YTUHD/blob/0e735616fd8fc6546339da7fdc78466f16f23ffd/Settings.x
-// And Thanks to the original codes from YTweaks by fosterbarnes for the tweak header and tweak preferences logics - https://github.com/fosterbarnes/YTweaks/blob/9a6b4df48981d69e36feb774852e46c49dd31b32/Settings.x
+// Special Thanks
+// YTUHD by PoomSmart (Settings strctures) - https://github.com/PoomSmart/YTUHD/blob/0e735616fd8fc6546339da7fdc78466f16f23ffd/Settings.x
+// YTweaks by fosterbarnes (Tweak header and tweak preferences logics) - https://github.com/fosterbarnes/YTweaks/blob/9a6b4df48981d69e36feb774852e46c49dd31b32/Settings.x
+// Gonerino by castdrian (Settings headers) - https://github.com/castdrian/Gonerino/blob/6eb749e8b0ef5ae6b2cea494156c6f8dbcb4ba4f/headers/Settings.h#L22
 #import <PSHeader/Misc.h>
 #import <YouTubeHeader/YTSettingsGroupData.h>
 #import <YouTubeHeader/YTSettingsPickerViewController.h>
@@ -142,7 +144,7 @@ NSBundle *YTFlagsBundle() {
     YTSettingsViewController *settingsViewController = [self valueForKey:@"_settingsViewControllerDelegate"];
 
     // Tweak Version (at the top)
-    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.2.1"
+    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.2.0"
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
@@ -210,7 +212,7 @@ NSBundle *YTFlagsBundle() {
         }];
     [sectionItems addObject:restore];
 
-    // Features (Adapted from Gonerino by castdrian)
+    // Features header (Adapted from Gonerino by castdrian)
     YTSettingsSectionItem *features = [YTSettingsSectionItemClass itemWithTitle:@"\t"
         titleDescription:LOC(@"FEATURES")
         accessibilityIdentifier:nil
@@ -370,6 +372,7 @@ NSBundle *YTFlagsBundle() {
 
 %new
 - (void)exportPreferencesForYTFlags {
+    self.isImportingPreferencesForYTFlags = NO;
     // Get all preferences
     NSDictionary *prefs = [defaults dictionaryRepresentation];
     // Filter only YTFlags keys
@@ -436,6 +439,7 @@ NSBundle *YTFlagsBundle() {
 
 %new
 - (void)restoreDefaultsForYTFlags {
+    self.isImportingPreferencesForYTFlags = NO;
     NSArray *keys = @[@"IAmNotGonnaSleep",
                       @"NoWatchingShelf",
                       @"EnableBackgroundPlayback",
