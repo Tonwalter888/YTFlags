@@ -429,6 +429,8 @@ NSBundle *YTFlagsBundle() {
             [defaults setObject:importedPrefs[key] forKey:key];
         }
         [defaults synchronize];
+        // Refresh the settings
+        [self updateYTFlagsSectionWithEntry:nil];
         // Show success message
         [[%c(YTToastResponderEvent) eventWithMessage:LOC(@"IMPORT_SUCCESS") firstResponder:[self parentResponder]] send];
     } else {
@@ -455,6 +457,8 @@ NSBundle *YTFlagsBundle() {
         [defaults removeObjectForKey:key];
     }
     [defaults synchronize];
+    // Refresh the settings
+    [self updateYTFlagsSectionWithEntry:nil];
 }
 
 %end
