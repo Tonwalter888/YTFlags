@@ -419,10 +419,7 @@ NSBundle *YTFlagsBundle() {
 %new
 - (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
     // Only process for import operations, ignore export
-    if (!self.isImportingPreferencesForYTFlags) {
-        %orig; // Orig for YTweaks
-        return;
-    } else if (urls.count == 0) { return; }
+    if (!self.isImportingPreferencesForYTFlags || urls.count == 0) { return; }
     NSURL *fileURL = urls[0];
     NSDictionary *importedPrefs = [NSDictionary dictionaryWithContentsOfURL:fileURL];
     if (importedPrefs) {
