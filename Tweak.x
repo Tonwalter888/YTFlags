@@ -3,6 +3,9 @@
 
 #import <Foundation/Foundation.h>
 
+@interface YTReelPlayerViewController : NSObject
+@end
+
 extern BOOL EnablesTweak();
 extern BOOL Bedtime();
 extern BOOL Watching();
