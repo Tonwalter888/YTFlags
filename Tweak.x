@@ -80,13 +80,9 @@ extern BOOL DisablesNewMiniPlayer();
 %end
 
 %hook YTReelPlayerViewController
-- (BOOL)isPictureInPictureAllowed {
-    if (DisablesShortsPiP()) {
-        [self setValue:@(NO) forKey:@"_enablePlayerIsPictureInPictureAllowed"];
-        return NO;
-    }
-    return %orig;
-}
+- (BOOL)isPictureInPictureAllowed { return DisablesShortsPiP() ? NO : %orig; }
+// Hide first-time using Shorts (The "how to swipe" UI)
+- (BOOL)isFirstTimeEduAvailable { return HideYouTubeEdu() ? NO : %orig; }
 %end
 
 %hook YTReelWatchRootViewController
