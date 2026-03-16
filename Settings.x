@@ -417,8 +417,7 @@ NSBundle *YTFlagsBundle() {
 }
 
 %new
-- (void)documentPickerForYTFlags:(UIDocumentPickerViewController *)controller 
-    didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
+- (void)documentPickerForYTFlags:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
     // Only process for import operations, ignore export
     if (!self.isImportingPreferencesForYTFlags || urls.count == 0) return;
     NSURL *fileURL = urls[0];
