@@ -80,6 +80,15 @@ extern BOOL DisablesNewMiniPlayer();
 - (BOOL)isPictureInPictureAllowed { return DisablesShortsPiP() ? NO : %orig; }
 %end
 
+%hook YTReelWatchRootViewController
+- (void)switchToPictureInPicture { 
+    if (DisablesShortsPiP()) {
+        return;
+    }
+    %orig;
+}
+%end
+
 // Allows background playback
 %hook YTPlaybackData
 - (BOOL)isPlayableInBackground { return AllowsBackgroundPlayback() ? YES : %orig; }

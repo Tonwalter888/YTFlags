@@ -9,7 +9,6 @@
 #import <YouTubeHeader/YTSettingsViewController.h>
 
 #define TweakName @"YTFlags"
-#define TWEAK_VERSION 1.1.10
 
 #define EnablesTweakKey @"ActivateTweak"
 #define BedtimeKey @"IAmNotGonnaSleep"
@@ -130,8 +129,7 @@ NSBundle *YTFlagsBundle() {
 
     // Tweak Version (at the top)
     // Thanks to the original codes from YTweaks by fosterbarnes - https://github.com/fosterbarnes/YTweaks/blob/e921591a89b87256a2b37c4788bd99282f70d9c2/Settings.x
-    NSString *versionString = [NSString stringWithFormat:@"YTFlags v%s", TOSTRING(TWEAK_VERSION)];
-    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:versionString
+    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.1.11"
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
