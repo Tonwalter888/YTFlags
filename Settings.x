@@ -417,9 +417,12 @@ NSBundle *YTFlagsBundle() {
 }
 
 %new
-- (void)documentPickerForYTFlags:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
+- (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
     // Only process for import operations, ignore export
-    if (!self.isImportingPreferencesForYTFlags || urls.count == 0) return;
+    if (!self.isImportingPreferencesForYTFlags) {
+        %orig; // Orig for YTweaks
+        return;
+    } else if (urls.count == 0) { return; }
     NSURL *fileURL = urls[0];
     NSDictionary *importedPrefs = [NSDictionary dictionaryWithContentsOfURL:fileURL];
     if (importedPrefs) {
@@ -428,8 +431,6 @@ NSBundle *YTFlagsBundle() {
             [defaults setObject:importedPrefs[key] forKey:key];
         }
         [defaults synchronize];
-        // Refresh the settings
-        [self updateYTFlagsSectionWithEntry:entry];
         // Show success message
         [[%c(YTToastResponderEvent) eventWithMessage:LOC(@"IMPORT_SUCCESS") firstResponder:[self parentResponder]] send];
     } else {
@@ -456,8 +457,6 @@ NSBundle *YTFlagsBundle() {
         [defaults removeObjectForKey:key];
     }
     [defaults synchronize];
-    // Refresh the settings
-    [self updateYTFlagsSectionWithEntry:entry];
 }
 
 %end
