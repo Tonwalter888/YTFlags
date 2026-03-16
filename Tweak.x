@@ -80,9 +80,12 @@ extern BOOL DisablesNewMiniPlayer();
 %end
 
 %hook YTReelPlayerViewController
-- (BOOL)isPictureInPictureAllowed { 
-    [self setValue:@(NO) forKey:@"_enablePlayerIsPictureInPictureAllowed"];
-    return DisablesShortsPiP() ? NO : %orig; 
+- (BOOL)isPictureInPictureAllowed {
+    if (DisablesShortsPiP()) {
+        [self setValue:@(NO) forKey:@"_enablePlayerIsPictureInPictureAllowed"];
+        return NO;
+    }
+    return %orig;
 }
 %end
 
