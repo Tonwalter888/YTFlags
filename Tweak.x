@@ -83,12 +83,7 @@ extern BOOL DisablesNewMiniPlayer();
 %end
 
 %hook YTReelWatchRootViewController
-- (void)switchToPictureInPicture { 
-    if (DisablesShortsPiP()) {
-        return;
-    }
-    %orig;
-}
+- (void)switchToPictureInPicture { if (!DisablesShortsPiP()) %orig; }
 %end
 
 // Allows background playback
