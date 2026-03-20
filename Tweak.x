@@ -15,6 +15,7 @@ extern BOOL HideAdsBadges();
 extern BOOL HideYouTubeEdu();
 extern BOOL FixSlowsMiniPlayer();
 extern BOOL DisablesNewMiniPlayer();
+extern BOOL SnackBar();
 
 // Enables PiP, modifies the miniplayer, and hide tips
 %hook YTColdConfig
@@ -99,10 +100,20 @@ extern BOOL DisablesNewMiniPlayer();
 // Prevent YouTube from asking "Are you there?"
 %hook YTYouThereController
 - (BOOL)shouldShowYouTherePrompt { return HideAreYouThereDialog() ? NO : %orig; }
+- (void)showYouTherePrompt { if (!HideAreYouThereDialog()) %orig; }
 %end
 
 %hook YTYouThereControllerImpl
 - (BOOL)shouldShowYouTherePrompt { return HideAreYouThereDialog() ? NO : %orig; }
+- (void)showYouTherePrompt { if (!HideAreYouThereDialog()) %orig; }
+%end
+
+// Disables Snackbar
+%hook GOOHUDManagerInternal
+- (id)sharedInstance { return SnackBar() ? nil : %orig; }
+- (void)showMessageMainThread:(id)arg  { if (!SnackBar()) %orig; }
+- (void)activateOverlay:(id)arg { if (!SnackBar()) %orig; }
+- (void)displayHUDViewForMessage:(id)arg { if (!SnackBar()) %orig; }
 %end
 
 // Prevent YouTube from asking to update the app

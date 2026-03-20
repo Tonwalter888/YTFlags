@@ -1,7 +1,7 @@
-"ENABLED" = "Enables Tweak";
+"ENABLED" = "Enables tweak";
 "ENABLED_DESC" = "Turning this option on will activate the tweak";
 
-"ALLOWS_BACKGROUND_PLAYBACK" = "Allows Background Playback";
+"ALLOWS_BACKGROUND_PLAYBACK" = "Allows background playback";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Allows YouTube to play videos in the background";
 
 "ENABLES_PIP" = "Enables PiP";
@@ -10,26 +10,29 @@
 "DISABLES_SHORTS_PIP" = "Disables Shorts PiP";
 "DISABLES_SHORTS_PIP_DESC" = "Try to disables Shorts PiP, this may not 100% disables it";
 
-"BLOCK_UPGRADE_DIALOGS" = "Block Upgrade Dialogs";
+"BLOCK_UPGRADE_DIALOGS" = "Block upgrade dialogs";
 "BLOCK_UPGRADE_DIALOGS_DESC" = "Block the YouTube dialogs that are telling you to upgrade the app";
 
-"ARE_YOU_THERE_DIALOG" = "Hide Are you there? Dialog";
-"ARE_YOU_THERE_DIALOG_DESC" = "Hide the dialog when you are inactive to the app";
+"ARE_YOU_THERE_DIALOG" = "Hide Are you there? dialog";
+"ARE_YOU_THERE_DIALOG_DESC" = "Hide the dialog when you are inactive to the app for too long";
 
-"HIDE_ADS_BADGES" = "Hide Ads Badges Dialogs";
+"HIDE_ADS_BADGES" = "Hide ads badges dialogs";
 "HIDE_ADS_BADGES_DESC" = "Hide ads badges dialogs, try to hide AI things, and much more";
 
-"HIDE_YOUTUBE_EDU" = "Hide YouTube Educations";
+"HIDE_YOUTUBE_EDU" = "Hide YouTube educations";
 "HIDE_YOUTUBE_EDU_DESC" = "Hide educations when you are using the app/features in the first time or reinstall the app";
 
-"FIX_SLOWS_MINIPLAYER" = "Fix Slows Miniplayer";
-"FIX_SLOWS_MINIPLAYER_DESC" = "Fix the miniplayer slows to expand the video, this only works in older YouTube versions";
+"FIX_SLOWS_MINIPLAYER" = "Fixes slows miniplayer";
+"FIX_SLOWS_MINIPLAYER_DESC" = "Fixes the miniplayer slows to expand the video, this only works in older YouTube versions";
 
-"DISABLES_NEW_MINIPLAYER" = "Disables New Miniplayer";
+"DISABLES_NEW_MINIPLAYER" = "Disables new miniplayer";
 "DISABLES_NEW_MINIPLAYER_DESC" = "Use old-style miniplayer instead of the new one, this only works in older YouTube versions";
 
-"BEDTIME" = "Hide Bedtime Reminders";
+"BEDTIME" = "Hide bedtime reminders";
 "BEDTIME_DESC" = "Hide bedtime reminders panels when YouTube tries to show them up";
 
-"WATCHING" = "Hide Continue Watching Section";
+"WATCHING" = "Hide Continue watching section";
 "WATCHING_DESC" = "Hide Continue Watcing section in feeds such as Home or when searching videos"; 
+
+"SNACK_BAR" = "Disables snack bar";
+"SNACK_BAR_DESC" = "Disables snack bar when pressing some buttons or do something in the app";

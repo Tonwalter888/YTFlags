@@ -22,6 +22,7 @@
 #define HideYouTubeEduKey @"HideYouTubeEducations"
 #define FixSlowsMiniPlayerKey @"FixSlowsPlayer"
 #define DisablesNewMiniPlayerKey @"DisablesNewStyleMiniPlayer"
+#define DisablesSnackBarKey @"DisablesAnnoyingYTHUD"
 
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
 #define STRINGIFY(x) #x
@@ -81,6 +82,10 @@ BOOL Watching() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:WatchingKey];
 }
 
+BOOL SnackBar() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:DisablesSnackBarKey];
+}
+
 NSBundle *YTFlagsBundle() {
     static NSBundle *bundle = nil;
     static dispatch_once_t onceToken;
@@ -129,7 +134,7 @@ NSBundle *YTFlagsBundle() {
 
     // Tweak Version (at the top)
     // Thanks to the original codes from YTweaks by fosterbarnes - https://github.com/fosterbarnes/YTweaks/blob/e921591a89b87256a2b37c4788bd99282f70d9c2/Settings.x
-    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.1.15"
+    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.1.16"
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
@@ -281,6 +286,18 @@ NSBundle *YTFlagsBundle() {
         }
         settingItemId:0];
     [sectionItems addObject:bedtime];
+
+    // Disables Snackbar
+    YTSettingsSectionItem *snackBar = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"SNACK_BAR")
+        titleDescription:LOC(@"SNACK_BAR_DESC")
+        accessibilityIdentifier:nil
+        switchOn:SnackBar()
+        switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:DisablesSnackBarKey];
+            return YES;
+        }
+        settingItemId:0];
+    [sectionItems addObject:snackBar];
 
     if ([settingsViewController respondsToSelector:@selector(setSectionItems:forCategory:title:icon:titleDescription:headerHidden:)]) {
         YTIIcon *icon = [%c(YTIIcon) new];
