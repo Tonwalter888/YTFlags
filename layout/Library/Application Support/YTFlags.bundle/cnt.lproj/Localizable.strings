@@ -1,0 +1,38 @@
+"ENABLED" = "啟用插件";
+"ENABLED_DESC" = "開啟這選項將啟用此插件";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "允許背景播放";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "允許YouTube在背景播放影片";
+
+"ENABLES_PIP" = "啟用畫中畫";
+"ENABLES_PIP_DESC" = "啟用畫中畫可以讓影片在YouTube應用外繼續播放影片";
+
+"DISABLES_SHORTS_PIP" = "停用短視頻畫中畫";
+"DISABLES_SHORTS_PIP_DESC" = "嘗試停止短視頻畫中畫, 有可能不完全停止此功能";
+
+"BLOCK_UPGRADE_DIALOGS" = "阻止更新對話框";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "阻止YouTube彈出更新對話框";
+
+"ARE_YOU_THERE_DIALOG" = "隱藏 你還在嗎? 對話框";
+"ARE_YOU_THERE_DIALOG_DESC" = "當您長時間未使用應用程式時，隱藏提示對話框";
+
+"HIDE_ADS_BADGES" = "隱藏廣告徽章對話框";
+"HIDE_ADS_BADGES_DESC" = "隱藏廣告徽章對話框，嘗試隱藏人工智能相關內容，以及更多內容";
+
+"HIDE_YOUTUBE_EDU" = "隱藏YouTube使用指南";
+"HIDE_YOUTUBE_EDU_DESC" = "首次使用應用程式/功能或重新安裝應用程式時，隱藏使用指南";
+
+"FIX_SLOWS_MINIPLAYER" = "修復了迷你播放器運行緩慢";
+"FIX_SLOWS_MINIPLAYER_DESC" = "修復迷你播放器在展開影片是運行緩慢的問題，只適用於比較舊的YouTube版本";
+
+"DISABLES_NEW_MINIPLAYER" = "停用新款迷你播放器";
+"DISABLES_NEW_MINIPLAYER_DESC" = "使用舊款迷你播放器, 只適用於比較舊的YouTube版本";
+
+"BEDTIME" = "隱藏就寢提醒";
+"BEDTIME_DESC" = "當YouTube想顯示就寢提醒時隱藏他們";
+
+"WATCHING" = "隱藏繼續觀看";
+"WATCHING_DESC" = "在主頁和搜尋等頁面隱藏繼續觀看建議"; 
+
+"SNACK_BAR" = "隱藏提示條";
+"SNACK_BAR_DESC" = "當你在按一些按鈕或在進行一些指令時隱藏一些會出現的提示條";
