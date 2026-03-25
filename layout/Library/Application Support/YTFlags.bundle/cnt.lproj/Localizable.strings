@@ -1,5 +1,5 @@
 "ENABLED" = "啟用插件";
-"ENABLED_DESC" = "開啟這選項將啟用此插件";
+"ENABLED_DESC" = "開啟這選項將啟用此插件 需要重啟應用程式。";
 
 "ALLOWS_BACKGROUND_PLAYBACK" = "允許背景播放";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "允許YouTube在背景播放影片";
