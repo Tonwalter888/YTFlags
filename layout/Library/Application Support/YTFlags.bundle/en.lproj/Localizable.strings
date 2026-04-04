@@ -1,5 +1,6 @@
+"RESTART_BAR" = "Any changes to these settings are required to restart the app to take effect.";
 "ENABLED" = "Enables tweak";
-"ENABLED_DESC" = "Turning this option on will activate the tweak. App restart is requried.";
+"ENABLED_DESC" = "Turning this option on will activate the tweak.";
 
 "ALLOWS_BACKGROUND_PLAYBACK" = "Allows background playback";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Allows YouTube to play videos in the background.";
