@@ -8,7 +8,7 @@ Currently, these hooks are based on YouTube versions 19.49.5, 20.21.6, 21.04.2, 
 - Fix playback issues (For jailbroken and TrollStore users only)
 - Hide the "Are you there?" dialog
 - Hide upgrade dialogs
-- Hide YouTube Premium promotions (mostly)
+- Hide YouTube Premium promotions (Mostly)
 - Uses/Restores old miniplayer (Only for older YouTube versions)
 - Fixes miniplayer working slowly (Only for older YouTube versions)
 - Disables snack bar
