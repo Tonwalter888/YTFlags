@@ -496,11 +496,11 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 %end
 
 %hook YTSPromotionServiceBlockImpl
-- (BOOL)createPromotion:(id)arg1 writer:(id)arg2 error:(NSError **) { return HideAdsBadges() ? NO : %orig; }
+- (BOOL)createPromotion:(id)arg1 writer:(id)arg2 error:(NSError **)arg3 { return HideAdsBadges() ? NO : %orig; }
 %end
 
 %hook YTSPromotionServiceBlock
-- (BOOL)createPromotion:(id)arg1 writer:(id)arg2 error:(NSError **) { return HideAdsBadges() ? NO : %orig; }
+- (BOOL)createPromotion:(id)arg1 writer:(id)arg2 error:(NSError **)arg3 { return HideAdsBadges() ? NO : %orig; }
 %end
 
 %hook YTPromosheetController
@@ -595,10 +595,6 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 
 %hook YTWatchMiniBarControlsView
 - (void)setTitle:(id)arg1 byline:(id)arg2 showingPaidPromotion:(BOOL)arg3 showingPremiumBadge:(BOOL)arg4 { if (!HideAdsBadges()) %orig; }
-%end
-
-%hook YTWatchSurveyTriggerController
-- (id)initWithParentResponder:(id)arg1 promosheetController:(id)arg2 { return HideAdsBadges() ? nil : %orig; }
 %end
 
 %hook MDXFeatureFlags
