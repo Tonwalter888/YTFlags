@@ -23,6 +23,7 @@
 #define FixSlowsMiniPlayerKey @"FixSlowsPlayer"
 #define DisablesNewMiniPlayerKey @"DisablesNewStyleMiniPlayer"
 #define DisablesSnackBarKey @"DisablesAnnoyingYTHUD"
+#define VideoAdsKey @"RemoveVideoAds"
 
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
 #define STRINGIFY(x) #x
@@ -86,6 +87,10 @@ BOOL SnackBar() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:DisablesSnackBarKey];
 }
 
+BOOL VideoAds() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:VideoAdsKey];
+}
+
 NSBundle *YTFlagsBundle() {
     static NSBundle *bundle = nil;
     static dispatch_once_t onceToken;
@@ -137,7 +142,7 @@ NSBundle *YTFlagsBundle() {
 
     // Tweak Version (at the top)
     // Thanks to the original codes from YTweaks by fosterbarnes - https://github.com/fosterbarnes/YTweaks/blob/e921591a89b87256a2b37c4788bd99282f70d9c2/Settings.x
-    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.1.19"
+    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.1.20"
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
@@ -179,6 +184,18 @@ NSBundle *YTFlagsBundle() {
         }
         settingItemId:0];
     [sectionItems addObject:backgroundPlayback];
+
+    // Remove video ads
+    YTSettingsSectionItem *videoAds = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"VIDEO_ADS")
+        titleDescription:LOC(@"VIDEO_ADS_DESC")
+        accessibilityIdentifier:nil
+        switchOn:VideoAds()
+        switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:VideoAdsKey];
+            return YES;
+        }
+        settingItemId:0];
+    [sectionItems addObject:videoAds];
 
     // Enables PiP
     YTSettingsSectionItem *pip = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLES_PIP")

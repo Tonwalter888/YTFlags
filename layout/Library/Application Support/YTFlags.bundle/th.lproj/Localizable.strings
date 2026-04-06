@@ -8,6 +8,9 @@
 "ENABLES_PIP" = "เปิดใช้งาน PiP";
 "ENABLES_PIP_DESC" = "เปิดใช้งานโหมด PiP (การเล่นภาพซ้อนภาพ) เพื่อเล่นวิดีโอนอกแอป YouTube";
 
+"VIDEO_ADS" = "ลบโฆษณาวิดีโอ";
+"VIDEO_ADS_DESC" = "ลบโฆษณาวิดีโอ รวมถึง Shorts ด้วย";
+
 "DISABLES_SHORTS_PIP" = "ปิดใช้งาน PiP ของ Shorts";
 "DISABLES_SHORTS_PIP_DESC" = "พยายามปิดใช้งาน PiP สำหรับ Shorts อาจไม่สามารถปิดได้ 100%";
 

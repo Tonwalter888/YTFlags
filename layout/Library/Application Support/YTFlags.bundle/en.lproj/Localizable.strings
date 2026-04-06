@@ -5,6 +5,9 @@
 "ALLOWS_BACKGROUND_PLAYBACK" = "Allows background playback";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Allows YouTube to play videos in the background.";
 
+"VIDEO_ADS" = "Remove video ads";
+"VIDEO_ADS_DESC" = "Remove video ads including Shorts.";
+
 "ENABLES_PIP" = "Enables PiP";
 "ENABLES_PIP_DESC" = "Enables PiP (Picture-In-Picture) to play videos outsides the YouTube app.";
 

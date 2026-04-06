@@ -5,6 +5,9 @@
 "ALLOWS_BACKGROUND_PLAYBACK" = "允許背景播放";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "允許YouTube在背景播放影片";
 
+"VIDEO_ADS" = "移除影片廣告";
+"VIDEO_ADS_DESC" = "移除影片廣告，包含 Shorts 短影音。";
+
 "ENABLES_PIP" = "啟用畫中畫";
 "ENABLES_PIP_DESC" = "啟用畫中畫可以讓影片在YouTube應用外繼續播放影片";
 
