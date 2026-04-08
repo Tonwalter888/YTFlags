@@ -605,7 +605,7 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 %group NoContinShelf
 %hook YTCommuteShelfViewModel
 - (BOOL)shouldHideShelf { return YES; }
-- (id)initWithModel:(id)arg { return nil }
+- (id)initWithModel:(id)arg { return nil; }
 - (id)sectionRenderers { return nil; }
 - (id)delegate { return nil; }
 - (void)setDelegate:(id)arg {}
