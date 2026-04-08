@@ -26,8 +26,8 @@
 "HIDE_YOUTUBE_EDU" = "隱藏YouTube使用指南";
 "HIDE_YOUTUBE_EDU_DESC" = "首次使用應用程式/功能或重新安裝應用程式時，隱藏使用指南";
 
-"FIX_SLOWS_MINIPLAYER" = "修復了迷你播放器運行緩慢";
-"FIX_SLOWS_MINIPLAYER_DESC" = "修復迷你播放器在展開影片是運行緩慢的問題，只適用於比較舊的YouTube版本";
+"FIXES_SLOW_MINIPLAYER" = "修復了迷你播放器運行緩慢";
+"FIXES_SLOW_MINIPLAYER_DESC" = "修復迷你播放器在展開影片是運行緩慢的問題，只適用於比較舊的YouTube版本";
 
 "DISABLES_NEW_MINIPLAYER" = "停用新款迷你播放器";
 "DISABLES_NEW_MINIPLAYER_DESC" = "使用舊款迷你播放器, 只適用於比較舊的YouTube版本";

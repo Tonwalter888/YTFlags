@@ -26,8 +26,8 @@
 "HIDE_YOUTUBE_EDU" = "ซ่อนคำแนะนำของ YouTube";
 "HIDE_YOUTUBE_EDU_DESC" = "ซ่อนคำแนะนำเมื่อใช้งานแอปหรือฟีเจอร์ต่าง ๆ เป็นครั้งแรก หรือหลังจากติดตั้งแอปใหม่";
 
-"FIX_SLOWS_MINIPLAYER" = "แก้ปัญหา Miniplayer ช้า";
-"FIX_SLOWS_MINIPLAYER_DESC" = "แก้ปัญหา Miniplayer ขยายวิดีโอช้า ฟีเจอร์นี้ใช้ได้เฉพาะ YouTube เวอร์ชันเก่า";
+"FIXES_SLOW_MINIPLAYER" = "แก้ปัญหา Miniplayer ช้า";
+"FIXES_SLOW_MINIPLAYER_DESC" = "แก้ปัญหา Miniplayer ขยายวิดีโอช้า ฟีเจอร์นี้ใช้ได้เฉพาะ YouTube เวอร์ชันเก่า";
 
 "DISABLES_NEW_MINIPLAYER" = "ปิดใช้งาน Miniplayer แบบใหม่";
 "DISABLES_NEW_MINIPLAYER_DESC" = "ใช้ Miniplayer แบบเก่าแทนรูปแบบใหม่ ฟีเจอร์นี้ใช้ได้เฉพาะ YouTube เวอร์ชันเก่า";

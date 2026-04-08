@@ -1,6 +1,5 @@
 // Tweak.x
 // Some flags may not work as expected, as simply enabling or disabling them may not be enough.
-// TODO - Adjust codes to make it easier to read and modify.
 
 #import <Foundation/Foundation.h>
 #import <YouTubeHeader/_ASDisplayView.h>
@@ -15,19 +14,19 @@
 #import <YouTubeHeader/YTIShowFullscreenInterstitialCommand.h>
 
 extern BOOL EnablesTweak();
-extern BOOL Bedtime();
-extern BOOL Watching();
 extern BOOL AllowsBackgroundPlayback();
+extern BOOL VideoAds();
 extern BOOL EnablesPiP();
 extern BOOL DisablesShortsPiP();
 extern BOOL BlockUpgradeDialogs();
 extern BOOL HideAreYouThereDialog();
 extern BOOL HideAdsBadges();
 extern BOOL HideYouTubeEdu();
-extern BOOL FixSlowsMiniPlayer();
+extern BOOL FixesSlowMiniPlayer();
 extern BOOL DisablesNewMiniPlayer();
+extern BOOL Watching();
+extern BOOL Bedtime();
 extern BOOL SnackBar();
-extern BOOL VideoAds();
 
 static BOOL isProductList(YTICommand *command) {
     if ([command respondsToSelector:@selector(yt_showEngagementPanelEndpoint)]) {
@@ -107,53 +106,43 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
     return newArray;
 }
 
-// Enables PiP, modifies the miniplayer, and hide tips
+// Global hooks
 %hook YTColdConfig
-- (BOOL)addPipMenuItem { return EnablesPiP() ? YES : %orig; }
-- (BOOL)enablePipMenuItem { return EnablesPiP() ? YES : %orig; }
-- (BOOL)androidDisablePipBackgroundButtonForPremium { return EnablesPiP() ? NO : %orig; }
-- (BOOL)androidDisablePipForPremium { return EnablesPiP() ? NO : %orig; }
-- (BOOL)androidEnableShowSystemBedtimePromoHardcoded { return Bedtime() ? NO : %orig; }
-- (BOOL)cxClientDisableMementoPromotions { return HideAdsBadges() ? YES : %orig; }
-- (BOOL)enableIosFloatingMiniplayer { return DisablesNewMiniPlayer() ? NO : %orig; }
-- (BOOL)enableIosFloatingMiniplayerDoubleTapToResize { return FixSlowsMiniPlayer() ? NO : %orig; }
 - (BOOL)enableIosFreeStableVolume { return YES; }
 - (BOOL)enableIosLockMode { return YES; }
 - (BOOL)enableIosLockModeFixes { return YES; }
-- (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPicture { return DisablesShortsPiP() ? NO : %orig; }
-- (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPictureIos { return DisablesShortsPiP() ? NO : %orig; }
-- (BOOL)isPlaylistEntrypointUserEducationEnabled { return HideYouTubeEdu() ? NO : %orig; }
-- (BOOL)enableYouthereCommandsOnIos { return HideAreYouThereDialog() ? NO : %orig; }
-- (BOOL)immersiveWatchClientGlobalConfigIosEnableIwfEducationImpressionController { return HideYouTubeEdu() ? NO : %orig; }
-- (BOOL)showPipStyleMiniplayer { return EnablesPiP() ? NO : %orig; }
-- (BOOL)iosClientGlobalConfigIosEnablePipNavigationFromPlayerViewController { return EnablesPiP() ? YES : %orig; }
-%end
-
-%hook YTColdConfigWatchPlayerClientGlobalConfigImpl
-- (BOOL)enableIosFloatingMiniplayer { return DisablesNewMiniPlayer() ? NO : %orig; }
 %end
 
 %hook YTHotConfig
 - (BOOL)clientInfraClientConfigIosEnableFillingEncodedHacksInnertubeContext { return NO; }
-- (BOOL)iosPlayerClientSharedConfigEnableResumeOnHeadForImmersiveLiveInPip { return EnablesPiP() ? NO : %orig; }
-- (BOOL)iosPlayerClientSharedConfigEnableFullScreenAdsInPip { return EnablesPiP() ? NO : %orig; }
-- (BOOL)iosPlayerClientSharedConfigDefaultOffPremiumPip { return EnablesPiP() ? NO : %orig; }
-- (BOOL)iosPlayerClientSharedConfigDisableLockscreenControlsFromPip { return EnablesPiP() ? NO : %orig; }
-- (BOOL)iosPlayerClientSharedConfigSkipPipToggleOnStateChange { return EnablesPiP() ? NO : %orig; }
-- (BOOL)iosPlayerClientSharedConfigTouchEarlyAccessPipSetting { return EnablesPiP() ? YES : %orig; }
-- (BOOL)iosPlayerClientSharedConfigOffsetPipControllerTimeRangeWithSbdlCurrentTime { return EnablesPiP() ? NO : %orig; }
-- (BOOL)iosPlayerClientSharedConfigShowPipClingPromo { return HideAdsBadges() ? NO : %orig; }
-- (BOOL)liveChatEnableEngagementPanelPromo { return HideAdsBadges() ? NO : %orig; }
-- (BOOL)livestreamClientConfigEnableCreationModesPromosTriggered { return HideAdsBadges() ? NO : %orig; }
-- (BOOL)isAggressiveSwipeUserEducationEnabled { return HideYouTubeEdu() ? NO : %orig; }
-- (BOOL)shortsPlayerGlobalConfigAndroidDisableEducationOverlay { return HideYouTubeEdu() ? YES : %orig; }
-- (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPictureAllowedFromPlayer { return DisablesShortsPiP() ? NO : %orig; }
+%end
+
+%group BackgroundPlayback
+%hook YTIBackgroundOfflineSettingCategoryEntryRenderer
+%new(B@:)
+- (BOOL)isBackgroundEnabled { return YES; }
+%end
+
+%hook MLVideo
+- (BOOL)playableInBackground { return YES; }
+%end
+
+%hook YTIPlayabilityStatus
+- (BOOL)isPlayableInBackground { return YES; }
+%end
+
+%hook YTPlaybackData
+- (BOOL)isPlayableInBackground { return YES; }
+%end
+
+%hook YTIPlayerResponse
+- (BOOL)isPlayableInBackground { return YES; }
+%end
 %end
 
 // Remove video ads
 // YouTube-X - @PoomSmart https://github.com/PoomSmart/YouTube-X
 %group VideoAds
-
 %hook YTPlayerResponse
 %new(@@:)
 - (NSMutableArray *)playerAdsArray { return [NSMutableArray array]; }
@@ -177,11 +166,15 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 %end
 
 %hook YTAdsInnerTubeContextDecorator
-- (void)decorateContext:(id)context { %orig(nil); }
+- (void)decorateContext:(id)context {}
 %end
 
 %hook YTAccountScopedAdsInnerTubeContextDecorator
-- (void)decorateContext:(id)context { %orig(nil); }
+- (void)decorateContext:(id)context {}
+%end
+
+%hook YTIPlayerResponse
+- (BOOL)isMonetized { return NO; }
 %end
 
 %hook YTLocalPlaybackController
@@ -189,6 +182,10 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 %end
 
 %hook MDXSession
+- (void)adPlaying:(id)ad {}
+%end
+
+%hook MDXSessionImpl
 - (void)adPlaying:(id)ad {}
 %end
 
@@ -259,191 +256,129 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 %end
 %end
 
-// PiP hacks stuff
-%hook YTPlayerResponse
-- (BOOL)isPlayableInPictureInPicture { return EnablesPiP() ? YES : %orig; }
-- (BOOL)isPipOffByDefault { return EnablesPiP() ? NO : %orig; }
-- (BOOL)shouldPipResumeOnHead { return EnablesPiP() ? YES : %orig; }
+%group PiP
+%hook YTColdConfig
+- (BOOL)addPipMenuItem { return YES; }
+- (BOOL)enablePipMenuItem { return YES; }
+- (BOOL)androidDisablePipBackgroundButtonForPremium { return NO; }
+- (BOOL)androidDisablePipForPremium { return NO; }
+- (BOOL)showPipStyleMiniplayer { return NO; }
+- (BOOL)iosClientGlobalConfigIosEnablePipNavigationFromPlayerViewController { return YES; }
 %end
 
-%group BackgroundPlayback
-%hook YTIBackgroundOfflineSettingCategoryEntryRenderer
-%new(B@:)
-- (BOOL)isBackgroundEnabled { return YES; }
-%end
-%end
-
-%hook MLVideo
-- (BOOL)playableInBackground { return AllowsBackgroundPlayback() ? YES : %orig; }
+%hook YTHotConfig
+- (BOOL)iosPlayerClientSharedConfigEnableResumeOnHeadForImmersiveLiveInPip { return NO; }
+- (BOOL)iosPlayerClientSharedConfigEnableFullScreenAdsInPip { return NO; }
+- (BOOL)iosPlayerClientSharedConfigDefaultOffPremiumPip { return NO; }
+- (BOOL)iosPlayerClientSharedConfigDisableLockscreenControlsFromPip { return NO; }
+- (BOOL)iosPlayerClientSharedConfigSkipPipToggleOnStateChange { return NO; }
+- (BOOL)iosPlayerClientSharedConfigTouchEarlyAccessPipSetting { return YES; }
+- (BOOL)iosPlayerClientSharedConfigOffsetPipControllerTimeRangeWithSbdlCurrentTime { return NO; }
 %end
 
 %hook YTIPlayabilityStatus
-- (BOOL)isPlayableInBackground { return AllowsBackgroundPlayback() ? YES : %orig; }
-- (BOOL)isPlayableInPictureInPicture { return EnablesPiP() ? YES : %orig; }
+- (BOOL)isPlayableInPictureInPicture { return YES; }
+%end
+
+%hook YTPlayerResponse
+- (BOOL)isPlayableInPictureInPicture { return YES; }
+- (BOOL)isPipOffByDefault { return NO; }
+- (BOOL)shouldPipResumeOnHead { return YES; }
+%end
 %end
 
 // Try to disable Shorts PiP
+%group DisablesShortsPiP
+%hook YTColdConfig
+- (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPicture { return NO; }
+- (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPictureIos { return NO; }
+%end
+
+%hook YTHotConfig
+- (BOOL)shortsPlayerGlobalConfigEnableReelsPictureInPictureAllowedFromPlayer { return NO; }
+%end
+
 %hook YTReelModel
-- (BOOL)isPiPSupported { return DisablesShortsPiP() ? NO : %orig; }
+- (BOOL)isPiPSupported { return NO; }
 %end
 
 %hook YTReelPlayerViewController
-- (BOOL)isPictureInPictureAllowed { return DisablesShortsPiP() ? NO : %orig; }
-// Hide first-time using Shorts (The "how to swipe" UI)
-- (BOOL)isFirstTimeEduAvailable { return HideYouTubeEdu() ? NO : %orig; }
+- (BOOL)isPictureInPictureAllowed { return NO; }
 %end
 
 %hook YTReelWatchRootViewController
-- (void)switchToPictureInPicture { if (!DisablesShortsPiP()) %orig; }
+- (void)switchToPictureInPicture {}
 %end
-
-// Allows background playback
-%hook YTPlaybackData
-- (BOOL)isPlayableInBackground { return AllowsBackgroundPlayback() ? YES : %orig; }
-%end
-
-%hook YTIPlayerResponse
-- (BOOL)isPlayableInBackground { return AllowsBackgroundPlayback() ? YES : %orig; }
-- (BOOL)isMonetized { return HideAdsBadges() ? NO : %orig; }
-%end
-
-// Prevent YouTube from asking "Are you there?"
-%hook YTYouThereController
-- (BOOL)shouldShowYouTherePrompt { return HideAreYouThereDialog() ? NO : %orig; }
-- (void)showYouTherePrompt { if (!HideAreYouThereDialog()) %orig; }
-%end
-
-%hook YTYouThereControllerImpl
-- (BOOL)shouldShowYouTherePrompt { return HideAreYouThereDialog() ? NO : %orig; }
-- (void)showYouTherePrompt { if (!HideAreYouThereDialog()) %orig; }
-%end
-
-// Disables Snackbar
-%hook GOOHUDManagerInternal
-- (id)sharedInstance { return SnackBar() ? nil : %orig; }
-- (void)showMessageMainThread:(id)arg  { if (!SnackBar()) %orig; }
-- (void)activateOverlay:(id)arg { if (!SnackBar()) %orig; }
-- (void)displayHUDViewForMessage:(id)arg { if (!SnackBar()) %orig; }
 %end
 
 // Prevent YouTube from asking to update the app
+%group Upgrade
 %hook YTGlobalConfig
-- (BOOL)shouldBlockUpgradeDialog { return BlockUpgradeDialogs() ? YES : %orig; }
-- (BOOL)shouldShowUpgradeDialog { return BlockUpgradeDialogs() ? NO : %orig; }
-- (BOOL)shouldShowUpgrade { return BlockUpgradeDialogs() ? NO : %orig; }
-- (BOOL)shouldForceUpgrade { return BlockUpgradeDialogs() ? NO : %orig; }
+- (BOOL)shouldBlockUpgradeDialog { return YES; }
+- (BOOL)shouldShowUpgradeDialog { return NO; }
+- (BOOL)shouldShowUpgrade { return NO; }
+- (BOOL)shouldForceUpgrade { return NO; }
+%end
 %end
 
-// Hide "Continue watching" section in feeds
-%hook YTCommuteShelfViewModel
-- (BOOL)shouldHideShelf { return Watching() ? YES : %orig; }
-- (id)initWithModel:(id)arg { return Watching() ? nil : %orig; }
-- (id)sectionRenderers { return Watching() ? nil : %orig; }
-- (id)delegate { return Watching() ? nil : %orig; }
-- (void)setDelegate:(id)arg { if (!Watching()) %orig; }
-- (id)menu { return Watching() ? nil : %orig; }
+// Prevent YouTube from asking "Are you there?"
+%group AreYouThere
+%hook YTColdConfig
+- (BOOL)enableYouthereCommandsOnIos { return NO; }
 %end
 
-// Prevent YouTube from showing you how to use the app
-%hook GWACameraView
-- (BOOL)shouldShowInstructions { return HideYouTubeEdu() ? NO : %orig; }
+%hook YTYouThereController
+- (BOOL)shouldShowYouTherePrompt { return NO; }
+- (void)showYouTherePrompt {}
 %end
 
-%hook YTHintControllerImpl
-- (void)sendPromoEventWithAccept:(BOOL)arg1 sendClick:(BOOL)arg2 { if (!HideAdsBadges()) %orig; }
+%hook YTYouThereControllerImpl
+- (BOOL)shouldShowYouTherePrompt { return NO; }
+- (void)showYouTherePrompt {}
+%end
 %end
 
-%hook YTHintController
-- (void)sendPromoEventWithAccept:(BOOL)arg1 sendClick:(BOOL)arg2 { if (!HideAdsBadges()) %orig; }
+%group AdsBadges
+%hook YTColdConfig
+- (BOOL)cxClientDisableMementoPromotions { return YES; }
 %end
 
-%hook YTReelWatchEducationViewController
-- (BOOL)isEducationAvailable { return HideYouTubeEdu() ? NO : %orig; }
+%hook YTHotConfig
+- (BOOL)iosPlayerClientSharedConfigShowPipClingPromo { return NO; }
+- (BOOL)liveChatEnableEngagementPanelPromo { return NO; }
+- (BOOL)livestreamClientConfigEnableCreationModesPromosTriggered { return NO; }
 %end
 
-%hook YTFormfillFormHeaderView
-- (BOOL)shouldShowInstructions { return HideYouTubeEdu() ? NO : %orig; }
-%end
-
-%hook YTInlineMutedPlaybackPlayerOverlayViewController
-- (BOOL)shouldShowUserEducation { return HideYouTubeEdu() ? NO : %orig; }
-%end
-
-%hook YTLCEntryRequirementsViewController
-- (BOOL)shouldSkipIntroDialog { return HideYouTubeEdu() ? YES : %orig; }
-%end
-
-%hook YTInlineMutedPlaybackAudioIconView
-- (BOOL)enableUserEducation { return HideYouTubeEdu() ? NO : %orig; }
-%end
-
-%hook OGLEducationCappingServiceImpl
-- (BOOL)shouldShowQuickSwipeApdEducation { return HideYouTubeEdu() ? NO : %orig; }
-%end
-
-%hook YTNUXTooltipVisibility
-- (BOOL)shouldShowTooltip { return HideYouTubeEdu() ? NO : %orig; }
-%end
-
-%hook YTPostsQuizCollectionViewController
-- (BOOL)shouldShowMarkAnswerTooltip { return HideYouTubeEdu() ? NO : %orig; }
-%end
-
-// Hide AI things
-%hook YTShortsSharedGalleryPresentationView
-- (BOOL)shouldShowAiMontageButton { return HideAdsBadges() ? NO : %orig; }
-%end
-
-%hook YTShortsSharedGalleryPresentationViewController
-- (BOOL)shouldShowAiMontageButton { return HideAdsBadges() ? NO : %orig; }
-%end
-
-%hook YTMainAppVideoPlayerOverlayViewController
-- (BOOL)shouldEnableScrubberSlideUserEducation { return HideYouTubeEdu() ? NO : %orig; }
-- (BOOL)shouldShowScrubUserEducation { return HideYouTubeEdu() ? NO : %orig; }
-- (BOOL)shouldShowFineScrubbingUserEdu { return HideYouTubeEdu() ? NO : %orig; }
-%end
-
-%hook MDXSmartRemoteViewController
-- (BOOL)shouldShowPrivacyDialog { return HideYouTubeEdu() ? NO : %orig; }
-%end
-
-// Hide Bedtime Reminders
-%hook YTBedtimeReminderController
-- (BOOL)shouldShowBedtimeReminderAsPanel { return Bedtime() ? NO : %orig; }
-%end
-
-// Hide ads
 // NoYTPremium - @PoomSmart https://github.com/PoomSmart/NoYTPremium
 // Alert
 %hook YTCommerceEventGroupHandler
-- (void)addEventHandlers { if (!HideAdsBadges()) %orig; }
+- (void)addEventHandlers {}
 %end
 
 // Full-screen
 %hook YTInterstitialPromoEventGroupHandler
-- (void)addEventHandlers { if (!HideAdsBadges()) %orig; }
+- (void)addEventHandlers {}
 %end
 
 %hook YTPromosheetEventGroupHandler
-- (void)addEventHandlers { if (!HideAdsBadges()) %orig; }
+- (void)addEventHandlers {}
 %end
 
 %hook YTPromoThrottleController
-- (BOOL)canShowThrottledPromo { return HideAdsBadges() ? NO : %orig; }
-- (BOOL)canShowThrottledPromoWithFrequencyCap:(id)arg1 { return HideAdsBadges() ? NO : %orig; }
-- (BOOL)canShowThrottledPromoWithFrequencyCaps:(id)arg1 { return HideAdsBadges() ? NO : %orig; }
+- (BOOL)canShowThrottledPromo { return NO; }
+- (BOOL)canShowThrottledPromoWithFrequencyCap:(id)arg1 { return NO; }
+- (BOOL)canShowThrottledPromoWithFrequencyCaps:(id)arg1 { return NO; }
 %end
 
 %hook YTPromoThrottleControllerImpl
-- (BOOL)canShowThrottledPromo { return HideAdsBadges() ? NO : %orig; }
-- (BOOL)canShowThrottledPromoWithFrequencyCap:(id)arg1 { return HideAdsBadges() ? NO : %orig; }
-- (BOOL)canShowThrottledPromoWithFrequencyCaps:(id)arg1 { return HideAdsBadges() ? NO : %orig; }
+- (BOOL)canShowThrottledPromo { return NO; }
+- (BOOL)canShowThrottledPromoWithFrequencyCap:(id)arg1 { return NO; }
+- (BOOL)canShowThrottledPromoWithFrequencyCaps:(id)arg1 { return NO; }
 %end
 
 %hook YTIShowFullscreenInterstitialCommand
 - (BOOL)shouldThrottleInterstitial {
-    if (self.hasModalClientThrottlingRules && HideAdsBadges())
+    if (self.hasModalClientThrottlingRules)
         self.modalClientThrottlingRules.oncePerTimeWindow = YES;
     return %orig;
 }
@@ -451,7 +386,252 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 
 // "Try new features" in settings
 %hook YTSettingsSectionItemManager
-- (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 { if (!HideAdsBadges()) %orig; }
+- (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 {}
+%end
+
+// Survey
+%hook YTSurveyController
+- (void)showSurveyWithRenderer:(id)arg1 surveyParentResponder:(id)arg2 {}
+%end
+
+// Hide AI things
+%hook YTShortsSharedGalleryPresentationView
+- (BOOL)shouldShowAiMontageButton { return NO; }
+%end
+
+%hook YTShortsSharedGalleryPresentationViewController
+- (BOOL)shouldShowAiMontageButton { return NO; }
+%end
+
+%hook YTVideoSubtitleView
+- (BOOL)shouldShowAdBadge { return NO; }
+%end
+
+%hook YTIPlayerCompanionAdsSupportedRenderers
+- (BOOL)hasAppPromoCompanionAdRenderer { return NO; }
+%end
+
+%hook YTIRenderer
+- (id)appPromoAdCtaRenderer { return nil; }
+- (BOOL)hasAppPromoAdCtaRenderer { return NO; }
+%end
+
+%hook YTIInStreamPlayerCtaAdsSupportedRenderers
+- (BOOL)hasAppPromoAdCtaRenderer { return NO; }
+%end
+
+%hook YTInterstitialPromoViewController
+- (void)showInterstitialPromo:(id)arg1 enableClientImpressionThrottling:(BOOL)arg2 interstitialParentResponder:(id)arg3 {}
+- (void)showInterstitialPromo:(id)arg1 interstitialParentResponder:(id)arg2 {}
+%end
+
+%hook YTMealbarPromoController
+- (id)promoRenderer { return nil; }
+- (void)showMealbarPromoWithEvent:(id)arg {}
+%end
+
+%hook YTOfflineButtonPromoController
+- (void)showOfflinePromoWithRenderer:(id)arg1 endpoint:(id)arg2 parentResponder:(id)arg3 {}
+%end
+
+%hook YTOfflineButtonPromoView
+- (id)initWithFrame:(CGRect)arg1 renderer:(id)arg2 attributedView:(id)arg3 formattedStringLabelDelegate:(id)arg4 offlineButtonPromoDelegate:(id)arg5 { return nil; }
+%end
+
+%hook YTWatchMiniBarControlsView
+- (void)setTitle:(id)arg1 byline:(id)arg2 showingPaidPromotion:(BOOL)arg3 showingPremiumBadge:(BOOL)arg4 {}
+%end
+
+%hook MDXFeatureFlags
+- (BOOL)areMementoPromotionsEnabled { return NO; }
+%end
+
+%hook YTUserDefaults
+- (BOOL)enablePromoDebugToast { return NO; }
+- (BOOL)isPromoForced { return NO; }
+%end
+
+%hook YTAppMealbarPromoController
+- (id)mealbarPromoController { return nil; }
+%end
+
+%hook YTAppMealbarPromoControllerImpl
+- (id)mealbarPromoController { return nil; }
+%end
+
+%hook YTSurveyPromosheet
+- (id)expandablePromosheetDelegate { return nil; }
+- (void)setExpandablePromosheetDelegate:(id)arg {}
+%end
+
+%hook YTSPromotionServiceBlockImpl
+- (BOOL)createPromotion:(id)arg1 writer:(id)arg2 error:(NSError **)arg3 { return NO; }
+%end
+
+%hook YTSPromotionServiceBlock
+- (BOOL)createPromotion:(id)arg1 writer:(id)arg2 error:(NSError **)arg3 { return NO; }
+%end
+
+%hook YTPromosheetController
+- (BOOL)canPresentPromosheetWithGlobalThrottling:(BOOL)arg1 customizedThrottling:(id)arg2 shouldReplacePromosheet:(BOOL)arg3 { return NO; }
+- (void)setCurrentPromosheet:(id)arg {}
+%end
+
+%hook YTWatchSurveyTriggerController
+- (id)initWithParentResponder:(id)arg1 promosheetController:(id)arg2 { return nil; }
+%end
+
+%hook YTShareMainView
+- (BOOL)shouldShowPromo { return NO; }
+- (void)setPromoView:(id)arg {}
+%end
+
+%hook YCHLiveChatActionPanelView
+- (BOOL)shouldShowUpsellButton { return NO; }
+%end
+
+%hook YTPromosheetContainerView
+- (BOOL)shouldShowExpandButton { return NO; }
+- (void)setPromosheet:(id)arg {}
+- (void)setPromosheetDisplayed:(BOOL)arg {}
+- (void)setPromosheet:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3 {}
+%end
+
+%hook ELMPBShowBottomSheetCommand
+- (void)showMealbarPromoWithContainerView:(id)arg1 handler:(id)arg2 {}
+%end
+%end
+
+// Prevent YouTube from showing you how to use the app
+%group Edu
+%hook YTReelPlayerViewController
+// Hide first-time using Shorts (The "how to swipe" UI)
+- (BOOL)isFirstTimeEduAvailable { return NO; }
+%end
+
+%hook GWACameraView
+- (BOOL)shouldShowInstructions { return NO; }
+%end
+
+%hook YTHintControllerImpl
+- (void)sendPromoEventWithAccept:(BOOL)arg1 sendClick:(BOOL)arg2 {}
+%end
+
+%hook YTHintController
+- (void)sendPromoEventWithAccept:(BOOL)arg1 sendClick:(BOOL)arg2 {}
+%end
+
+%hook YTReelWatchEducationViewController
+- (BOOL)isEducationAvailable { return NO; }
+%end
+
+%hook YTFormfillFormHeaderView
+- (BOOL)shouldShowInstructions { return NO; }
+%end
+
+%hook YTInlineMutedPlaybackPlayerOverlayViewController
+- (BOOL)shouldShowUserEducation { return NO; }
+%end
+
+%hook YTLCEntryRequirementsViewController
+- (BOOL)shouldSkipIntroDialog { return YES; }
+%end
+
+%hook YTInlineMutedPlaybackAudioIconView
+- (BOOL)enableUserEducation { return NO; }
+%end
+
+%hook OGLEducationCappingServiceImpl
+- (BOOL)shouldShowQuickSwipeApdEducation { return NO; }
+%end
+
+%hook YTNUXTooltipVisibility
+- (BOOL)shouldShowTooltip { return NO; }
+%end
+
+%hook YTPostsQuizCollectionViewController
+- (BOOL)shouldShowMarkAnswerTooltip { return NO; }
+%end
+
+%hook YTMainAppVideoPlayerOverlayViewController
+- (BOOL)shouldEnableScrubberSlideUserEducation { return NO; }
+- (BOOL)shouldShowScrubUserEducation { return NO; }
+- (BOOL)shouldShowFineScrubbingUserEdu { return NO; }
+%end
+
+%hook MDXSmartRemoteViewController
+- (BOOL)shouldShowPrivacyDialog { return NO; }
+%end
+
+%hook YTUserDefaults
+- (BOOL)safeguardEducationSkipped { return YES; }
+- (BOOL)didShowNewReelUserEducation { return YES; }
+- (BOOL)hasPictureInPictureOnboardingHintShown { return YES; }
+- (BOOL)shouldShowAddToLongPressHint { return NO; }
+%end
+
+%hook YTSettings
+- (BOOL)hasPictureInPictureOnboardingHintShown { return YES; }
+%end
+
+%hook YTHotConfig
+- (BOOL)isAggressiveSwipeUserEducationEnabled { return NO; }
+- (BOOL)shortsPlayerGlobalConfigAndroidDisableEducationOverlay { return YES; }
+%end
+
+%hook YTColdConfig
+- (BOOL)isPlaylistEntrypointUserEducationEnabled { return NO; }
+- (BOOL)immersiveWatchClientGlobalConfigIosEnableIwfEducationImpressionController { return NO; }
+%end
+%end
+
+%group SlowMiniPlayer
+%hook YTColdConfig
+- (BOOL)enableIosFloatingMiniplayerDoubleTapToResize { return NO; }
+%end
+%end
+
+%group OldMiniPlayer
+%hook YTColdConfig
+- (BOOL)enableIosFloatingMiniplayer { return NO; }
+%end
+
+%hook YTColdConfigWatchPlayerClientGlobalConfigImpl
+- (BOOL)enableIosFloatingMiniplayer { return NO; }
+%end
+%end
+
+// Hide "Continue watching" section in feeds
+%group NoContinShelf
+%hook YTCommuteShelfViewModel
+- (BOOL)shouldHideShelf { return YES; }
+- (id)initWithModel:(id)arg { return nil }
+- (id)sectionRenderers { return nil; }
+- (id)delegate { return nil; }
+- (void)setDelegate:(id)arg {}
+- (id)menu { return nil; }
+%end
+%end
+
+// Hide Bedtime Reminders
+%group Bedtime
+%hook YTBedtimeReminderController
+- (BOOL)shouldShowBedtimeReminderAsPanel { return NO; }
+%end
+
+%hook YTColdConfig
+- (BOOL)androidEnableShowSystemBedtimePromoHardcoded { return NO; }
+%end
+%end
+
+// Disables Snackbar
+%group SnackBar
+%hook GOOHUDManagerInternal
+- (id)sharedInstance { return nil; }
+- (void)showMessageMainThread:(id)arg {}
+- (void)activateOverlay:(id)arg {}
+- (void)displayHUDViewForMessage:(id)arg {}
+%end
 %end
 
 /* Hide settings section - Coming soon
@@ -470,7 +650,7 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 - (void)updateOfflineSectionWithEntry:(id)arg1
 - (void)updateParentSettingsSectionWithEntry:(id)arg1
 - (void)updatePlaybackSectionWithEntry:(id)arg1
-- (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 { if (!HideAdsBadges()) %orig; }
+- (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 {}
 - (void)updatePrivacySectionWithEntry:(id)arg1
 - (void)updateQualitySectionWithEntry:(id)arg1
 - (void)updateSendFeedbackSectionWithEntry:(id)arg1
@@ -485,129 +665,46 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 %end
 */
 
-// Survey
-%hook YTSurveyController
-- (void)showSurveyWithRenderer:(id)arg1 surveyParentResponder:(id)arg2 { if (!HideAdsBadges()) %orig; }
-%end
-
-%hook YTSurveyPromosheet
-- (id)expandablePromosheetDelegate { return HideAdsBadges() ? nil : %orig; }
-- (void)setExpandablePromosheetDelegate:(id)arg { if (!HideAdsBadges()) %orig; }
-%end
-
-%hook YTSPromotionServiceBlockImpl
-- (BOOL)createPromotion:(id)arg1 writer:(id)arg2 error:(NSError **)arg3 { return HideAdsBadges() ? NO : %orig; }
-%end
-
-%hook YTSPromotionServiceBlock
-- (BOOL)createPromotion:(id)arg1 writer:(id)arg2 error:(NSError **)arg3 { return HideAdsBadges() ? NO : %orig; }
-%end
-
-%hook YTPromosheetController
-- (BOOL)canPresentPromosheetWithGlobalThrottling:(BOOL)arg1 customizedThrottling:(id)arg2 shouldReplacePromosheet:(BOOL)arg3 { return HideAdsBadges() ? NO : %orig; }
-- (void)setCurrentPromosheet:(id)arg { if (!HideAdsBadges()) %orig; }
-%end
-
-%hook YTWatchSurveyTriggerController
-- (id)initWithParentResponder:(id)arg1 promosheetController:(id)arg2 { return HideAdsBadges() ? nil : %orig; }
-%end
-
-%hook YTShareMainView
-- (BOOL)shouldShowPromo { return HideAdsBadges() ? NO : %orig; }
-- (void)setPromoView:(id)arg { if (!HideAdsBadges()) %orig; }
-%end
-
-%hook YCHLiveChatActionPanelView
-- (BOOL)shouldShowUpsellButton { return HideAdsBadges() ? NO : %orig; }
-%end
-
-%hook YTPromosheetContainerView
-- (BOOL)shouldShowExpandButton { return HideAdsBadges() ? NO : %orig; }
-- (void)setPromosheet:(id)arg { if (!HideAdsBadges()) %orig; }
-- (void)setPromosheetDisplayed:(BOOL)arg { if (!HideAdsBadges()) %orig; }
-- (void)setPromosheet:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3 { if (!HideAdsBadges()) %orig; }
-%end
-
-%hook ELMPBShowBottomSheetCommand
-- (void)showMealbarPromoWithContainerView:(id)arg1 handler:(id)arg2 { if (!HideAdsBadges()) %orig; }
-%end
-
-%hook YTAppMealbarPromoController
-- (id)mealbarPromoController { return HideAdsBadges() ? nil : %orig; }
-%end
-
-%hook YTAppMealbarPromoControllerImpl
-- (id)mealbarPromoController { return HideAdsBadges() ? nil : %orig; }
-%end
-
-%hook YTUserDefaults
-- (BOOL)enablePromoDebugToast { return HideAdsBadges() ? NO : %orig; }
-- (BOOL)isPromoForced { return HideAdsBadges() ? NO : %orig; }
-- (BOOL)safeguardEducationSkipped { return HideYouTubeEdu() ? YES : %orig; }
-- (BOOL)didShowNewReelUserEducation { return HideYouTubeEdu() ? YES : %orig; }
-- (BOOL)hasPictureInPictureOnboardingHintShown { return HideYouTubeEdu() ? YES : %orig; }
-- (BOOL)shouldShowAddToLongPressHint { return HideYouTubeEdu() ? NO : %orig; }
-%end
-
-%hook YTSettings
-- (BOOL)hasPictureInPictureOnboardingHintShown { return HideYouTubeEdu() ? YES : %orig; }
-%end
-
-%hook YTVideoSubtitleView
-- (BOOL)shouldShowAdBadge { return HideAdsBadges() ? NO : %orig; }
-%end
-
-%hook YTPostCreationDialogStateEntityModel
-- (BOOL)hasisPromoDismissed { return HideAdsBadges() ? YES : %orig; }
-- (BOOL)isPromoDismissed { return HideAdsBadges() ? YES : %orig; }
-%end
-
-%hook YTIPlayerCompanionAdsSupportedRenderers
-- (BOOL)hasAppPromoCompanionAdRenderer { return HideAdsBadges() ? NO : %orig; }
-%end
-
-%hook YTIRenderer
-- (id)appPromoAdCtaRenderer { return HideAdsBadges() ? nil : %orig; }
-- (BOOL)hasAppPromoAdCtaRenderer { return HideAdsBadges() ? NO : %orig; }
-%end
-
-%hook YTIInStreamPlayerCtaAdsSupportedRenderers
-- (BOOL)hasAppPromoAdCtaRenderer { return HideAdsBadges() ? NO : %orig; }
-%end
-
-%hook YTInterstitialPromoViewController
-- (void)showInterstitialPromo:(id)arg1 enableClientImpressionThrottling:(BOOL)arg2 interstitialParentResponder:(id)arg3 { if (!HideAdsBadges()) %orig; }
-- (void)showInterstitialPromo:(id)arg1 interstitialParentResponder:(id)arg2 { if (!HideAdsBadges()) %orig; }
-%end
-
-%hook YTMealbarPromoController
-- (id)promoRenderer { return HideAdsBadges() ? nil : %orig; }
-- (void)showMealbarPromoWithEvent:(id)arg { if (!HideAdsBadges()) %orig; }
-%end
-
-%hook YTOfflineButtonPromoController
-- (void)showOfflinePromoWithRenderer:(id)arg1 endpoint:(id)arg2 parentResponder:(id)arg3 { if (!HideAdsBadges()) %orig; }
-%end
-
-%hook YTOfflineButtonPromoView
-- (id)initWithFrame:(CGRect)arg1 renderer:(id)arg2 attributedView:(id)arg3 formattedStringLabelDelegate:(id)arg4 offlineButtonPromoDelegate:(id)arg5 { return HideAdsBadges() ? nil : %orig; }
-%end
-
-%hook YTWatchMiniBarControlsView
-- (void)setTitle:(id)arg1 byline:(id)arg2 showingPaidPromotion:(BOOL)arg3 showingPremiumBadge:(BOOL)arg4 { if (!HideAdsBadges()) %orig; }
-%end
-
-%hook MDXFeatureFlags
-- (BOOL)areMementoPromotionsEnabled { return HideAdsBadges() ? NO : %orig; }
-%end
-
 %ctor {
     if (!EnablesTweak()) return;
     %init;
+    if (AllowsBackgroundPlayback()) {
+        %init(BackgroundPlayback);
+    }
     if (VideoAds()) {
         %init(VideoAds);
     }
-    if (AllowsBackgroundPlayback()) {
-        %init(BackgroundPlayback);
+    if (EnablesPiP()) {
+        %init(PiP);
+    }
+    if (DisablesShortsPiP()) {
+        %init(DisablesShortsPiP);
+    }
+    if (BlockUpgradeDialogs()) {
+        %init(Upgrade);
+    }
+    if (HideAreYouThereDialog()) { 
+        %init(AreYouThere);
+    }
+    if (HideAdsBadges()) {
+        %init(AdsBadges);
+    }
+    if (HideYouTubeEdu()) {
+        %init(Edu);
+    }
+    if (FixesSlowMiniPlayer()) {
+        %init(SlowMiniPlayer);
+    }
+    if (DisablesNewMiniPlayer()) {
+        %init(OldMiniPlayer);
+    }
+    if (Watching()) {
+        %init(NoContinShelf);
+    }
+    if (Bedtime()) {
+        %init(Bedtime);
+    }
+    if (SnackBar()) {
+        %init(SnackBar);
     }
 }

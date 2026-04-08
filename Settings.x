@@ -20,7 +20,7 @@
 #define HideAreYouThereDialogKey @"HideAnnoyingDialog"
 #define HideAdsBadgesKey @"HideAds"
 #define HideYouTubeEduKey @"HideYouTubeEducations"
-#define FixSlowsMiniPlayerKey @"FixSlowsPlayer"
+#define FixesSlowMiniPlayerKey @"FixesSlowPlayer"
 #define DisablesNewMiniPlayerKey @"DisablesNewStyleMiniPlayer"
 #define DisablesSnackBarKey @"DisablesAnnoyingYTHUD"
 #define VideoAdsKey @"RemoveVideoAds"
@@ -67,8 +67,8 @@ BOOL HideYouTubeEdu() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:HideYouTubeEduKey];
 }
 
-BOOL FixSlowsMiniPlayer() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:FixSlowsMiniPlayerKey];
+BOOL FixesSlowMiniPlayer() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:FixesSlowMiniPlayerKey];
 }
 
 BOOL DisablesNewMiniPlayer() {
@@ -142,7 +142,7 @@ NSBundle *YTFlagsBundle() {
 
     // Tweak Version (at the top)
     // Thanks to the original codes from YTweaks by fosterbarnes - https://github.com/fosterbarnes/YTweaks/blob/e921591a89b87256a2b37c4788bd99282f70d9c2/Settings.x
-    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.1.20"
+    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.1.21"
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
@@ -269,17 +269,17 @@ NSBundle *YTFlagsBundle() {
         settingItemId:0];
     [sectionItems addObject:edu];
 
-    // Fix Slows Miniplayer
-    YTSettingsSectionItem *slowsminiplayer = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"FIX_SLOWS_MINIPLAYER")
-        titleDescription:LOC(@"FIX_SLOWS_MINIPLAYER_DESC")
+    // Fixes Slow Miniplayer
+    YTSettingsSectionItem *slowMiniplayer = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"FIXES_SLOW_MINIPLAYER")
+        titleDescription:LOC(@"FIXES_SLOW_MINIPLAYER_DESC")
         accessibilityIdentifier:nil
-        switchOn:FixSlowsMiniPlayer()
+        switchOn:FixesSlowMiniPlayer()
         switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:FixSlowsMiniPlayerKey];
+            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:FixesSlowMiniPlayerKey];
             return YES;
         }
         settingItemId:0];
-    [sectionItems addObject:slowsminiplayer];
+    [sectionItems addObject:slowMiniplayer];
 
     // Disables New Miniplayer
     YTSettingsSectionItem *newminiplayer = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"DISABLES_NEW_MINIPLAYER")

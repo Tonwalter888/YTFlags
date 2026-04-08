@@ -26,8 +26,8 @@
 "HIDE_YOUTUBE_EDU" = "Hide YouTube educations";
 "HIDE_YOUTUBE_EDU_DESC" = "Hide educations when you are using the app/features in the first time or reinstall the app.";
 
-"FIX_SLOWS_MINIPLAYER" = "Fixes slows miniplayer";
-"FIX_SLOWS_MINIPLAYER_DESC" = "Fixes the miniplayer slows to expand the video, this only works in older YouTube versions.";
+"FIXES_SLOW_MINIPLAYER" = "Fixes slows miniplayer";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Fixes the miniplayer slows to expand the video, this only works in older YouTube versions.";
 
 "DISABLES_NEW_MINIPLAYER" = "Disables new miniplayer";
 "DISABLES_NEW_MINIPLAYER_DESC" = "Use old-style miniplayer instead of the new one, this only works in older YouTube versions.";
