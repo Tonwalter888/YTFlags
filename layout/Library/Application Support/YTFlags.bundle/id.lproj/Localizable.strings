@@ -1,0 +1,36 @@
+"RESTART_BAR" = "Setiap perubahan pada pengaturan ini memerlukan mulai ulang aplikasi agar dapat diterapkan.";
+"ENABLED" = "Aktifkan tweak";
+"ENABLED_DESC" = "Mengaktifkan opsi ini akan mengaktifkan tweak.";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "Izinkan pemutaran di latar belakang";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Izinkan YouTube memutar video di latar belakang.";
+
+"VIDEO_ADS" = "Hapus iklan video";
+"VIDEO_ADS_DESC" = "Hapus iklan video termasuk Shorts.";
+
+"ENABLES_PIP" = "Aktifkan PiP";
+"ENABLES_PIP_DESC" = "Mengaktifkan PiP (Picture-In-Picture) untuk memutar video di luar aplikasi YouTube.";
+
+"DISABLES_SHORTS_PIP" = "Nonaktifkan PiP Shorts";
+"DISABLES_SHORTS_PIP_DESC" = "Mencoba menonaktifkan PiP Shorts, ini mungkin tidak 100% berhasil menonaktifkannya.";
+
+"BLOCK_UPGRADE_DIALOGS" = "Blokir dialog pembaruan";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Blokir dialog YouTube yang meminta Anda untuk memperbarui aplikasi.";
+
+"ARE_YOU_THERE_DIALOG" = "Sembunyikan dialog 'Apakah Anda masih di sana?'";
+"ARE_YOU_THERE_DIALOG_DESC" = "Sembunyikan dialog saat Anda tidak aktif di aplikasi dalam waktu yang terlalu lama.";
+
+"HIDE_ADS_BADGES" = "Sembunyikan lencana iklan";
+"HIDE_ADS_BADGES_DESC" = "Sembunyikan dialog lencana iklan, promosi YouTube Premium, mencoba menyembunyikan hal-hal terkait AI, dan banyak lagi.";
+
+"HIDE_YOUTUBE_EDU" = "Sembunyikan edukasi YouTube (Eksperimental)";
+"HIDE_YOUTUBE_EDU_DESC" = "Mencoba menyembunyikan edukasi YouTube saat Anda menginstal ulang aplikasi atau menggunakan aplikasi/fitur untuk pertama kalinya.";
+
+"FIXES_SLOW_MINIPLAYER" = "Perbaiki pemutar mini yang lambat";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Memperbaiki kelambatan pemutar mini saat memperbesar video, ini hanya berfungsi pada versi YouTube lama.";
+
+"DISABLES_NEW_MINIPLAYER" = "Nonaktifkan pemutar mini baru";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Gunakan gaya pemutar mini lama alih-alih yang baru, ini hanya berfungsi pada versi YouTube lama.";
+
+"SNACK_BAR" = "Nonaktifkan snack bar";
+"SNACK_BAR_DESC" = "Menonaktifkan snack bar saat menekan beberapa tombol atau melakukan sesuatu di aplikasi.";
