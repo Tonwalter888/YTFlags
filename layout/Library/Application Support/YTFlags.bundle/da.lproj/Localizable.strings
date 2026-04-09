@@ -1,0 +1,36 @@
+"RESTART_BAR" = "Eventuelle ændringer af disse indstillinger kræver en genstart af appen for at træde i kraft.";
+"ENABLED" = "Aktivér tweak";
+"ENABLED_DESC" = "Aktivering af denne mulighed vil slå tweaket til.";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "Tillad baggrundsafspilning";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Giver YouTube tilladelse til at afspille videoer i baggrunden.";
+
+"VIDEO_ADS" = "Fjern videoannoncer";
+"VIDEO_ADS_DESC" = "Fjern videoannoncer inklusiv Shorts.";
+
+"ENABLES_PIP" = "Aktivér PiP";
+"ENABLES_PIP_DESC" = "Aktiverer PiP (billede-i-billede) for at afspille videoer uden for YouTube-appen.";
+
+"DISABLES_SHORTS_PIP" = "Deaktiver Shorts PiP";
+"DISABLES_SHORTS_PIP_DESC" = "Forsøg at deaktivere Shorts PiP, dette deaktiverer det muligvis ikke 100%.";
+
+"BLOCK_UPGRADE_DIALOGS" = "Bloker opgraderingsdialoger";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Bloker de YouTube-dialogbokse, der beder dig om at opgradere appen.";
+
+"ARE_YOU_THERE_DIALOG" = "Skjul Er du der?-dialog";
+"ARE_YOU_THERE_DIALOG_DESC" = "Skjul dialogboksen, når du har været inaktiv i appen for længe.";
+
+"HIDE_ADS_BADGES" = "Skjul annoncebadges";
+"HIDE_ADS_BADGES_DESC" = "Skjul annoncebadges-dialoger, YouTube Premium-kampagner, forsøg at skjule AI-ting og meget mere.";
+
+"HIDE_YOUTUBE_EDU" = "Skjul YouTube-vejledninger (Eksperimentel)";
+"HIDE_YOUTUBE_EDU_DESC" = "Forsøg at skjule YouTube-vejledninger, når du geninstallerer appen eller bruger appen/funktionerne for første gang.";
+
+"FIXES_SLOW_MINIPLAYER" = "Retter langsom miniafspiller";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Retter miniafspillerens langsomhed med at udvide videoen, dette virker kun i ældre YouTube-versioner.";
+
+"DISABLES_NEW_MINIPLAYER" = "Deaktiver ny miniafspiller";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Brug den gamle stil miniafspiller i stedet for den nye, dette virker kun i ældre YouTube-versioner.";
+
+"SNACK_BAR" = "Deaktiver snackbar";
+"SNACK_BAR_DESC" = "Deaktiverer snackbar, når du trykker på nogle knapper eller gør noget i appen.";

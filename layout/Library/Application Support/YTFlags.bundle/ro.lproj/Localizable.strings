@@ -1,0 +1,36 @@
+"RESTART_BAR" = "Orice modificare a acestor setări necesită repornirea aplicației pentru a intra în vigoare.";
+"ENABLED" = "Activează modificarea";
+"ENABLED_DESC" = "Activarea acestei opțiuni va activa modificarea.";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "Permite redarea în fundal";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Permite YouTube să redea videoclipuri în fundal.";
+
+"VIDEO_ADS" = "Elimină reclamele video";
+"VIDEO_ADS_DESC" = "Elimină reclamele video, inclusiv Shorts.";
+
+"ENABLES_PIP" = "Activează PiP";
+"ENABLES_PIP_DESC" = "Activează PiP (Picture-In-Picture) pentru a reda videoclipuri în afara aplicației YouTube.";
+
+"DISABLES_SHORTS_PIP" = "Dezactivează PiP pentru Shorts";
+"DISABLES_SHORTS_PIP_DESC" = "Încearcă să dezactivezi PiP pentru Shorts, s-ar putea să nu funcționeze 100%.";
+
+"BLOCK_UPGRADE_DIALOGS" = "Blochează dialogurile de actualizare";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Blochează dialogurile YouTube care îți cer să actualizezi aplicația.";
+
+"ARE_YOU_THERE_DIALOG" = "Ascunde dialogul 'Ești acolo?'";
+"ARE_YOU_THERE_DIALOG_DESC" = "Ascunde dialogul când ești inactiv în aplicație pentru prea mult timp.";
+
+"HIDE_ADS_BADGES" = "Ascunde insignele publicitare";
+"HIDE_ADS_BADGES_DESC" = "Ascunde dialogurile insignelor publicitare, promoțiile YouTube Premium, încearcă să ascundă elementele AI și multe altele.";
+
+"HIDE_YOUTUBE_EDU" = "Ascunde tutorialele YouTube (Experimental)";
+"HIDE_YOUTUBE_EDU_DESC" = "Încearcă să ascundă tutorialele YouTube la reinstalarea aplicației sau la prima utilizare a aplicației/funcțiilor.";
+
+"FIXES_SLOW_MINIPLAYER" = "Repară miniplayer-ul lent";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Repară lentoarea miniplayer-ului la extinderea videoclipului, funcționează doar în versiuni mai vechi de YouTube.";
+
+"DISABLES_NEW_MINIPLAYER" = "Dezactivează noul miniplayer";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Folosește miniplayer-ul în stil vechi în locul celui nou, funcționează doar în versiuni mai vechi de YouTube.";
+
+"SNACK_BAR" = "Dezactivează snack bar";
+"SNACK_BAR_DESC" = "Dezactivează snack bar-ul la apăsarea unor butoane sau la efectuarea unor acțiuni în aplicație.";

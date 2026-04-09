@@ -1,0 +1,36 @@
+"RESTART_BAR" = "これらの設定の変更を適用するには、アプリを再起動する必要があります。";
+"ENABLED" = "Tweakを有効にする";
+"ENABLED_DESC" = "このオプションをオンにすると、Tweakが有効になります。";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "バックグラウンド再生を許可";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "YouTubeで動画をバックグラウンドで再生できるようにします。";
+
+"VIDEO_ADS" = "動画広告を削除";
+"VIDEO_ADS_DESC" = "ショートを含む動画広告を削除します。";
+
+"ENABLES_PIP" = "PiPを有効にする";
+"ENABLES_PIP_DESC" = "YouTubeアプリの外部で動画を再生するためのPiP（ピクチャー・イン・ピクチャー）を有効にします。";
+
+"DISABLES_SHORTS_PIP" = "ショートのPiPを無効にする";
+"DISABLES_SHORTS_PIP_DESC" = "ショートのPiPを無効にしようと試みますが、100%無効にならない場合があります。";
+
+"BLOCK_UPGRADE_DIALOGS" = "アップグレードダイアログをブロック";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "アプリのアップグレードを促すYouTubeのダイアログをブロックします。";
+
+"ARE_YOU_THERE_DIALOG" = "「視聴を続けていますか？」ダイアログを非表示";
+"ARE_YOU_THERE_DIALOG_DESC" = "アプリでの操作が長時間ない場合のダイアログを非表示にします。";
+
+"HIDE_ADS_BADGES" = "広告バッジを非表示";
+"HIDE_ADS_BADGES_DESC" = "広告バッジのダイアログ、YouTube Premiumのプロモーションを非表示にし、AI関連のものを非表示にするなど、様々な機能があります。";
+
+"HIDE_YOUTUBE_EDU" = "YouTubeのチュートリアルを非表示（試験版）";
+"HIDE_YOUTUBE_EDU_DESC" = "アプリを再インストールした時、または初めてアプリ/機能を使用する際に、YouTubeのチュートリアルを非表示にしようと試みます。";
+
+"FIXES_SLOW_MINIPLAYER" = "遅いミニプレーヤーを修正";
+"FIXES_SLOW_MINIPLAYER_DESC" = "動画を拡大する際のミニプレーヤーの遅延を修正します。これは古いバージョンのYouTubeでのみ機能します。";
+
+"DISABLES_NEW_MINIPLAYER" = "新しいミニプレーヤーを無効にする";
+"DISABLES_NEW_MINIPLAYER_DESC" = "新しいものの代わりに古いスタイルのミニプレーヤーを使用します。これは古いバージョンのYouTubeでのみ機能します。";
+
+"SNACK_BAR" = "スナックバーを無効にする";
+"SNACK_BAR_DESC" = "一部のボタンを押した時やアプリ内で何かをした時に表示されるスナックバーを無効にします。";

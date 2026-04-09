@@ -1,0 +1,36 @@
+"RESTART_BAR" = "Änderungen an diesen Einstellungen erfordern einen Neustart der App, um wirksam zu werden.";
+"ENABLED" = "Tweak aktivieren";
+"ENABLED_DESC" = "Das Einschalten dieser Option aktiviert den Tweak.";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "Hintergrundwiedergabe erlauben";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Erlaubt YouTube, Videos im Hintergrund abzuspielen.";
+
+"VIDEO_ADS" = "Video-Werbung entfernen";
+"VIDEO_ADS_DESC" = "Entfernt Video-Werbung einschließlich Shorts.";
+
+"ENABLES_PIP" = "PiP aktivieren";
+"ENABLES_PIP_DESC" = "Aktiviert PiP (Bild-in-Bild), um Videos außerhalb der YouTube-App abzuspielen.";
+
+"DISABLES_SHORTS_PIP" = "Shorts PiP deaktivieren";
+"DISABLES_SHORTS_PIP_DESC" = "Versucht, Shorts PiP zu deaktivieren, dies wird möglicherweise nicht zu 100% deaktiviert.";
+
+"BLOCK_UPGRADE_DIALOGS" = "Upgrade-Dialoge blockieren";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Blockiert die YouTube-Dialoge, die Sie auffordern, die App zu aktualisieren.";
+
+"ARE_YOU_THERE_DIALOG" = "Bist du noch da?-Dialog ausblenden";
+"ARE_YOU_THERE_DIALOG_DESC" = "Blendet den Dialog aus, wenn Sie in der App zu lange inaktiv waren.";
+
+"HIDE_ADS_BADGES" = "Werbe-Badges ausblenden";
+"HIDE_ADS_BADGES_DESC" = "Blendet Werbe-Badges-Dialoge und YouTube Premium-Aktionen aus, versucht KI-Dinge zu verbergen und vieles mehr.";
+
+"HIDE_YOUTUBE_EDU" = "YouTube-Anleitungen ausblenden (Experimentell)";
+"HIDE_YOUTUBE_EDU_DESC" = "Versucht, YouTube-Anleitungen auszublenden, wenn Sie die App neu installieren oder die App/Funktionen zum ersten Mal verwenden.";
+
+"FIXES_SLOW_MINIPLAYER" = "Langsamen Miniplayer beheben";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Behebt das langsame Erweitern des Videos durch den Miniplayer. Dies funktioniert nur in älteren YouTube-Versionen.";
+
+"DISABLES_NEW_MINIPLAYER" = "Neuen Miniplayer deaktivieren";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Verwenden Sie den Miniplayer im alten Stil anstelle des neuen. Dies funktioniert nur in älteren YouTube-Versionen.";
+
+"SNACK_BAR" = "Snack-Bar deaktivieren";
+"SNACK_BAR_DESC" = "Deaktiviert die Snack-Bar, wenn Sie bestimmte Tasten drücken oder etwas in der App tun.";

@@ -1,0 +1,36 @@
+"RESTART_BAR" = "Mọi thay đổi đối với các cài đặt này đều yêu cầu khởi động lại ứng dụng để có hiệu lực.";
+"ENABLED" = "Bật tinh chỉnh";
+"ENABLED_DESC" = "Bật tùy chọn này sẽ kích hoạt tinh chỉnh.";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "Cho phép phát trong nền";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Cho phép YouTube phát video trong nền.";
+
+"VIDEO_ADS" = "Xóa quảng cáo video";
+"VIDEO_ADS_DESC" = "Xóa quảng cáo video bao gồm cả Shorts.";
+
+"ENABLES_PIP" = "Bật PiP";
+"ENABLES_PIP_DESC" = "Bật PiP (Ảnh trong ảnh) để phát video bên ngoài ứng dụng YouTube.";
+
+"DISABLES_SHORTS_PIP" = "Tắt PiP cho Shorts";
+"DISABLES_SHORTS_PIP_DESC" = "Cố gắng tắt PiP cho Shorts, điều này có thể không tắt được 100%.";
+
+"BLOCK_UPGRADE_DIALOGS" = "Chặn hộp thoại nâng cấp";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Chặn các hộp thoại YouTube yêu cầu bạn nâng cấp ứng dụng.";
+
+"ARE_YOU_THERE_DIALOG" = "Ẩn hộp thoại 'Bạn có đó không?'";
+"ARE_YOU_THERE_DIALOG_DESC" = "Ẩn hộp thoại khi bạn không hoạt động trong ứng dụng quá lâu.";
+
+"HIDE_ADS_BADGES" = "Ẩn huy hiệu quảng cáo";
+"HIDE_ADS_BADGES_DESC" = "Ẩn hộp thoại huy hiệu quảng cáo, khuyến mãi YouTube Premium, cố gắng ẩn các thứ về AI, v.v.";
+
+"HIDE_YOUTUBE_EDU" = "Ẩn hướng dẫn YouTube (Thử nghiệm)";
+"HIDE_YOUTUBE_EDU_DESC" = "Cố gắng ẩn các hướng dẫn YouTube khi bạn cài đặt lại ứng dụng hoặc sử dụng ứng dụng/tính năng lần đầu.";
+
+"FIXES_SLOW_MINIPLAYER" = "Sửa lỗi trình phát thu nhỏ chậm";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Sửa lỗi trình phát thu nhỏ mở rộng video chậm, điều này chỉ hoạt động trong các phiên bản YouTube cũ hơn.";
+
+"DISABLES_NEW_MINIPLAYER" = "Tắt trình phát thu nhỏ mới";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Sử dụng trình phát thu nhỏ kiểu cũ thay vì kiểu mới, điều này chỉ hoạt động trong các phiên bản YouTube cũ hơn.";
+
+"SNACK_BAR" = "Tắt thanh thông báo dưới cùng";
+"SNACK_BAR_DESC" = "Tắt thanh thông báo (Snack bar) khi nhấn một số nút hoặc thực hiện hành động trong ứng dụng.";

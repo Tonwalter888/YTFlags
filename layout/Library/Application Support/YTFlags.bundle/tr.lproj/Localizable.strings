@@ -1,0 +1,36 @@
+"RESTART_BAR" = "Bu ayarlarda yapılan herhangi bir değişikliğin etkili olması için uygulamanın yeniden başlatılması gerekir.";
+"ENABLED" = "Tweak'i etkinleştir";
+"ENABLED_DESC" = "Bu seçeneği açmak tweak'i etkinleştirecektir.";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "Arka planda oynatmaya izin ver";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "YouTube'un videoları arka planda oynatmasına izin verir.";
+
+"VIDEO_ADS" = "Video reklamlarını kaldır";
+"VIDEO_ADS_DESC" = "Shorts dahil olmak üzere video reklamlarını kaldırır.";
+
+"ENABLES_PIP" = "PiP'yi etkinleştir";
+"ENABLES_PIP_DESC" = "Videoları YouTube uygulaması dışında oynatmak için PiP'yi (Resim İçinde Resim) etkinleştirir.";
+
+"DISABLES_SHORTS_PIP" = "Shorts PiP'yi devre dışı bırak";
+"DISABLES_SHORTS_PIP_DESC" = "Shorts PiP'yi devre dışı bırakmayı dener, bu %100 devre dışı bırakmayabilir.";
+
+"BLOCK_UPGRADE_DIALOGS" = "Güncelleme iletişim kutularını engelle";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Sizden uygulamayı güncellemenizi isteyen YouTube iletişim kutularını engeller.";
+
+"ARE_YOU_THERE_DIALOG" = "Orada mısınız? iletişim kutusunu gizle";
+"ARE_YOU_THERE_DIALOG_DESC" = "Uygulamada çok uzun süre işlem yapmadığınızda çıkan iletişim kutusunu gizler.";
+
+"HIDE_ADS_BADGES" = "Reklam rozetlerini gizle";
+"HIDE_ADS_BADGES_DESC" = "Reklam rozeti iletişim kutularını, YouTube Premium promosyonlarını gizler, yapay zeka araçlarını gizlemeye çalışır ve çok daha fazlasını yapar.";
+
+"HIDE_YOUTUBE_EDU" = "YouTube eğitimlerini gizle (Deneysel)";
+"HIDE_YOUTUBE_EDU_DESC" = "Uygulamayı yeniden yüklediğinizde veya uygulamayı/özellikleri ilk kez kullandığınızda YouTube eğitimlerini gizlemeyi dener.";
+
+"FIXES_SLOW_MINIPLAYER" = "Yavaş mini oynatıcıyı düzelt";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Videonun genişletilmesindeki mini oynatıcı yavaşlığını düzeltir, bu yalnızca eski YouTube sürümlerinde çalışır.";
+
+"DISABLES_NEW_MINIPLAYER" = "Yeni mini oynatıcıyı devre dışı bırak";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Yenisi yerine eski stil mini oynatıcıyı kullanır, bu yalnızca eski YouTube sürümlerinde çalışır.";
+
+"SNACK_BAR" = "Bildirim çubuğunu devre dışı bırak";
+"SNACK_BAR_DESC" = "Bazı düğmelere basıldığında veya uygulamada bir şey yapıldığında çıkan bildirim çubuğunu (snack bar) devre dışı bırakır.";

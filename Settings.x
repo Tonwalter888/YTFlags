@@ -142,7 +142,7 @@ NSBundle *YTFlagsBundle() {
 
     // Tweak Version (at the top)
     // Thanks to the original codes from YTweaks by fosterbarnes - https://github.com/fosterbarnes/YTweaks/blob/e921591a89b87256a2b37c4788bd99282f70d9c2/Settings.x
-    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.1.21"
+    YTSettingsSectionItem *tweakVersion = [YTSettingsSectionItemClass itemWithTitle:@"YTFlags v1.1.22"
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
@@ -292,30 +292,6 @@ NSBundle *YTFlagsBundle() {
         }
         settingItemId:0];
     [sectionItems addObject:newminiplayer];
-
-    // Hide "Continue Watching" section in feeds
-    YTSettingsSectionItem *watching = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"WATCHING")
-        titleDescription:LOC(@"WATCHING_DESC")
-        accessibilityIdentifier:nil
-        switchOn:Watching()
-        switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:WatchingKey];
-            return YES;
-        }
-        settingItemId:0];
-    [sectionItems addObject:watching];
-
-    // Hide Bedtime Reminders
-    YTSettingsSectionItem *bedtime = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"BEDTIME")
-        titleDescription:LOC(@"BEDTIME_DESC")
-        accessibilityIdentifier:nil
-        switchOn:Bedtime()
-        switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:BedtimeKey];
-            return YES;
-        }
-        settingItemId:0];
-    [sectionItems addObject:bedtime];
 
     // Disables Snackbar
     YTSettingsSectionItem *snackBar = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"SNACK_BAR")

@@ -1,0 +1,36 @@
+"RESTART_BAR" = "Qualsiasi modifica a queste impostazioni richiede il riavvio dell'app per avere effetto.";
+"ENABLED" = "Abilita il tweak";
+"ENABLED_DESC" = "Attivando questa opzione si attiverà il tweak.";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "Consenti la riproduzione in background";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Consente a YouTube di riprodurre video in background.";
+
+"VIDEO_ADS" = "Rimuovi annunci video";
+"VIDEO_ADS_DESC" = "Rimuovi gli annunci video, inclusi gli Shorts.";
+
+"ENABLES_PIP" = "Abilita PiP";
+"ENABLES_PIP_DESC" = "Abilita il PiP (Picture-In-Picture) per riprodurre i video all'esterno dell'app YouTube.";
+
+"DISABLES_SHORTS_PIP" = "Disabilita PiP negli Shorts";
+"DISABLES_SHORTS_PIP_DESC" = "Prova a disabilitare il PiP per gli Shorts, questo potrebbe non disabilitarlo al 100%.";
+
+"BLOCK_UPGRADE_DIALOGS" = "Blocca le finestre di aggiornamento";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Blocca le finestre di dialogo di YouTube che ti dicono di aggiornare l'app.";
+
+"ARE_YOU_THERE_DIALOG" = "Nascondi la finestra Ci sei ancora?";
+"ARE_YOU_THERE_DIALOG_DESC" = "Nascondi la finestra di dialogo quando sei inattivo sull'app per troppo tempo.";
+
+"HIDE_ADS_BADGES" = "Nascondi i badge degli annunci";
+"HIDE_ADS_BADGES_DESC" = "Nascondi le finestre dei badge degli annunci, le promozioni di YouTube Premium, cerca di nascondere le cose legate all'IA e molto altro.";
+
+"HIDE_YOUTUBE_EDU" = "Nascondi i tutorial di YouTube (Sperimentale)";
+"HIDE_YOUTUBE_EDU_DESC" = "Prova a nascondere le guide di YouTube quando reinstalli l'app o usi l'app/le funzioni per la prima volta.";
+
+"FIXES_SLOW_MINIPLAYER" = "Risolvi minilauncher lento";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Risolve la lentezza del minilauncher nell'espandere il video, funziona solo nelle versioni precedenti di YouTube.";
+
+"DISABLES_NEW_MINIPLAYER" = "Disabilita nuovo minilauncher";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Usa il minilauncher in vecchio stile al posto del nuovo, funziona solo nelle versioni precedenti di YouTube.";
+
+"SNACK_BAR" = "Disabilita snack bar";
+"SNACK_BAR_DESC" = "Disabilita la snack bar quando si premono alcuni pulsanti o si fa qualcosa nell'app.";

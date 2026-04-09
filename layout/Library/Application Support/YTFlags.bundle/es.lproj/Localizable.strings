@@ -1,0 +1,36 @@
+"RESTART_BAR" = "Cualquier cambio en esta configuración requiere reiniciar la aplicación para surtir efecto.";
+"ENABLED" = "Habilitar ajuste";
+"ENABLED_DESC" = "Activar esta opción habilitará el ajuste.";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "Permite la reproducción en segundo plano";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Permite que YouTube reproduzca videos en segundo plano.";
+
+"VIDEO_ADS" = "Eliminar anuncios de video";
+"VIDEO_ADS_DESC" = "Elimina los anuncios de video, incluidos los Shorts.";
+
+"ENABLES_PIP" = "Habilita PiP";
+"ENABLES_PIP_DESC" = "Habilita PiP (Picture-In-Picture) para reproducir videos fuera de la aplicación de YouTube.";
+
+"DISABLES_SHORTS_PIP" = "Desactiva PiP en Shorts";
+"DISABLES_SHORTS_PIP_DESC" = "Intenta desactivar PiP en los Shorts, es posible que no lo desactive al 100%.";
+
+"BLOCK_UPGRADE_DIALOGS" = "Bloquear cuadros de diálogo de actualización";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Bloquea los cuadros de diálogo de YouTube que te piden que actualices la aplicación.";
+
+"ARE_YOU_THERE_DIALOG" = "Ocultar el cuadro de diálogo ¿Sigues ahí?";
+"ARE_YOU_THERE_DIALOG_DESC" = "Oculta el cuadro de diálogo cuando has estado inactivo en la aplicación durante mucho tiempo.";
+
+"HIDE_ADS_BADGES" = "Ocultar insignias de anuncios";
+"HIDE_ADS_BADGES_DESC" = "Oculta los cuadros de diálogo de insignias de anuncios, promociones de YouTube Premium, intenta ocultar cosas de IA y mucho más.";
+
+"HIDE_YOUTUBE_EDU" = "Ocultar consejos de YouTube (Experimental)";
+"HIDE_YOUTUBE_EDU_DESC" = "Intenta ocultar los consejos de YouTube cuando reinstalas la aplicación o utilizas la aplicación/funciones por primera vez.";
+
+"FIXES_SLOW_MINIPLAYER" = "Repara el minirreproductor lento";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Repara la lentitud del minirreproductor al expandir el video, esto solo funciona en versiones anteriores de YouTube.";
+
+"DISABLES_NEW_MINIPLAYER" = "Desactiva el nuevo minirreproductor";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Usa el minirreproductor de estilo antiguo en lugar del nuevo, esto solo funciona en versiones anteriores de YouTube.";
+
+"SNACK_BAR" = "Desactiva la barra de notificaciones";
+"SNACK_BAR_DESC" = "Desactiva la barra de notificaciones (Snack bar) al presionar algunos botones o hacer algo en la aplicación.";

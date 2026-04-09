@@ -24,8 +24,6 @@ extern BOOL HideAdsBadges();
 extern BOOL HideYouTubeEdu();
 extern BOOL FixesSlowMiniPlayer();
 extern BOOL DisablesNewMiniPlayer();
-extern BOOL Watching();
-extern BOOL Bedtime();
 extern BOOL SnackBar();
 
 static BOOL isProductList(YTICommand *command) {
@@ -601,29 +599,6 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 %end
 %end
 
-// Hide "Continue watching" section in feeds
-%group NoContinShelf
-%hook YTCommuteShelfViewModel
-- (BOOL)shouldHideShelf { return YES; }
-- (id)initWithModel:(id)arg { return nil; }
-- (id)sectionRenderers { return nil; }
-- (id)delegate { return nil; }
-- (void)setDelegate:(id)arg {}
-- (id)menu { return nil; }
-%end
-%end
-
-// Hide Bedtime Reminders
-%group Bedtime
-%hook YTBedtimeReminderController
-- (BOOL)shouldShowBedtimeReminderAsPanel { return NO; }
-%end
-
-%hook YTColdConfig
-- (BOOL)androidEnableShowSystemBedtimePromoHardcoded { return NO; }
-%end
-%end
-
 // Disables Snackbar
 %group SnackBar
 %hook GOOHUDManagerInternal
@@ -697,12 +672,6 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
     }
     if (DisablesNewMiniPlayer()) {
         %init(OldMiniPlayer);
-    }
-    if (Watching()) {
-        %init(NoContinShelf);
-    }
-    if (Bedtime()) {
-        %init(Bedtime);
     }
     if (SnackBar()) {
         %init(SnackBar);

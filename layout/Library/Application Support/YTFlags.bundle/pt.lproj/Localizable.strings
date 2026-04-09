@@ -1,0 +1,36 @@
+"RESTART_BAR" = "Qualquer alteração nessas configurações requer a reinicialização do aplicativo para entrar em vigor.";
+"ENABLED" = "Ativar modificação";
+"ENABLED_DESC" = "Ativar esta opção habilitará a modificação.";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "Permitir reprodução em segundo plano";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Permite que o YouTube reproduza vídeos em segundo plano.";
+
+"VIDEO_ADS" = "Remover anúncios em vídeo";
+"VIDEO_ADS_DESC" = "Remove anúncios em vídeo, incluindo os do Shorts.";
+
+"ENABLES_PIP" = "Ativar PiP";
+"ENABLES_PIP_DESC" = "Ativa o PiP (Picture-In-Picture) para reproduzir vídeos fora do aplicativo do YouTube.";
+
+"DISABLES_SHORTS_PIP" = "Desativar PiP no Shorts";
+"DISABLES_SHORTS_PIP_DESC" = "Tenta desativar o PiP para o Shorts, mas pode não desativá-lo 100%.";
+
+"BLOCK_UPGRADE_DIALOGS" = "Bloquear diálogos de atualização";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Bloqueia os diálogos do YouTube que pedem para você atualizar o aplicativo.";
+
+"ARE_YOU_THERE_DIALOG" = "Ocultar o diálogo 'Você ainda está aí?'";
+"ARE_YOU_THERE_DIALOG_DESC" = "Oculta o diálogo quando você fica inativo no aplicativo por muito tempo.";
+
+"HIDE_ADS_BADGES" = "Ocultar emblemas de anúncios";
+"HIDE_ADS_BADGES_DESC" = "Oculta diálogos de emblemas de anúncios, promoções do YouTube Premium, tenta ocultar coisas de IA e muito mais.";
+
+"HIDE_YOUTUBE_EDU" = "Ocultar dicas do YouTube (Experimental)";
+"HIDE_YOUTUBE_EDU_DESC" = "Tenta ocultar as dicas do YouTube ao reinstalar o aplicativo ou ao usar o aplicativo/recursos pela primeira vez.";
+
+"FIXES_SLOW_MINIPLAYER" = "Corrigir miniplayer lento";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Corrige a lentidão do miniplayer ao expandir o vídeo, isso funciona apenas em versões mais antigas do YouTube.";
+
+"DISABLES_NEW_MINIPLAYER" = "Desativar novo miniplayer";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Use o miniplayer de estilo antigo em vez do novo, isso funciona apenas em versões mais antigas do YouTube.";
+
+"SNACK_BAR" = "Desativar barra de notificações";
+"SNACK_BAR_DESC" = "Desativa a barra de notificações (Snack bar) ao pressionar alguns botões ou fazer algo no aplicativo.";

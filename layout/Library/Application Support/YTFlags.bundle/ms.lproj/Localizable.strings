@@ -1,0 +1,36 @@
+"RESTART_BAR" = "Sebarang perubahan pada tetapan ini memerlukan aplikasi dimulakan semula untuk berkesan.";
+"ENABLED" = "Dayakan tweak";
+"ENABLED_DESC" = "Menghidupkan pilihan ini akan mengaktifkan tweak.";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "Benarkan main balik latar belakang";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Membenarkan YouTube memainkan video di latar belakang.";
+
+"VIDEO_ADS" = "Alih keluar iklan video";
+"VIDEO_ADS_DESC" = "Alih keluar iklan video termasuk Shorts.";
+
+"ENABLES_PIP" = "Dayakan PiP";
+"ENABLES_PIP_DESC" = "Mendayakan PiP (Picture-In-Picture) untuk memainkan video di luar aplikasi YouTube.";
+
+"DISABLES_SHORTS_PIP" = "Nyahdayakan PiP Shorts";
+"DISABLES_SHORTS_PIP_DESC" = "Cuba nyahdayakan PiP Shorts, ini mungkin tidak 100% melumpuhkannya.";
+
+"BLOCK_UPGRADE_DIALOGS" = "Sekat dialog naik taraf";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Sekat dialog YouTube yang meminta anda menaik taraf aplikasi.";
+
+"ARE_YOU_THERE_DIALOG" = "Sembunyikan dialog 'Adakah anda di sana?'";
+"ARE_YOU_THERE_DIALOG_DESC" = "Sembunyikan dialog apabila anda tidak aktif dalam aplikasi terlalu lama.";
+
+"HIDE_ADS_BADGES" = "Sembunyikan lencana iklan";
+"HIDE_ADS_BADGES_DESC" = "Sembunyikan dialog lencana iklan, promosi YouTube Premium, cuba sembunyikan perkara AI, dan banyak lagi.";
+
+"HIDE_YOUTUBE_EDU" = "Sembunyikan pendidikan YouTube (Eksperimen)";
+"HIDE_YOUTUBE_EDU_DESC" = "Cuba sembunyikan pendidikan YouTube apabila anda memasang semula aplikasi atau menggunakan aplikasi/ciri buat kali pertama.";
+
+"FIXES_SLOW_MINIPLAYER" = "Baiki pemain mini lambat";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Membaiki kelambatan pemain mini untuk mengembangkan video, ini hanya berfungsi dalam versi YouTube lama.";
+
+"DISABLES_NEW_MINIPLAYER" = "Nyahdayakan pemain mini baharu";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Gunakan pemain mini gaya lama dan bukannya yang baharu, ini hanya berfungsi dalam versi YouTube lama.";
+
+"SNACK_BAR" = "Nyahdayakan bar snek";
+"SNACK_BAR_DESC" = "Melumpuhkan bar snek apabila menekan beberapa butang atau melakukan sesuatu dalam aplikasi.";

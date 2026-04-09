@@ -1,0 +1,36 @@
+"RESTART_BAR" = "Näiden asetusten muutokset edellyttävät sovelluksen uudelleenkäynnistystä tullakseen voimaan.";
+"ENABLED" = "Ota viilaus käyttöön";
+"ENABLED_DESC" = "Tämän vaihtoehdon ottaminen käyttöön aktivoi viilauksen.";
+
+"ALLOWS_BACKGROUND_PLAYBACK" = "Salli taustatoisto";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Sallii YouTuben toistaa videoita taustalla.";
+
+"VIDEO_ADS" = "Poista videomainokset";
+"VIDEO_ADS_DESC" = "Poista videomainokset, mukaan lukien Shorts-videot.";
+
+"ENABLES_PIP" = "Ota PiP käyttöön";
+"ENABLES_PIP_DESC" = "Ota Kuva kuvassa (PiP) käyttöön videoiden toistamiseksi YouTube-sovelluksen ulkopuolella.";
+
+"DISABLES_SHORTS_PIP" = "Poista Shorts PiP käytöstä";
+"DISABLES_SHORTS_PIP_DESC" = "Yrittää poistaa Shorts PiP:n käytöstä, tämä ei ehkä poista sitä 100 % käytöstä.";
+
+"BLOCK_UPGRADE_DIALOGS" = "Estä päivitysvalintaikkunat";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Estä YouTuben valintaikkunat, jotka pyytävät sinua päivittämään sovellusta.";
+
+"ARE_YOU_THERE_DIALOG" = "Piilota Oletko siellä? -valintaikkuna";
+"ARE_YOU_THERE_DIALOG_DESC" = "Piilota valintaikkuna, kun olet ollut epäaktiivinen sovelluksessa liian kauan.";
+
+"HIDE_ADS_BADGES" = "Piilota mainosmerkit";
+"HIDE_ADS_BADGES_DESC" = "Piilota mainosmerkkien valintaikkunat, YouTube Premium -kampanjat, yritä piilottaa tekoälyasiat ja paljon muuta.";
+
+"HIDE_YOUTUBE_EDU" = "Piilota YouTuben ohjeet (Kokeellinen)";
+"HIDE_YOUTUBE_EDU_DESC" = "Yritä piilottaa YouTuben ohjeet, kun asennat sovelluksen uudelleen tai käytät sovellusta/ominaisuuksia ensimmäistä kertaa.";
+
+"FIXES_SLOW_MINIPLAYER" = "Korjaa hidas minisoitin";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Korjaa minisoittimen hitauden videon laajentamisessa, tämä toimii vain vanhemmissa YouTube-versioissa.";
+
+"DISABLES_NEW_MINIPLAYER" = "Poista uusi minisoitin käytöstä";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Käytä vanhanmallista minisoitinta uuden sijaan, tämä toimii vain vanhemmissa YouTube-versioissa.";
+
+"SNACK_BAR" = "Poista ilmoituspalkki käytöstä";
+"SNACK_BAR_DESC" = "Poistaa ilmoituspalkin (Snack bar) käytöstä painettaessa joitain painikkeita tai tehdessäsi jotain sovelluksessa.";
