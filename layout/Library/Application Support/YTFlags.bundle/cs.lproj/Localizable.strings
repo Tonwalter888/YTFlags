@@ -1,36 +1,36 @@
-"RESTART_BAR" = "Jakékoli změny těchto nastavení vyžadují restartování aplikace.";
-"ENABLED" = "Povolit vylepšení";
-"ENABLED_DESC" = "Zapnutím této možnosti se aktivuje vylepšení.";
+"RESTART_BAR" = "Aby se změny těchto nastavení projevily, je nutné restartovat aplikaci.";
+"ENABLED" = "Povolit tweak";
+"ENABLED_DESC" = "Zapnutím této možnosti se tweak aktivuje.";
 
 "ALLOWS_BACKGROUND_PLAYBACK" = "Povolit přehrávání na pozadí";
-"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Umožňuje přehrávat videa z YouTube na pozadí.";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Umožňuje YouTube přehrávat videa na pozadí.";
 
-"VIDEO_ADS" = "Odstranit videoreklamy";
-"VIDEO_ADS_DESC" = "Odstraní videoreklamy včetně Shorts.";
+"VIDEO_ADS" = "Odstranit video reklamy";
+"VIDEO_ADS_DESC" = "Odstraňuje video reklamy včetně Shorts.";
 
 "ENABLES_PIP" = "Povolit PiP";
-"ENABLES_PIP_DESC" = "Povolí PiP (obraz v obraze) pro přehrávání videí mimo aplikaci YouTube.";
+"ENABLES_PIP_DESC" = "Povolí režim Obraz v obraze (PiP) pro přehrávání videí mimo aplikaci YouTube.";
 
-"DISABLES_SHORTS_PIP" = "Zakázat PiP pro Shorts";
-"DISABLES_SHORTS_PIP_DESC" = "Pokusí se zakázat PiP pro Shorts, nemusí to fungovat na 100 %.";
+"DISABLES_SHORTS_PIP" = "Zakázat Shorts PiP";
+"DISABLES_SHORTS_PIP_DESC" = "Pokusí se zakázat Shorts PiP, nemusí být zcela deaktivováno.";
 
-"BLOCK_UPGRADE_DIALOGS" = "Blokovat dialogy o aktualizaci";
-"BLOCK_UPGRADE_DIALOGS_DESC" = "Zablokuje dialogy YouTube, které vás vyzývají k aktualizaci aplikace.";
+"BLOCK_UPGRADE_DIALOGS" = "Blokovat dialogy aktualizace";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Blokuje dialogy YouTube, které vás vyzývají k aktualizaci aplikace.";
 
-"ARE_YOU_THERE_DIALOG" = "Skrýt dialog Jste tam?";
-"ARE_YOU_THERE_DIALOG_DESC" = "Skryje dialog, když jste v aplikaci příliš dlouho neaktivní.";
+"ARE_YOU_THERE_DIALOG" = "Skrýt dialog 'Jste tam?'";
+"ARE_YOU_THERE_DIALOG_DESC" = "Skryje dialog, který se zobrazí při dlouhé neaktivitě.";
 
 "HIDE_ADS_BADGES" = "Skrýt odznaky reklam";
-"HIDE_ADS_BADGES_DESC" = "Skryje dialogy s odznaky reklam, propagace YouTube Premium, pokusí se skrýt prvky umělé inteligence a mnoho dalšího.";
+"HIDE_ADS_BADGES_DESC" = "Skryje odznaky reklam, propagace YouTube Premium, pokusí se skrýt AI funkce a další.";
 
-"HIDE_YOUTUBE_EDU" = "Skrýt tipy YouTube (Experimentální)";
-"HIDE_YOUTUBE_EDU_DESC" = "Pokusí se skrýt vzdělávací tipy YouTube při přeinstalaci aplikace nebo při prvním použití aplikace/funkcí.";
+"HIDE_YOUTUBE_EDU" = "Skrýt výukové tipy YouTube (experimentální)";
+"HIDE_YOUTUBE_EDU_DESC" = "Pokusí se skrýt výukové tipy při přeinstalaci aplikace nebo prvním použití funkcí.";
 
 "FIXES_SLOW_MINIPLAYER" = "Opravit pomalý minipřehrávač";
-"FIXES_SLOW_MINIPLAYER_DESC" = "Opravuje pomalé zvětšování videa v minipřehrávači, funguje pouze ve starších verzích YouTube.";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Opravuje pomalé rozšiřování minipřehrávače. Funguje pouze ve starších verzích YouTube.";
 
 "DISABLES_NEW_MINIPLAYER" = "Zakázat nový minipřehrávač";
-"DISABLES_NEW_MINIPLAYER_DESC" = "Použije starý styl minipřehrávače místo nového, funguje pouze ve starších verzích YouTube.";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Použije starý styl minipřehrávače místo nového. Funguje pouze ve starších verzích YouTube.";
 
-"SNACK_BAR" = "Zakázat informační lištu";
-"SNACK_BAR_DESC" = "Zakáže informační lištu (Snack bar) při stisknutí některých tlačítek nebo provádění akcí v aplikaci.";
+"SNACK_BAR" = "Zakázat snackbar";
+"SNACK_BAR_DESC" = "Zakáže snackbar při stisknutí některých tlačítek nebo provedení akcí v aplikaci.";

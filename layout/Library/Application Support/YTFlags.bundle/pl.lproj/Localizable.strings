@@ -1,36 +1,36 @@
-"RESTART_BAR" = "Wszelkie zmiany w tych ustawieniach wymagają ponownego uruchomienia aplikacji, aby weszły w życie.";
+"RESTART_BAR" = "Zmiany tych ustawień wymagają ponownego uruchomienia aplikacji, aby zaczęły działać.";
 "ENABLED" = "Włącz tweak";
-"ENABLED_DESC" = "Włączenie tej opcji spowoduje aktywację tweaka.";
+"ENABLED_DESC" = "Włączenie tej opcji aktywuje tweak.";
 
-"ALLOWS_BACKGROUND_PLAYBACK" = "Zezwalaj na odtwarzanie w tle";
+"ALLOWS_BACKGROUND_PLAYBACK" = "Zezwól na odtwarzanie w tle";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Pozwala YouTube odtwarzać filmy w tle.";
 
 "VIDEO_ADS" = "Usuń reklamy wideo";
-"VIDEO_ADS_DESC" = "Usuń reklamy wideo, w tym Shorts.";
+"VIDEO_ADS_DESC" = "Usuwa reklamy wideo, w tym Shorts.";
 
 "ENABLES_PIP" = "Włącz PiP";
-"ENABLES_PIP_DESC" = "Włącza tryb PiP (obraz w obrazie), aby odtwarzać filmy poza aplikacją YouTube.";
+"ENABLES_PIP_DESC" = "Włącza tryb Picture-in-Picture (PiP), aby odtwarzać wideo poza aplikacją YouTube.";
 
-"DISABLES_SHORTS_PIP" = "Wyłącz PiP w Shorts";
-"DISABLES_SHORTS_PIP_DESC" = "Spróbuj wyłączyć PiP dla Shorts, może to nie zadziałać w 100%.";
+"DISABLES_SHORTS_PIP" = "Wyłącz PiP Shorts";
+"DISABLES_SHORTS_PIP_DESC" = "Próbuje wyłączyć PiP Shorts. Może nie działać w pełni.";
 
 "BLOCK_UPGRADE_DIALOGS" = "Blokuj okna aktualizacji";
-"BLOCK_UPGRADE_DIALOGS_DESC" = "Blokuj okna dialogowe YouTube informujące o konieczności aktualizacji aplikacji.";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Blokuje okna YouTube proszące o aktualizację aplikacji.";
 
-"ARE_YOU_THERE_DIALOG" = "Ukryj okno 'Czy jesteś tam?'";
-"ARE_YOU_THERE_DIALOG_DESC" = "Ukryj okno dialogowe, gdy jesteś nieaktywny w aplikacji zbyt długo.";
+"ARE_YOU_THERE_DIALOG" = "Ukryj dialog 'Czy nadal oglądasz?'";
+"ARE_YOU_THERE_DIALOG_DESC" = "Ukrywa dialog pojawiający się po dłuższej bezczynności.";
 
-"HIDE_ADS_BADGES" = "Ukryj plakietki reklam";
-"HIDE_ADS_BADGES_DESC" = "Ukryj okna plakietek reklam, promocje YouTube Premium, spróbuj ukryć elementy AI i wiele więcej.";
+"HIDE_ADS_BADGES" = "Ukryj oznaczenia reklam";
+"HIDE_ADS_BADGES_DESC" = "Ukrywa oznaczenia reklam, promocje YouTube Premium, próbuje ukryć elementy AI i więcej.";
 
 "HIDE_YOUTUBE_EDU" = "Ukryj wskazówki YouTube (Eksperymentalne)";
-"HIDE_YOUTUBE_EDU_DESC" = "Spróbuj ukryć wskazówki YouTube po ponownej instalacji aplikacji lub podczas pierwszego użycia aplikacji/funkcji.";
+"HIDE_YOUTUBE_EDU_DESC" = "Próbuje ukryć wskazówki przy ponownej instalacji aplikacji lub pierwszym użyciu.";
 
-"FIXES_SLOW_MINIPLAYER" = "Napraw powolny miniodtwarzacz";
-"FIXES_SLOW_MINIPLAYER_DESC" = "Naprawia powolne rozszerzanie wideo w miniodtwarzaczu, działa to tylko w starszych wersjach YouTube.";
+"FIXES_SLOW_MINIPLAYER" = "Napraw wolny miniplayer";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Naprawia wolne rozszerzanie miniplayera. Działa tylko w starszych wersjach.";
 
-"DISABLES_NEW_MINIPLAYER" = "Wyłącz nowy miniodtwarzacz";
-"DISABLES_NEW_MINIPLAYER_DESC" = "Użyj miniodtwarzacza w starym stylu zamiast nowego, działa to tylko w starszych wersjach YouTube.";
+"DISABLES_NEW_MINIPLAYER" = "Wyłącz nowy miniplayer";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Używa starego miniplayera zamiast nowego. Działa tylko w starszych wersjach.";
 
-"SNACK_BAR" = "Wyłącz pasek powiadomień";
-"SNACK_BAR_DESC" = "Wyłącza pasek powiadomień (Snack bar) podczas naciskania niektórych przycisków lub wykonywania czynności w aplikacji.";
+"SNACK_BAR" = "Wyłącz snackbar";
+"SNACK_BAR_DESC" = "Wyłącza snackbar przy naciskaniu przycisków lub wykonywaniu działań w aplikacji.";

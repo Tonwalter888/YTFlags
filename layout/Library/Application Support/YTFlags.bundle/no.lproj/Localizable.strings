@@ -1,36 +1,36 @@
-"RESTART_BAR" = "Eventuelle endringer i disse innstillingene krever at appen startes på nytt for å tre i kraft.";
+"RESTART_BAR" = "Endringer i disse innstillingene krever at appen startes på nytt for å tre i kraft.";
 "ENABLED" = "Aktiver tweak";
-"ENABLED_DESC" = "Ved å slå på dette alternativet aktiveres tweaken.";
+"ENABLED_DESC" = "Når dette alternativet er slått på, vil tweaken aktiveres.";
 
 "ALLOWS_BACKGROUND_PLAYBACK" = "Tillat bakgrunnsavspilling";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Lar YouTube spille av videoer i bakgrunnen.";
 
 "VIDEO_ADS" = "Fjern videoannonser";
-"VIDEO_ADS_DESC" = "Fjern videoannonser inkludert Shorts.";
+"VIDEO_ADS_DESC" = "Fjerner videoannonser inkludert Shorts.";
 
 "ENABLES_PIP" = "Aktiver PiP";
-"ENABLES_PIP_DESC" = "Aktiverer PiP (bilde-i-bilde) for å spille av videoer utenfor YouTube-appen.";
+"ENABLES_PIP_DESC" = "Aktiverer Picture-in-Picture (PiP) for å spille av videoer utenfor YouTube-appen.";
 
 "DISABLES_SHORTS_PIP" = "Deaktiver Shorts PiP";
-"DISABLES_SHORTS_PIP_DESC" = "Prøv å deaktivere Shorts PiP, dette vil kanskje ikke deaktivere det 100%.";
+"DISABLES_SHORTS_PIP_DESC" = "Prøver å deaktivere Shorts PiP, men det kan hende det ikke fungerer helt.";
 
 "BLOCK_UPGRADE_DIALOGS" = "Blokker oppgraderingsdialoger";
-"BLOCK_UPGRADE_DIALOGS_DESC" = "Blokker YouTube-dialogene som ber deg om å oppgradere appen.";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Blokkerer YouTube-dialoger som ber deg oppgradere appen.";
 
-"ARE_YOU_THERE_DIALOG" = "Skjul 'Er du der?'-dialog";
-"ARE_YOU_THERE_DIALOG_DESC" = "Skjul dialogen når du er inaktiv i appen for lenge.";
+"ARE_YOU_THERE_DIALOG" = "Skjul 'Er du der?' dialog";
+"ARE_YOU_THERE_DIALOG_DESC" = "Skjuler dialogen når du er inaktiv for lenge.";
 
 "HIDE_ADS_BADGES" = "Skjul annonsemerker";
-"HIDE_ADS_BADGES_DESC" = "Skjul dialoger for annonsemerker, YouTube Premium-kampanjer, prøv å skjule AI-ting, og mye mer.";
+"HIDE_ADS_BADGES_DESC" = "Skjuler annonsemerker, YouTube Premium-kampanjer, prøver å skjule AI-elementer og mer.";
 
-"HIDE_YOUTUBE_EDU" = "Skjul YouTube-opplæring (Eksperimentelt)";
-"HIDE_YOUTUBE_EDU_DESC" = "Prøv å skjule YouTube-opplæring når du installerer appen på nytt eller bruker appen/funksjonene for første gang.";
+"HIDE_YOUTUBE_EDU" = "Skjul YouTube-veiledninger (Eksperimentell)";
+"HIDE_YOUTUBE_EDU_DESC" = "Prøver å skjule YouTube-veiledninger ved reinstallasjon eller første gangs bruk.";
 
-"FIXES_SLOW_MINIPLAYER" = "Fiks treg minispiller";
-"FIXES_SLOW_MINIPLAYER_DESC" = "Fikser at minispilleren er treg med å utvide videoen, dette fungerer bare i eldre YouTube-versjoner.";
+"FIXES_SLOW_MINIPLAYER" = "Fiks treg miniplayer";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Fikser treg utvidelse av miniplayer. Fungerer bare på eldre versjoner.";
 
-"DISABLES_NEW_MINIPLAYER" = "Deaktiver ny minispiller";
-"DISABLES_NEW_MINIPLAYER_DESC" = "Bruk gammeldags minispiller i stedet for den nye, dette fungerer bare i eldre YouTube-versjoner.";
+"DISABLES_NEW_MINIPLAYER" = "Deaktiver ny miniplayer";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Bruker den gamle miniplayeren i stedet for den nye. Fungerer bare på eldre versjoner.";
 
 "SNACK_BAR" = "Deaktiver snackbar";
-"SNACK_BAR_DESC" = "Deaktiverer snackbar når du trykker på enkelte knapper eller gjør noe i appen.";
+"SNACK_BAR_DESC" = "Deaktiverer snackbar når knapper trykkes eller handlinger utføres.";

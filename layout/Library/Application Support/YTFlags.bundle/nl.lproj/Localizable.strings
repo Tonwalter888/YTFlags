@@ -1,36 +1,36 @@
-"RESTART_BAR" = "Wijzigingen in deze instellingen vereisen dat de app opnieuw wordt opgestart om effect te hebben.";
+"RESTART_BAR" = "Wijzigingen in deze instellingen vereisen dat de app opnieuw wordt gestart om effect te hebben.";
 "ENABLED" = "Tweak inschakelen";
-"ENABLED_DESC" = "Door deze optie in te schakelen wordt de tweak geactiveerd.";
+"ENABLED_DESC" = "Het inschakelen van deze optie activeert de tweak.";
 
-"ALLOWS_BACKGROUND_PLAYBACK" = "Achtergrond afspelen toestaan";
+"ALLOWS_BACKGROUND_PLAYBACK" = "Achtergrondweergave toestaan";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Hiermee kan YouTube video's op de achtergrond afspelen.";
 
-"VIDEO_ADS" = "Video-advertenties verwijderen";
-"VIDEO_ADS_DESC" = "Verwijder video-advertenties inclusief Shorts.";
+"VIDEO_ADS" = "Videoadvertenties verwijderen";
+"VIDEO_ADS_DESC" = "Verwijdert videoadvertenties inclusief Shorts.";
 
 "ENABLES_PIP" = "PiP inschakelen";
-"ENABLES_PIP_DESC" = "Schakelt PiP (Picture-In-Picture) in om video's buiten de YouTube-app af te spelen.";
+"ENABLES_PIP_DESC" = "Schakelt Picture-in-Picture (PiP) in om video's buiten de YouTube-app af te spelen.";
 
 "DISABLES_SHORTS_PIP" = "Shorts PiP uitschakelen";
-"DISABLES_SHORTS_PIP_DESC" = "Probeert Shorts PiP uit te schakelen, dit werkt mogelijk niet 100%.";
+"DISABLES_SHORTS_PIP_DESC" = "Probeert Shorts PiP uit te schakelen. Mogelijk werkt dit niet volledig.";
 
-"BLOCK_UPGRADE_DIALOGS" = "Upgrade-dialogen blokkeren";
-"BLOCK_UPGRADE_DIALOGS_DESC" = "Blokkeer de YouTube-dialogen die u vragen de app te upgraden.";
+"BLOCK_UPGRADE_DIALOGS" = "Upgradevensters blokkeren";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Blokkeert YouTube-vensters die vragen om de app te upgraden.";
 
-"ARE_YOU_THERE_DIALOG" = "Dialoog 'Bent u daar nog?' verbergen";
-"ARE_YOU_THERE_DIALOG_DESC" = "Verberg de dialoog wanneer u te lang inactief bent in de app.";
+"ARE_YOU_THERE_DIALOG" = "Dialoog 'Ben je er nog?' verbergen";
+"ARE_YOU_THERE_DIALOG_DESC" = "Verbergt de dialoog wanneer je te lang inactief bent.";
 
 "HIDE_ADS_BADGES" = "Advertentiebadges verbergen";
-"HIDE_ADS_BADGES_DESC" = "Verberg dialoogvensters voor advertentiebadges, YouTube Premium-promoties, probeer AI-dingen te verbergen en nog veel meer.";
+"HIDE_ADS_BADGES_DESC" = "Verbergt advertentiebadges, YouTube Premium-promoties, probeert AI-elementen te verbergen en meer.";
 
-"HIDE_YOUTUBE_EDU" = "YouTube-educatie verbergen (Experimenteel)";
-"HIDE_YOUTUBE_EDU_DESC" = "Probeer YouTube-educatie te verbergen wanneer u de app opnieuw installeert of de app/functies voor het eerst gebruikt.";
+"HIDE_YOUTUBE_EDU" = "YouTube-uitleg verbergen (Experimenteel)";
+"HIDE_YOUTUBE_EDU_DESC" = "Probeert YouTube-uitleg te verbergen bij herinstallatie of eerste gebruik.";
 
-"FIXES_SLOW_MINIPLAYER" = "Trage minispeler repareren";
-"FIXES_SLOW_MINIPLAYER_DESC" = "Repareert de traagheid van de minispeler bij het uitvouwen van de video, dit werkt alleen in oudere YouTube-versies.";
+"FIXES_SLOW_MINIPLAYER" = "Trage miniplayer repareren";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Repareert het langzaam uitbreiden van de miniplayer. Werkt alleen op oudere versies.";
 
-"DISABLES_NEW_MINIPLAYER" = "Nieuwe minispeler uitschakelen";
-"DISABLES_NEW_MINIPLAYER_DESC" = "Gebruik de minispeler in oude stijl in plaats van de nieuwe, dit werkt alleen in oudere YouTube-versies.";
+"DISABLES_NEW_MINIPLAYER" = "Nieuwe miniplayer uitschakelen";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Gebruikt de oude miniplayer in plaats van de nieuwe. Werkt alleen op oudere versies.";
 
 "SNACK_BAR" = "Snackbar uitschakelen";
-"SNACK_BAR_DESC" = "Schakelt de snackbar uit bij het indrukken van sommige knoppen of bij acties in de app.";
+"SNACK_BAR_DESC" = "Schakelt de snackbar uit wanneer knoppen worden ingedrukt of acties worden uitgevoerd.";

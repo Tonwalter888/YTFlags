@@ -1,36 +1,36 @@
-"RESTART_BAR" = "これらの設定の変更を適用するには、アプリを再起動する必要があります。";
-"ENABLED" = "Tweakを有効にする";
-"ENABLED_DESC" = "このオプションをオンにすると、Tweakが有効になります。";
+"RESTART_BAR" = "これらの設定を変更した場合、反映するにはアプリの再起動が必要です。";
+"ENABLED" = "Tweakを有効化";
+"ENABLED_DESC" = "このオプションをオンにすると、tweakが有効になります。";
 
 "ALLOWS_BACKGROUND_PLAYBACK" = "バックグラウンド再生を許可";
-"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "YouTubeで動画をバックグラウンドで再生できるようにします。";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "YouTubeがバックグラウンドで動画を再生できるようにします。";
 
 "VIDEO_ADS" = "動画広告を削除";
-"VIDEO_ADS_DESC" = "ショートを含む動画広告を削除します。";
+"VIDEO_ADS_DESC" = "Shortsを含む動画広告を削除します。";
 
-"ENABLES_PIP" = "PiPを有効にする";
-"ENABLES_PIP_DESC" = "YouTubeアプリの外部で動画を再生するためのPiP（ピクチャー・イン・ピクチャー）を有効にします。";
+"ENABLES_PIP" = "PiPを有効化";
+"ENABLES_PIP_DESC" = "Picture-in-Picture (PiP) を有効にして、YouTubeアプリ外で動画を再生できます。";
 
-"DISABLES_SHORTS_PIP" = "ショートのPiPを無効にする";
-"DISABLES_SHORTS_PIP_DESC" = "ショートのPiPを無効にしようと試みますが、100%無効にならない場合があります。";
+"DISABLES_SHORTS_PIP" = "Shorts PiPを無効化";
+"DISABLES_SHORTS_PIP_DESC" = "Shorts PiPを無効化しようとします。完全に無効化できない場合があります。";
 
 "BLOCK_UPGRADE_DIALOGS" = "アップグレードダイアログをブロック";
-"BLOCK_UPGRADE_DIALOGS_DESC" = "アプリのアップグレードを促すYouTubeのダイアログをブロックします。";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "アプリの更新を求めるYouTubeダイアログをブロックします。";
 
-"ARE_YOU_THERE_DIALOG" = "「視聴を続けていますか？」ダイアログを非表示";
-"ARE_YOU_THERE_DIALOG_DESC" = "アプリでの操作が長時間ない場合のダイアログを非表示にします。";
+"ARE_YOU_THERE_DIALOG" = "「まだ視聴していますか？」ダイアログを非表示";
+"ARE_YOU_THERE_DIALOG_DESC" = "長時間操作がない場合に表示されるダイアログを非表示にします。";
 
 "HIDE_ADS_BADGES" = "広告バッジを非表示";
-"HIDE_ADS_BADGES_DESC" = "広告バッジのダイアログ、YouTube Premiumのプロモーションを非表示にし、AI関連のものを非表示にするなど、様々な機能があります。";
+"HIDE_ADS_BADGES_DESC" = "広告バッジ、YouTube Premiumのプロモーション、AI要素などを非表示にします。";
 
-"HIDE_YOUTUBE_EDU" = "YouTubeのチュートリアルを非表示（試験版）";
-"HIDE_YOUTUBE_EDU_DESC" = "アプリを再インストールした時、または初めてアプリ/機能を使用する際に、YouTubeのチュートリアルを非表示にしようと試みます。";
+"HIDE_YOUTUBE_EDU" = "YouTubeチュートリアルを非表示 (実験的)";
+"HIDE_YOUTUBE_EDU_DESC" = "アプリ再インストール時や初回利用時のチュートリアル表示を非表示にします。";
 
 "FIXES_SLOW_MINIPLAYER" = "遅いミニプレーヤーを修正";
-"FIXES_SLOW_MINIPLAYER_DESC" = "動画を拡大する際のミニプレーヤーの遅延を修正します。これは古いバージョンのYouTubeでのみ機能します。";
+"FIXES_SLOW_MINIPLAYER_DESC" = "ミニプレーヤーの展開が遅い問題を修正します。古いYouTubeバージョンのみ対応。";
 
-"DISABLES_NEW_MINIPLAYER" = "新しいミニプレーヤーを無効にする";
-"DISABLES_NEW_MINIPLAYER_DESC" = "新しいものの代わりに古いスタイルのミニプレーヤーを使用します。これは古いバージョンのYouTubeでのみ機能します。";
+"DISABLES_NEW_MINIPLAYER" = "新しいミニプレーヤーを無効化";
+"DISABLES_NEW_MINIPLAYER_DESC" = "新しいミニプレーヤーの代わりに旧スタイルを使用します。古いYouTubeバージョンのみ対応。";
 
-"SNACK_BAR" = "スナックバーを無効にする";
-"SNACK_BAR_DESC" = "一部のボタンを押した時やアプリ内で何かをした時に表示されるスナックバーを無効にします。";
+"SNACK_BAR" = "スナックバーを無効化";
+"SNACK_BAR_DESC" = "アプリ内でボタン操作などを行った際に表示されるスナックバーを無効化します。";

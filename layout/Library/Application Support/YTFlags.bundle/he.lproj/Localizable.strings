@@ -1,36 +1,36 @@
-"RESTART_BAR" = "כל שינוי בהגדרות אלו מחייב הפעלה מחדש של האפליקציה כדי שייכנס לתוקף.";
-"ENABLED" = "הפעלת ה-tweak";
+"RESTART_BAR" = "שינויים בהגדרות אלו דורשים הפעלה מחדש של האפליקציה כדי להיכנס לתוקף.";
+"ENABLED" = "הפעלת tweak";
 "ENABLED_DESC" = "הפעלת אפשרות זו תפעיל את ה-tweak.";
 
-"ALLOWS_BACKGROUND_PLAYBACK" = "אפשר השמעה ברקע";
-"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "מאפשר ל-YouTube להפעיל סרטונים ברקע.";
+"ALLOWS_BACKGROUND_PLAYBACK" = "אפשר ניגון ברקע";
+"ALLOWS_BACKGROUND_PLAYBACK_DESC" = "מאפשר ל-YouTube לנגן סרטונים ברקע.";
 
-"VIDEO_ADS" = "הסרת פרסומות וידאו";
-"VIDEO_ADS_DESC" = "הסרת פרסומות וידאו כולל ב-Shorts.";
+"VIDEO_ADS" = "הסר פרסומות וידאו";
+"VIDEO_ADS_DESC" = "מסיר פרסומות וידאו כולל Shorts.";
 
-"ENABLES_PIP" = "הפעלת PiP";
-"ENABLES_PIP_DESC" = "מפעיל מצב תמונה בתוך תמונה (PiP) כדי להפעיל סרטונים מחוץ לאפליקציית YouTube.";
+"ENABLES_PIP" = "הפעל PiP";
+"ENABLES_PIP_DESC" = "מפעיל מצב Picture-in-Picture לניגון וידאו מחוץ לאפליקציית YouTube.";
 
-"DISABLES_SHORTS_PIP" = "ביטול PiP ב-Shorts";
-"DISABLES_SHORTS_PIP_DESC" = "ניסיון לבטל את מצב ה-PiP ב-Shorts, ייתכן שזה לא יתבטל ב-100%.";
+"DISABLES_SHORTS_PIP" = "בטל PiP של Shorts";
+"DISABLES_SHORTS_PIP_DESC" = "מנסה לבטל PiP של Shorts, ייתכן שלא יושבת לחלוטין.";
 
-"BLOCK_UPGRADE_DIALOGS" = "חסימת הודעות שדרוג";
-"BLOCK_UPGRADE_DIALOGS_DESC" = "חסימת הודעות הדיאלוג של YouTube המבקשות ממך לעדכן את האפליקציה.";
+"BLOCK_UPGRADE_DIALOGS" = "חסום חלונות שדרוג";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "חוסם חלונות של YouTube שמבקשים לעדכן את האפליקציה.";
 
-"ARE_YOU_THERE_DIALOG" = "הסתרת דיאלוג 'האם אתה שם?'";
-"ARE_YOU_THERE_DIALOG_DESC" = "הסתרת הדיאלוג המופיע כשאתה לא פעיל באפליקציה זמן רב מדי.";
+"ARE_YOU_THERE_DIALOG" = "הסתר חלון 'אתה עדיין שם?'";
+"ARE_YOU_THERE_DIALOG_DESC" = "מסתיר את החלון שמופיע לאחר חוסר פעילות ממושך.";
 
-"HIDE_ADS_BADGES" = "הסתרת תגי פרסומות";
-"HIDE_ADS_BADGES_DESC" = "הסתרת תגי פרסומות, הצעות ל-YouTube Premium, ניסיון להסתרת תכונות AI ועוד.";
+"HIDE_ADS_BADGES" = "הסתר תגי פרסומות";
+"HIDE_ADS_BADGES_DESC" = "מסתיר תגי פרסומות, מבצעי YouTube Premium ומנסה להסתיר רכיבי AI.";
 
-"HIDE_YOUTUBE_EDU" = "הסתרת הדרכות YouTube (ניסיוני)";
-"HIDE_YOUTUBE_EDU_DESC" = "ניסיון להסתיר את הדרכות ה-YouTube בעת התקנה מחדש או שימוש ראשון בתכונות.";
+"HIDE_YOUTUBE_EDU" = "הסתר מדריכי YouTube (ניסיוני)";
+"HIDE_YOUTUBE_EDU_DESC" = "מנסה להסתיר מדריכי YouTube בעת התקנה מחדש או שימוש ראשון.";
 
-"FIXES_SLOW_MINIPLAYER" = "תיקון איטיות בנגן המוקטן";
-"FIXES_SLOW_MINIPLAYER_DESC" = "מתקן את האיטיות של הנגן המוקטן בעת הרחבת הסרטון, עובד רק בגרסאות YouTube ישנות.";
+"FIXES_SLOW_MINIPLAYER" = "תקן miniplayer איטי";
+"FIXES_SLOW_MINIPLAYER_DESC" = "מתקן הרחבה איטית של ה-miniplayer. עובד רק בגרסאות ישנות.";
 
-"DISABLES_NEW_MINIPLAYER" = "ביטול הנגן המוקטן החדש";
-"DISABLES_NEW_MINIPLAYER_DESC" = "שימוש בנגן המוקטן בסגנון הישן במקום החדש, עובד רק בגרסאות YouTube ישנות.";
+"DISABLES_NEW_MINIPLAYER" = "בטל miniplayer חדש";
+"DISABLES_NEW_MINIPLAYER_DESC" = "משתמש ב-miniplayer הישן במקום החדש. עובד רק בגרסאות ישנות.";
 
-"SNACK_BAR" = "ביטול תיבות הודעה (Snack bar)";
-"SNACK_BAR_DESC" = "מבטל את הופעת תיבות ההודעה בתחתית המסך בעת לחיצה על כפתורים מסוימים.";
+"SNACK_BAR" = "בטל snackbar";
+"SNACK_BAR_DESC" = "מבטל את ה-snackbar בעת לחיצה על כפתורים או פעולות באפליקציה.";

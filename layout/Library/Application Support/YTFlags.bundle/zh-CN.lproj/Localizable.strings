@@ -1,36 +1,36 @@
-"RESTART_BAR" = "对这些设置的任何更改都需要重启应用才能生效。";
-"ENABLED" = "启用插件";
-"ENABLED_DESC" = "开启此选项将激活插件。";
+"RESTART_BAR" = "更改这些设置后需要重新启动应用才能生效。";
+"ENABLED" = "启用 tweak";
+"ENABLED_DESC" = "打开此选项将激活 tweak。";
 
 "ALLOWS_BACKGROUND_PLAYBACK" = "允许后台播放";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "允许 YouTube 在后台播放视频。";
 
 "VIDEO_ADS" = "移除视频广告";
-"VIDEO_ADS_DESC" = "移除包括 Shorts 在内的视频广告。";
+"VIDEO_ADS_DESC" = "移除视频广告，包括 Shorts。";
 
-"ENABLES_PIP" = "启用画中画 (PiP)";
+"ENABLES_PIP" = "启用 PiP";
 "ENABLES_PIP_DESC" = "启用画中画 (PiP) 以在 YouTube 应用外播放视频。";
 
-"DISABLES_SHORTS_PIP" = "禁用 Shorts 画中画";
-"DISABLES_SHORTS_PIP_DESC" = "尝试禁用 Shorts 的画中画功能，可能无法 100% 禁用。";
+"DISABLES_SHORTS_PIP" = "禁用 Shorts PiP";
+"DISABLES_SHORTS_PIP_DESC" = "尝试禁用 Shorts PiP，但可能无法完全禁用。";
 
-"BLOCK_UPGRADE_DIALOGS" = "拦截升级提示框";
-"BLOCK_UPGRADE_DIALOGS_DESC" = "拦截 YouTube 提示您升级应用的对话框。";
+"BLOCK_UPGRADE_DIALOGS" = "阻止升级对话框";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "阻止 YouTube 要求升级应用的对话框。";
 
-"ARE_YOU_THERE_DIALOG" = "隐藏“您还在看吗？”提示框";
-"ARE_YOU_THERE_DIALOG_DESC" = "当您在应用中长时间不活动时隐藏该提示框。";
+"ARE_YOU_THERE_DIALOG" = "隐藏“你还在看吗？”对话框";
+"ARE_YOU_THERE_DIALOG_DESC" = "隐藏在应用长时间未操作时出现的对话框。";
 
-"HIDE_ADS_BADGES" = "隐藏广告角标";
-"HIDE_ADS_BADGES_DESC" = "隐藏广告角标对话框、YouTube Premium 促销活动，尝试隐藏 AI 相关内容等等。";
+"HIDE_ADS_BADGES" = "隐藏广告标识";
+"HIDE_ADS_BADGES_DESC" = "隐藏广告标识、YouTube Premium 推广，并尝试隐藏 AI 内容等。";
 
-"HIDE_YOUTUBE_EDU" = "隐藏 YouTube 教学提示 (实验性)";
-"HIDE_YOUTUBE_EDU_DESC" = "尝试在重新安装应用或首次使用应用/功能时隐藏 YouTube 教学提示。";
+"HIDE_YOUTUBE_EDU" = "隐藏 YouTube 教学提示（实验性）";
+"HIDE_YOUTUBE_EDU_DESC" = "尝试在重新安装应用或首次使用功能时隐藏 YouTube 教学提示。";
 
-"FIXES_SLOW_MINIPLAYER" = "修复迷你播放器卡顿";
-"FIXES_SLOW_MINIPLAYER_DESC" = "修复迷你播放器展开视频时的卡顿问题，这仅在旧版 YouTube 中有效。";
+"FIXES_SLOW_MINIPLAYER" = "修复迷你播放器缓慢";
+"FIXES_SLOW_MINIPLAYER_DESC" = "修复迷你播放器展开缓慢的问题，仅适用于较旧的 YouTube 版本。";
 
-"DISABLES_NEW_MINIPLAYER" = "禁用新版迷你播放器";
-"DISABLES_NEW_MINIPLAYER_DESC" = "使用旧版样式的迷你播放器代替新版，这仅在旧版 YouTube 中有效。";
+"DISABLES_NEW_MINIPLAYER" = "禁用新迷你播放器";
+"DISABLES_NEW_MINIPLAYER_DESC" = "使用旧版迷你播放器而不是新版，仅适用于较旧的 YouTube 版本。";
 
-"SNACK_BAR" = "禁用底部提示条";
-"SNACK_BAR_DESC" = "在按下某些按钮或在应用中执行操作时禁用底部提示条 (Snack bar)。";
+"SNACK_BAR" = "禁用提示条";
+"SNACK_BAR_DESC" = "在应用中按下按钮或执行操作时禁用提示条。";

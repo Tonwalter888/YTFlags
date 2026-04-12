@@ -1,36 +1,36 @@
-"RESTART_BAR" = "Bu ayarlarda yapılan herhangi bir değişikliğin etkili olması için uygulamanın yeniden başlatılması gerekir.";
-"ENABLED" = "Tweak'i etkinleştir";
-"ENABLED_DESC" = "Bu seçeneği açmak tweak'i etkinleştirecektir.";
+"RESTART_BAR" = "Bu ayarlardaki değişikliklerin etkili olması için uygulamanın yeniden başlatılması gerekir.";
+"ENABLED" = "Tweaki etkinleştir";
+"ENABLED_DESC" = "Bu seçeneği açmak tweaki etkinleştirir.";
 
 "ALLOWS_BACKGROUND_PLAYBACK" = "Arka planda oynatmaya izin ver";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "YouTube'un videoları arka planda oynatmasına izin verir.";
 
 "VIDEO_ADS" = "Video reklamlarını kaldır";
-"VIDEO_ADS_DESC" = "Shorts dahil olmak üzere video reklamlarını kaldırır.";
+"VIDEO_ADS_DESC" = "Shorts dahil video reklamlarını kaldırır.";
 
-"ENABLES_PIP" = "PiP'yi etkinleştir";
-"ENABLES_PIP_DESC" = "Videoları YouTube uygulaması dışında oynatmak için PiP'yi (Resim İçinde Resim) etkinleştirir.";
+"ENABLES_PIP" = "PiP'i etkinleştir";
+"ENABLES_PIP_DESC" = "YouTube uygulaması dışında video oynatmak için Picture-in-Picture (PiP) özelliğini etkinleştirir.";
 
-"DISABLES_SHORTS_PIP" = "Shorts PiP'yi devre dışı bırak";
-"DISABLES_SHORTS_PIP_DESC" = "Shorts PiP'yi devre dışı bırakmayı dener, bu %100 devre dışı bırakmayabilir.";
+"DISABLES_SHORTS_PIP" = "Shorts PiP'i devre dışı bırak";
+"DISABLES_SHORTS_PIP_DESC" = "Shorts PiP'i devre dışı bırakmayı dener, tamamen devre dışı kalmayabilir.";
 
-"BLOCK_UPGRADE_DIALOGS" = "Güncelleme iletişim kutularını engelle";
-"BLOCK_UPGRADE_DIALOGS_DESC" = "Sizden uygulamayı güncellemenizi isteyen YouTube iletişim kutularını engeller.";
+"BLOCK_UPGRADE_DIALOGS" = "Güncelleme pencerelerini engelle";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Uygulamayı güncellemenizi isteyen YouTube pencerelerini engeller.";
 
-"ARE_YOU_THERE_DIALOG" = "Orada mısınız? iletişim kutusunu gizle";
-"ARE_YOU_THERE_DIALOG_DESC" = "Uygulamada çok uzun süre işlem yapmadığınızda çıkan iletişim kutusunu gizler.";
+"ARE_YOU_THERE_DIALOG" = "'Hâlâ orada mısınız?' penceresini gizle";
+"ARE_YOU_THERE_DIALOG_DESC" = "Uygulamada uzun süre etkin olmadığınızda çıkan pencereyi gizler.";
 
 "HIDE_ADS_BADGES" = "Reklam rozetlerini gizle";
-"HIDE_ADS_BADGES_DESC" = "Reklam rozeti iletişim kutularını, YouTube Premium promosyonlarını gizler, yapay zeka araçlarını gizlemeye çalışır ve çok daha fazlasını yapar.";
+"HIDE_ADS_BADGES_DESC" = "Reklam rozetlerini, YouTube Premium tanıtımlarını gizler ve AI ile ilgili şeyleri saklamaya çalışır.";
 
 "HIDE_YOUTUBE_EDU" = "YouTube eğitimlerini gizle (Deneysel)";
-"HIDE_YOUTUBE_EDU_DESC" = "Uygulamayı yeniden yüklediğinizde veya uygulamayı/özellikleri ilk kez kullandığınızda YouTube eğitimlerini gizlemeyi dener.";
+"HIDE_YOUTUBE_EDU_DESC" = "Uygulamayı yeniden yüklediğinizde veya özellikleri ilk kez kullandığınızda görünen YouTube eğitimlerini gizlemeye çalışır.";
 
-"FIXES_SLOW_MINIPLAYER" = "Yavaş mini oynatıcıyı düzelt";
-"FIXES_SLOW_MINIPLAYER_DESC" = "Videonun genişletilmesindeki mini oynatıcı yavaşlığını düzeltir, bu yalnızca eski YouTube sürümlerinde çalışır.";
+"FIXES_SLOW_MINIPLAYER" = "Yavaş miniplayerı düzelt";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Miniplayerın yavaş genişleme sorununu düzeltir. Yalnızca eski YouTube sürümlerinde çalışır.";
 
-"DISABLES_NEW_MINIPLAYER" = "Yeni mini oynatıcıyı devre dışı bırak";
-"DISABLES_NEW_MINIPLAYER_DESC" = "Yenisi yerine eski stil mini oynatıcıyı kullanır, bu yalnızca eski YouTube sürümlerinde çalışır.";
+"DISABLES_NEW_MINIPLAYER" = "Yeni miniplayerı devre dışı bırak";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Yeni yerine eski tarz miniplayerı kullanır. Yalnızca eski YouTube sürümlerinde çalışır.";
 
-"SNACK_BAR" = "Bildirim çubuğunu devre dışı bırak";
-"SNACK_BAR_DESC" = "Bazı düğmelere basıldığında veya uygulamada bir şey yapıldığında çıkan bildirim çubuğunu (snack bar) devre dışı bırakır.";
+"SNACK_BAR" = "Snack barı devre dışı bırak";
+"SNACK_BAR_DESC" = "Uygulamada butonlara basıldığında veya işlem yapıldığında snack barı devre dışı bırakır.";

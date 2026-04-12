@@ -1,36 +1,36 @@
-"RESTART_BAR" = "Toute modification de ces paramètres nécessite le redémarrage de l'application pour prendre effet.";
+"RESTART_BAR" = "Les modifications de ces paramètres nécessitent de redémarrer l'application pour prendre effet.";
 "ENABLED" = "Activer le tweak";
-"ENABLED_DESC" = "L'activation de cette option activera le tweak.";
+"ENABLED_DESC" = "L’activation de cette option activera le tweak.";
 
-"ALLOWS_BACKGROUND_PLAYBACK" = "Permet la lecture en arrière-plan";
+"ALLOWS_BACKGROUND_PLAYBACK" = "Autoriser la lecture en arrière-plan";
 "ALLOWS_BACKGROUND_PLAYBACK_DESC" = "Permet à YouTube de lire des vidéos en arrière-plan.";
 
 "VIDEO_ADS" = "Supprimer les publicités vidéo";
-"VIDEO_ADS_DESC" = "Supprime les publicités vidéo, y compris dans les Shorts.";
+"VIDEO_ADS_DESC" = "Supprime les publicités vidéo, y compris celles des Shorts.";
 
-"ENABLES_PIP" = "Activer le PiP";
-"ENABLES_PIP_DESC" = "Active le PiP (Image dans l'image) pour lire des vidéos en dehors de l'application YouTube.";
+"ENABLES_PIP" = "Activer PiP";
+"ENABLES_PIP_DESC" = "Active le mode Picture-in-Picture (PiP) pour lire des vidéos en dehors de l’application YouTube.";
 
 "DISABLES_SHORTS_PIP" = "Désactiver le PiP des Shorts";
-"DISABLES_SHORTS_PIP_DESC" = "Essaie de désactiver le PiP pour les Shorts, il se peut que cela ne le désactive pas à 100%.";
+"DISABLES_SHORTS_PIP_DESC" = "Tente de désactiver le PiP des Shorts. Cela peut ne pas fonctionner complètement.";
 
-"BLOCK_UPGRADE_DIALOGS" = "Bloquer les dialogues de mise à jour";
-"BLOCK_UPGRADE_DIALOGS_DESC" = "Bloque les boîtes de dialogue YouTube vous demandant de mettre à jour l'application.";
+"BLOCK_UPGRADE_DIALOGS" = "Bloquer les fenêtres de mise à jour";
+"BLOCK_UPGRADE_DIALOGS_DESC" = "Bloque les fenêtres YouTube demandant de mettre à jour l’application.";
 
-"ARE_YOU_THERE_DIALOG" = "Masquer le dialogue Êtes-vous là ?";
-"ARE_YOU_THERE_DIALOG_DESC" = "Masque la boîte de dialogue lorsque vous êtes inactif sur l'application depuis trop longtemps.";
+"ARE_YOU_THERE_DIALOG" = "Masquer la fenêtre 'Êtes-vous toujours là ?'";
+"ARE_YOU_THERE_DIALOG_DESC" = "Masque la fenêtre qui apparaît après une longue période d’inactivité.";
 
 "HIDE_ADS_BADGES" = "Masquer les badges publicitaires";
-"HIDE_ADS_BADGES_DESC" = "Masque les boîtes de dialogue des badges publicitaires, les promotions YouTube Premium, essaie de masquer les éléments d'IA, et bien plus encore.";
+"HIDE_ADS_BADGES_DESC" = "Masque les badges publicitaires, les promotions YouTube Premium, tente de masquer les éléments IA et plus.";
 
-"HIDE_YOUTUBE_EDU" = "Masquer les astuces YouTube (Expérimental)";
-"HIDE_YOUTUBE_EDU_DESC" = "Essaie de masquer les didacticiels YouTube lorsque vous réinstallez l'application ou que vous utilisez l'application/les fonctionnalités pour la première fois.";
+"HIDE_YOUTUBE_EDU" = "Masquer les guides YouTube (Expérimental)";
+"HIDE_YOUTUBE_EDU_DESC" = "Tente de masquer les guides YouTube lors de la réinstallation ou de la première utilisation.";
 
-"FIXES_SLOW_MINIPLAYER" = "Corrige le mini-lecteur lent";
-"FIXES_SLOW_MINIPLAYER_DESC" = "Corrige la lenteur du mini-lecteur pour agrandir la vidéo, cela ne fonctionne que dans les anciennes versions de YouTube.";
+"FIXES_SLOW_MINIPLAYER" = "Corriger le miniplayer lent";
+"FIXES_SLOW_MINIPLAYER_DESC" = "Corrige l’extension lente du miniplayer. Fonctionne uniquement sur les anciennes versions.";
 
-"DISABLES_NEW_MINIPLAYER" = "Désactiver le nouveau mini-lecteur";
-"DISABLES_NEW_MINIPLAYER_DESC" = "Utiliser l'ancien style de mini-lecteur au lieu du nouveau, cela ne fonctionne que dans les anciennes versions de YouTube.";
+"DISABLES_NEW_MINIPLAYER" = "Désactiver le nouveau miniplayer";
+"DISABLES_NEW_MINIPLAYER_DESC" = "Utilise l’ancien miniplayer au lieu du nouveau. Fonctionne uniquement sur les anciennes versions.";
 
-"SNACK_BAR" = "Désactiver la barre de notification";
-"SNACK_BAR_DESC" = "Désactive la barre de notification (Snack bar) lors de la pression de certains boutons ou d'une action dans l'application.";
+"SNACK_BAR" = "Désactiver la snackbar";
+"SNACK_BAR_DESC" = "Désactive la snackbar lors de l’appui sur certains boutons ou actions dans l’application.";
