@@ -3,14 +3,18 @@
 
 #import <PSHeader/Misc.h>
 #import <YouTubeHeader/YTSettingsGroupData.h>
-#import <YouTubeHeader/YTSettingsPickerViewController.h>
 #import <YouTubeHeader/YTSettingsSectionItem.h>
 #import <YouTubeHeader/YTSettingsSectionItemManager.h>
 #import <YouTubeHeader/YTSettingsViewController.h>
+#import <YouTubeHeader/YTToastResponderEvent.h>
+#import <YouTubeHeader/YTSettingsCell.h>
+#import <YouTubeHeader/YTAlertView.h>
+#import <objc/runtime.h>
+#import <UIKit/UIKit.h>
 
 #define TweakName @"YTFlags"
 
-#define EnablesTweakKey @"ActivateTweak"
+// #define EnablesTweakKey @"ActivateTweak"
 #define BedtimeKey @"IAmNotGonnaSleep"
 #define WatchingKey @"NoWatchingShelf"
 #define AllowsBackgroundPlaybackKey @"EnableBackgroundPlayback"
@@ -18,7 +22,7 @@
 #define DisablesShortsPiPKey @"TryToDisablesShortsPiP"
 #define BlockUpgradeDialogsKey @"StopYouTubeForcingToUpgrade"
 #define HideAreYouThereDialogKey @"HideAnnoyingDialog"
-#define HideAdsBadgesKey @"HideAds"
+#define HideAdsBadgesKey @"HideAdsBadges"
 #define HideYouTubeEduKey @"HideYouTubeEducations"
 #define FixesSlowMiniPlayerKey @"FixesSlowPlayer"
 #define DisablesNewMiniPlayerKey @"DisablesNewStyleMiniPlayer"
@@ -31,8 +35,11 @@
 
 static const NSInteger TweakSection = 'ytfl';
 
-@interface YTSettingsSectionItemManager (YTFlags)
+@interface YTSettingsSectionItemManager (YTFlags) <UIDocumentPickerDelegate>
 - (void)updateYTFlagsSectionWithEntry:(id)entry;
+- (void)YTFlagsexportPreferences;
+- (void)YTFlagsimportPreferences;
+- (void)YTFlagsrestoreDefaults;
 @end
 
 BOOL EnablesTweak() {
@@ -133,6 +140,16 @@ NSBundle *YTFlagsBundle() {
 
 %hook YTSettingsSectionItemManager
 
+%new
+- (void)YTFlagssetIsImportingPreferences:(BOOL)YTFlagsisImportingPreferences {
+    objc_setAssociatedObject(self, @selector(YTFlagsisImportingPreferences), @(YTFlagsisImportingPreferences), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+%new
+- (BOOL)YTFlagsisImportingPreferences {
+    return [objc_getAssociatedObject(self, @selector(YTFlagsisImportingPreferences)) boolValue];
+}
+
 %new(v@:@)
 - (void)updateYTFlagsSectionWithEntry:(id)entry {
     NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray array];
@@ -161,17 +178,64 @@ NSBundle *YTFlagsBundle() {
         }];
     [sectionItems addObject:restartBar];
 
-    // Activate Tweak
-    YTSettingsSectionItem *enablesTweak = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLED")
-        titleDescription:LOC(@"ENABLED_DESC")
+    // Preferences management header
+    YTSettingsSectionItem *prefsHeader = [YTSettingsSectionItemClass itemWithTitle:LOC(@"PREFERENCES_MANAGEMENT")
+        titleDescription:nil
         accessibilityIdentifier:nil
-        switchOn:EnablesTweak()
-        switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:EnablesTweakKey];
+        detailTextBlock:nil
+        selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+            return NO; // Non-interactive header
+        }];
+    [sectionItems addObject:prefsHeader];
+
+    // Import preferences
+    YTSettingsSectionItem *importPrefs = [YTSettingsSectionItemClass itemWithTitle:LOC(@"IMPORT_PREFERENCES")
+        titleDescription:nil
+        accessibilityIdentifier:nil
+        detailTextBlock:nil
+        selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+            YTAlertView *alertView = [%c(YTAlertView) confirmationDialogWithAction:^{
+                [self YTFlagsimportPreferences];
+            }
+            actionTitle:LOC(@"YES")
+            cancelAction:^{}
+            cancelTitle:LOC(@"CANCEL")];
+            alertView.title = LOC(@"WARNING");
+            alertView.subtitle = LOC(@"IMPORT_CONFIRM");
+            [alertView show];
             return YES;
-        }
-        settingItemId:0];
-    [sectionItems addObject:enablesTweak];
+        }];
+    [sectionItems addObject:importPrefs];
+
+    // Export preferences
+    YTSettingsSectionItem *exportPrefs = [YTSettingsSectionItemClass itemWithTitle:LOC(@"EXPORT_PREFERENCES")
+        titleDescription:nil
+        accessibilityIdentifier:nil
+        detailTextBlock:nil
+        selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+            [self YTFlagsexportPreferences];
+            return YES;
+        }];
+    [sectionItems addObject:exportPrefs];
+
+    // Restore defaults
+    YTSettingsSectionItem *restoreDefaults = [YTSettingsSectionItemClass itemWithTitle:LOC(@"RESTORE_DEFAULTS")
+        titleDescription:nil
+        accessibilityIdentifier:nil
+        detailTextBlock:nil
+        selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+            YTAlertView *alertView = [%c(YTAlertView) confirmationDialogWithAction:^{
+                [self YTFlagsrestoreDefaults];
+            }
+            actionTitle:LOC(@"YES")
+            cancelAction:^{}
+            cancelTitle:LOC(@"CANCEL")];
+            alertView.title = LOC(@"WARNING");
+            alertView.subtitle = LOC(@"RESTORE_CONFIRM");
+            [alertView show];
+            return YES;
+        }];
+    [sectionItems addObject:restoreDefaults];
 
     // Allows Background Playback
     YTSettingsSectionItem *backgroundPlayback = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ALLOWS_BACKGROUND_PLAYBACK")
@@ -319,6 +383,103 @@ NSBundle *YTFlagsBundle() {
         return;
     }
     %orig;
+}
+
+%new
+- (void)YTFlagsexportPreferences {
+    self.YTFlagsisImportingPreferences = NO;
+    
+    // Get all preferences
+    NSDictionary *prefs = [defaults dictionaryRepresentation];
+    
+    // Filter only YTweaks keys
+    NSMutableDictionary *ytweaksPrefs = [NSMutableDictionary dictionary];
+    for (NSString *key in prefs) {
+        if ([key hasPrefix:@"IAmNotGonnaSleep"] || 
+            [key hasPrefix:@"NoWatchingShelf"] ||
+            [key hasPrefix:@"EnableBackgroundPlayback"] ||
+            [key hasPrefix:@"AllowsPiP"] ||
+            [key hasPrefix:@"TryToDisablesShortsPiP"] ||
+            [key hasPrefix:@"StopYouTubeForcingToUpgrade"] ||
+            [key hasPrefix:@"HideAnnoyingDialog"] ||
+            [key hasPrefix:@"HideAdsBadges"] ||
+            [key hasPrefix:@"HideYouTubeEducations"] ||
+            [key hasPrefix:@"FixesSlowPlayer"] ||
+            [key hasPrefix:@"DisablesNewStyleMiniPlayer"] ||
+            [key hasPrefix:@"DisablesAnnoyingYTHUD"] ||
+            [key hasPrefix:@"RemoveVideoAds"]) {
+            ytweaksPrefs[key] = prefs[key];
+        }
+    }
+    
+    // Write to temp file
+    NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"YTFlags-Preferences.plist"];
+    [ytweaksPrefs writeToFile:tempPath atomically:YES];
+    
+    // Present document picker for save
+    NSURL *fileURL = [NSURL fileURLWithPath:tempPath];
+    UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] 
+        initWithURL:fileURL 
+        inMode:UIDocumentPickerModeExportToService];
+    picker.delegate = self;
+    
+    YTSettingsViewController *settingsVC = [self valueForKey:@"_dataDelegate"];
+    [settingsVC presentViewController:picker animated:YES completion:nil];
+}
+
+%new
+- (void)YTFlagsimportPreferences {
+    self.YTFlagsisImportingPreferences = YES;
+    UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] 
+        initWithDocumentTypes:@[@"public.xml", @"com.apple.property-list"] 
+        inMode:UIDocumentPickerModeImport];
+    picker.delegate = self;
+    picker.allowsMultipleSelection = NO;
+    
+    YTSettingsViewController *settingsVC = [self valueForKey:@"_dataDelegate"];
+    [settingsVC presentViewController:picker animated:YES completion:nil];
+}
+
+%new
+- (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
+    
+    // Only process for import operations, ignore export
+    if (!self.YTFlagsisImportingPreferences) return;
+    
+    if (urls.count == 0) return;
+    
+    NSURL *fileURL = urls[0];
+    NSDictionary *importedPrefs = [NSDictionary dictionaryWithContentsOfURL:fileURL];
+    
+    if (importedPrefs) {
+        // Import preferences
+        for (NSString *key in importedPrefs) {
+            [defaults setObject:importedPrefs[key] forKey:key];
+        }
+        [defaults synchronize];
+        
+        // Show success message
+        NSString *successMsg = [bundle localizedStringForKey:@"IMPORT_SUCCESS" value:nil table:nil];
+        [[%c(YTToastResponderEvent) eventWithMessage:successMsg firstResponder:[self parentResponder]] send];
+    } else {
+        NSString *failMsg = [bundle localizedStringForKey:@"IMPORT_FAILED" value:nil table:nil];
+        [[%c(YTToastResponderEvent) eventWithMessage:failMsg firstResponder:[self parentResponder]] send];
+    }
+}
+
+%new
+- (void)YTFlagsrestoreDefaults {
+    NSArray *keys = @[@"fullscreen_mode", 
+                      @"enableIosFloatingMiniplayer",
+                      @"virtualBezel_enabled",
+                      @"hideAISummaries_enabled",
+                      @"fixCasting_enabled",
+                      @"nightMode_level"];
+    
+    for (NSString *key in keys) {
+        [defaults removeObjectForKey:key];
+    }
+    [defaults synchronize];
 }
 
 %end
