@@ -13,8 +13,6 @@
 #import <YouTubeHeader/YTReelModel.h>
 #import <YouTubeHeader/YTIShowFullscreenInterstitialCommand.h>
 
-#define EnablesTweakKey @"YTFlagsActivateTweak"
-
 extern BOOL EnablesTweak();
 extern BOOL AllowsBackgroundPlayback();
 extern BOOL VideoAds();
@@ -644,7 +642,7 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 
 %ctor {
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
-        EnablesTweakKey: @YES,
+         @"YTFlagsActivateTweak": @YES,
     }];
     if (!EnablesTweak()) return;
     %init;
