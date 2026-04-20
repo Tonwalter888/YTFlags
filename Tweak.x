@@ -641,6 +641,9 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 */
 
 %ctor {
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{
+        EnablesTweakKey: @YES,
+    }];
     if (!EnablesTweak()) return;
     %init;
     if (AllowsBackgroundPlayback()) {
