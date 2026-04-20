@@ -27,6 +27,10 @@
 - (NSMutableArray <YTIPivotBarSupportedRenderers *> *)itemsArray;
 @end
 
+@interface YTMainAppControlsOverlayView : NSObject
+@property (nonatomic, copy, readwrite) NSString *accessibilityIdentifier;
+@end
+
 extern BOOL EnablesTweak();
 extern BOOL AllowsBackgroundPlayback();
 extern BOOL VideoAds();
@@ -117,6 +121,16 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
     [newArray removeObjectsAtIndexes:removeIndexes];
     return newArray;
 }
+
+%hook _ASDisplayView
+- (void)didMoveToWindow {
+    %orig;
+    if (([self.accessibilityIdentifier isEqualToString:@"id.reel_remix_button"]))
+        [self removeFromSuperview];
+    if (([self.accessibilityIdentifier isEqualToString:@"id.reel_pivot_button"]))
+        [self removeFromSuperview];
+}
+%end
 
 %hook YTPivotBarView
 - (void)setRenderer:(YTIPivotBarRenderer *)renderer {
