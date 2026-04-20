@@ -13,6 +13,8 @@
 #import <YouTubeHeader/YTReelModel.h>
 #import <YouTubeHeader/YTIShowFullscreenInterstitialCommand.h>
 
+#define EnablesTweakKey @"YTFlagsActivateTweak"
+
 extern BOOL EnablesTweak();
 extern BOOL AllowsBackgroundPlayback();
 extern BOOL VideoAds();
