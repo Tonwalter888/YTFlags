@@ -121,36 +121,33 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 
 %hook YTPivotBarView
 - (void)setRenderer:(YTIPivotBarRenderer *)renderer {
-    // 1. Only run if the main tweak toggle is ON
-    if (YTMU(@"YTMUltimateIsEnabled")) {
-        NSMutableArray <YTIPivotBarSupportedRenderers *> *items = [renderer itemsArray];
-        NSMutableIndexSet *indicesToRemove = [NSMutableIndexSet indexSet];
+    NSMutableArray <YTIPivotBarSupportedRenderers *> *items = [renderer itemsArray];
+    NSMutableIndexSet *indicesToRemove = [NSMutableIndexSet indexSet];
 
-        [items enumerateObjectsUsingBlock:^(YTIPivotBarSupportedRenderers *obj, NSUInteger idx, BOOL *stop) {
-            NSString *pID = [[obj pivotBarItemRenderer] pivotIdentifier];
+    [items enumerateObjectsUsingBlock:^(YTIPivotBarSupportedRenderers *obj, NSUInteger idx, BOOL *stop) {
+        NSString *pID = [[obj pivotBarItemRenderer] pivotIdentifier];
 
-            // REAL RESEARCH
-            // 2. Check each ID against its specific setting key
-            if ([pID isEqualToString:@"FEshorts"]) {
-                [indicesToRemove addIndex:idx];
-            } 
-            if ([pID isEqualToString:@"FEuploads"]) {
-                [indicesToRemove addIndex:idx];
-            } 
-            if ([pID isEqualToString:@"FEsubscriptions"]) {
-                [indicesToRemove addIndex:idx];
-            }
+        // REAL RESEARCH
+        // 2. Check each ID against its specific setting key
+        if ([pID isEqualToString:@"FEshorts"]) {
+            [indicesToRemove addIndex:idx];
+        } 
+        if ([pID isEqualToString:@"FEuploads"]) {
+            [indicesToRemove addIndex:idx];
+        } 
+        if ([pID isEqualToString:@"FEsubscriptions"]) {
+            [indicesToRemove addIndex:idx];
+        }
             // else if ([pID isEqualToString:@"FElibrary"]) {
             //     [indicesToRemove addIndex:idx];
             // }
             // if ([pID isEqualToString:@"FEwhat_to_watch"]) {
             //    [indicesToRemove addIndex:idx];
             // }
-        }];
+    }];
 
-        // 3. Remove only the buttons the user toggled ON
-        [items removeObjectsAtIndexes:indicesToRemove];
-    }
+    // 3. Remove only the buttons the user toggled ON
+    [items removeObjectsAtIndexes:indicesToRemove];
     
     %orig(renderer);
 }
