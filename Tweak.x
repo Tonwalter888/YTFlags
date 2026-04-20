@@ -642,7 +642,7 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 
 %ctor {
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
-         @"YTFlagsActivateTweak": @YES,
+        @"YTFlagsActivateTweak": @YES,
     }];
     if (!EnablesTweak()) return;
     %init;
