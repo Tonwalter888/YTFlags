@@ -27,7 +27,7 @@
 - (NSMutableArray <YTIPivotBarSupportedRenderers *> *)itemsArray;
 @end
 
-@interface YTAsyncCollectionView : NSObject
+@interface YTAsyncCollectionView : UICollectionView
 @property (nonatomic, copy, readwrite) NSString *accessibilityIdentifier;
 @end
 
