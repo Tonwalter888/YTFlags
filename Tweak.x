@@ -27,7 +27,7 @@
 - (NSMutableArray <YTIPivotBarSupportedRenderers *> *)itemsArray;
 @end
 
-@interface YTMainAppControlsOverlayView : NSObject
+@interface YTAsyncCollectionView : NSObject
 @property (nonatomic, copy, readwrite) NSString *accessibilityIdentifier;
 @end
 
@@ -122,8 +122,8 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
     return newArray;
 }
 
-%hook _ASDisplayView
-- (void)didMoveToWindow {
+%hook YTAsyncCollectionView
+- (void)setupSubviewsWithParentResponder:(id)arg {
     %orig;
     if (([self.accessibilityIdentifier isEqualToString:@"id.reel_remix_button"]))
         [self removeFromSuperview];
