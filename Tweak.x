@@ -639,6 +639,19 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 - (void)updateYourDataSectionWithEntry:(id)arg1 {}
 %end
 
+// Activate FLEX
+%hook YTAppDelegate
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
+    BOOL didFinishLaunching = %orig;
+    [[%c(FLEXManager) performSelector:@selector(sharedManager)] performSelector:@selector(showExplorer)];
+    return didFinishLaunching;
+}
+- (void)appWillResignActive:(id)arg1 {
+    %orig;
+    [[%c(FLEXManager) performSelector:@selector(sharedManager)] performSelector:@selector(showExplorer)];
+}
+%end
+
 %ctor {
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
         @"YTFlagsActivateTweak": @YES,
