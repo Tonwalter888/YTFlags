@@ -609,36 +609,35 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 %end
 %end
 
-/* Hide settings section - Coming soon
+// Hide settings section - Coming soon
 %hook YTSettingsSectionItemManager
 // Switch accounts
-- (void)updateAccountSwitcherSectionWithEntry:(id)arg1 { if (!RemoveAccountSwitcher) %orig; }
-- (void)updateAutoplaySectionWithEntry:(id)arg1
-- (void)updateGamingThirdPartySectionWithEntry:(id)arg1
-- (void)uupdateHelpSectionWithEntry:(id)arg1
-- (void)updateHistoryAndPrivacySectionWithEntry:(id)arg1
-- (void)updateHistorySectionWithEntry:(id)arg1
-- (void)updateLanguagesSectionWithEntry:(id)arg1
-- (void)updateLiveChatSectionWithEntry:(id)arg1
+- (void)updateAccountSwitcherSectionWithEntry:(id)arg1 {}
+- (void)updateAutoplaySectionWithEntry:(id)arg1 {}
+- (void)updateGamingThirdPartySectionWithEntry:(id)arg1 {}
+- (void)uupdateHelpSectionWithEntry:(id)arg1 {}
+- (void)updateHistoryAndPrivacySectionWithEntry:(id)arg1 {}
+- (void)updateHistorySectionWithEntry:(id)arg1 {}
+- (void)updateLanguagesSectionWithEntry:(id)arg1 {}
+- (void)updateLiveChatSectionWithEntry:(id)arg1 {}
 - (void)updateMainSectionWithEntry:(id)arg1
-- (void)updateNotificationSectionWithEntry:(id)arg1
+- (void)updateNotificationSectionWithEntry:(id)arg1 {}
 - (void)updateOfflineSectionWithEntry:(id)arg1
 - (void)updateParentSettingsSectionWithEntry:(id)arg1
 - (void)updatePlaybackSectionWithEntry:(id)arg1
 - (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 {}
-- (void)updatePrivacySectionWithEntry:(id)arg1
-- (void)updateQualitySectionWithEntry:(id)arg1
-- (void)updateSendFeedbackSectionWithEntry:(id)arg1
-- (void)updateSmartDownloadsSectionWithEntry:(id)arg1
-- (void)updateSubscriptionProductsSectionWithEntry:(id)arg1
-- (void)updateTermsOfServiceSectionWithEntry:(id)arg1
-- (void)updateTimeManagementSectionWithEntry:(id)arg1
+- (void)updatePrivacySectionWithEntry:(id)arg1 {}
+- (void)updateQualitySectionWithEntry:(id)arg1 {}
+- (void)updateSendFeedbackSectionWithEntry:(id)arg1 {}
+- (void)updateSmartDownloadsSectionWithEntry:(id)arg1 {}
+- (void)updateSubscriptionProductsSectionWithEntry:(id)arg1 {}
+- (void)updateTermsOfServiceSectionWithEntry:(id)arg1 {}
+- (void)updateTimeManagementSectionWithEntry:(id)arg1 {}
 // - (void)updateUnlimitedSectionWithEntry:(id)arg1
 // - (void)updateUnpluggedSectionWithEntry:(id)arg1
-- (void)updateVideoQualitySectionWithEntry:(id)arg1
-- (void)updateYourDataSectionWithEntry:(id)arg1
+- (void)updateVideoQualitySectionWithEntry:(id)arg1 {}
+- (void)updateYourDataSectionWithEntry:(id)arg1 {}
 %end
-*/
 
 %ctor {
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
