@@ -620,11 +620,11 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 - (void)updateHistorySectionWithEntry:(id)arg1 {}
 - (void)updateLanguagesSectionWithEntry:(id)arg1 {}
 - (void)updateLiveChatSectionWithEntry:(id)arg1 {}
-- (void)updateMainSectionWithEntry:(id)arg1
+// - (void)updateMainSectionWithEntry:(id)arg1
 - (void)updateNotificationSectionWithEntry:(id)arg1 {}
-- (void)updateOfflineSectionWithEntry:(id)arg1
-- (void)updateParentSettingsSectionWithEntry:(id)arg1
-- (void)updatePlaybackSectionWithEntry:(id)arg1
+- (void)updateOfflineSectionWithEntry:(id)arg1 {}
+- (void)updateParentSettingsSectionWithEntry:(id)arg1 {}
+- (void)updatePlaybackSectionWithEntry:(id)arg1 {}
 - (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 {}
 - (void)updatePrivacySectionWithEntry:(id)arg1 {}
 - (void)updateQualitySectionWithEntry:(id)arg1 {}
