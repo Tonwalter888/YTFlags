@@ -13,6 +13,20 @@
 #import <YouTubeHeader/YTReelModel.h>
 #import <YouTubeHeader/YTIShowFullscreenInterstitialCommand.h>
 
+@interface YTIPivotBarItemRenderer : NSObject
+@property(copy, nonatomic) NSString *pivotIdentifier;
+- (NSString *)pivotIdentifier;
+@end
+
+@interface YTIPivotBarSupportedRenderers : NSObject
+@property(retain, nonatomic) YTIPivotBarItemRenderer *pivotBarItemRenderer;
+- (YTIPivotBarItemRenderer *)pivotBarItemRenderer;
+@end
+
+@interface YTIPivotBarRenderer : NSObject
+- (NSMutableArray <YTIPivotBarSupportedRenderers *> *)itemsArray;
+@end
+
 extern BOOL EnablesTweak();
 extern BOOL AllowsBackgroundPlayback();
 extern BOOL VideoAds();
@@ -104,49 +118,27 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
     return newArray;
 }
 
-@interface YTIPivotBarItemRenderer : NSObject
-@property(copy, nonatomic) NSString *pivotIdentifier;
-- (NSString *)pivotIdentifier;
-@end
-
-@interface YTIPivotBarSupportedRenderers : NSObject
-@property(retain, nonatomic) YTIPivotBarItemRenderer *pivotBarItemRenderer;
-- (YTIPivotBarItemRenderer *)pivotBarItemRenderer;
-@end
-
-@interface YTIPivotBarRenderer : NSObject
-- (NSMutableArray <YTIPivotBarSupportedRenderers *> *)itemsArray;
-@end
-
-
 %hook YTPivotBarView
 - (void)setRenderer:(YTIPivotBarRenderer *)renderer {
     NSMutableArray <YTIPivotBarSupportedRenderers *> *items = [renderer itemsArray];
+    
+    // We use an IndexSet to "mark" the buttons for deletion
     NSMutableIndexSet *indicesToRemove = [NSMutableIndexSet indexSet];
 
-    [items enumerateObjectsUsingBlock:^(YTIPivotBarSupportedRenderers *obj, NSUInteger idx, BOOL *stop) {
-        NSString *pID = [[obj pivotBarItemRenderer] pivotIdentifier];
+    // Loop through every item in the bar
+    for (NSUInteger i = 0; i < items.count; i++) {
+        YTIPivotBarSupportedRenderers *item = items[i];
+        NSString *pID = [[item pivotBarItemRenderer] pivotIdentifier];
 
-        // REAL RESEARCH
-        // 2. Check each ID against its specific setting key
-        if ([pID isEqualToString:@"FEshorts"]) {
-            [indicesToRemove addIndex:idx];
-        } 
-        if ([pID isEqualToString:@"FEuploads"]) {
-            [indicesToRemove addIndex:idx];
-        } 
-        if ([pID isEqualToString:@"FEsubscriptions"]) {
-            [indicesToRemove addIndex:idx];
+        // If the ID matches any of these, mark it for removal
+        if ([pID isEqualToString:@"FEshorts"] || 
+            [pID isEqualToString:@"FEuploads"] || 
+            [pID isEqualToString:@"FEsubscriptions"]) {
+            [indicesToRemove addIndex:i];
         }
-            // else if ([pID isEqualToString:@"FElibrary"]) {
-            //     [indicesToRemove addIndex:idx];
-            // }
-            // if ([pID isEqualToString:@"FEwhat_to_watch"]) {
-            //    [indicesToRemove addIndex:idx];
-            // }
-    }];
+    }
 
-    // 3. Remove only the buttons the user toggled ON
+    // Remove them all at once so the layout doesn't break
     [items removeObjectsAtIndexes:indicesToRemove];
     
     %orig(renderer);
