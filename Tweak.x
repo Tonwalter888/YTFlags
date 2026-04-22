@@ -11,7 +11,7 @@
 #import <YouTubeHeader/YTPlayerOverlay.h>
 #import <YouTubeHeader/YTPlayerOverlayProvider.h>
 #import <YouTubeHeader/YTReelModel.h>
-#import <YouTubeHeader/YTIShowFullscreenInterstitialCommand.h>end
+#import <YouTubeHeader/YTIShowFullscreenInterstitialCommand.h>
 
 extern BOOL EnablesTweak();
 extern BOOL AllowsBackgroundPlayback();
@@ -102,7 +102,7 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
     }];
     [newArray removeObjectsAtIndexes:removeIndexes];
     return newArray;
-
+}
 
 // Global hooks
 %hook YTColdConfig
