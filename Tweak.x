@@ -11,25 +11,7 @@
 #import <YouTubeHeader/YTPlayerOverlay.h>
 #import <YouTubeHeader/YTPlayerOverlayProvider.h>
 #import <YouTubeHeader/YTReelModel.h>
-#import <YouTubeHeader/YTIShowFullscreenInterstitialCommand.h>
-
-@interface YTIPivotBarItemRenderer : NSObject
-@property(copy, nonatomic) NSString *pivotIdentifier;
-- (NSString *)pivotIdentifier;
-@end
-
-@interface YTIPivotBarSupportedRenderers : NSObject
-@property(retain, nonatomic) YTIPivotBarItemRenderer *pivotBarItemRenderer;
-- (YTIPivotBarItemRenderer *)pivotBarItemRenderer;
-@end
-
-@interface YTIPivotBarRenderer : NSObject
-- (NSMutableArray <YTIPivotBarSupportedRenderers *> *)itemsArray;
-@end
-
-@interface YTAsyncCollectionView : UICollectionView
-@property (nonatomic, copy, readwrite) NSString *accessibilityIdentifier;
-@end
+#import <YouTubeHeader/YTIShowFullscreenInterstitialCommand.h>end
 
 extern BOOL EnablesTweak();
 extern BOOL AllowsBackgroundPlayback();
@@ -120,44 +102,7 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
     }];
     [newArray removeObjectsAtIndexes:removeIndexes];
     return newArray;
-}
 
-%hook YTAsyncCollectionView
-- (void)setupSubviewsWithParentResponder:(id)arg {
-    %orig;
-    if (([self.accessibilityIdentifier isEqualToString:@"id.reel_remix_button"]))
-        [self removeFromSuperview];
-    if (([self.accessibilityIdentifier isEqualToString:@"id.reel_pivot_button"]))
-        [self removeFromSuperview];
-}
-%end
-
-%hook YTPivotBarView
-- (void)setRenderer:(YTIPivotBarRenderer *)renderer {
-    NSMutableArray <YTIPivotBarSupportedRenderers *> *items = [renderer itemsArray];
-    
-    // We use an IndexSet to "mark" the buttons for deletion
-    NSMutableIndexSet *indicesToRemove = [NSMutableIndexSet indexSet];
-
-    // Loop through every item in the bar
-    for (NSUInteger i = 0; i < items.count; i++) {
-        YTIPivotBarSupportedRenderers *item = items[i];
-        NSString *pID = [[item pivotBarItemRenderer] pivotIdentifier];
-
-        // If the ID matches any of these, mark it for removal
-        if ([pID isEqualToString:@"FEshorts"] || 
-            [pID isEqualToString:@"FEuploads"] || 
-            [pID isEqualToString:@"FEsubscriptions"]) {
-            [indicesToRemove addIndex:i];
-        }
-    }
-
-    // Remove them all at once so the layout doesn't break
-    [items removeObjectsAtIndexes:indicesToRemove];
-    
-    %orig(renderer);
-}
-%end
 
 // Global hooks
 %hook YTColdConfig
