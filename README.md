@@ -1,5 +1,6 @@
 # YTFlags
-> [!WARNING] This project will no longer be maintaining anymore, please use my new project [YouMod](https://github.com/Tonwalter888/YouMod) instead.
+> [!WARNING]
+> This project will no longer be maintaining anymore, please use my new project [YouMod](https://github.com/Tonwalter888/YouMod) instead.
 > Every features here have moved there.
 
 Currently, these hooks are based on YouTube versions 19.49.5, 20.21.6, 21.04.2, 21.06.2, 21.10.2 and 21.13.6. I'll keep updaing the flags if the newer version comes out. This project is similar to [YTABGoodies](https://github.com/PoomSmart/YTABGoodies) by [PoomSmart](https://github.com/PoomSmart) and tries to enable useful YouTube features that are avaliable to you.
